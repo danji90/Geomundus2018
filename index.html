@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-	<title>Geomundus 2017</title>
+	<title>Geomundus 2018</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -37,11 +37,11 @@
                                 url: 'images/uni.png'
                             };
 
-                           
+
 
                             var muensterLoc = new google.maps.LatLng(51.9607, 7.6261);
                             var IFGILoc = new google.maps.LatLng(51.969371, 7.595696);
-                            
+
 
                             var contentIFGI = '<div id="content" style="color:#4a87d3">' +
                                     '<h2 style="color:#4a87d3">IFGI, ground floor, conference room </h2>'+
@@ -52,12 +52,12 @@
                                     'https://www.uni-muenster.de/Geoinformatics/en/</a></p>'+
                                     '</div>';
 
-							
+
                             var infoIfgi = new google.maps.InfoWindow({
                                 content: contentIFGI
                             });
 
-							
+
                             university = new google.maps.Marker({
                                 position:IFGILoc,
                                 map: map,
@@ -66,7 +66,7 @@
                                 label:'Conference Venue: Institute for Geoinformatics'
                             });
 
-							
+
 
                             university.addListener('click', function() {
                                 infoIfgi.open(map, university);
@@ -74,11 +74,11 @@
                             });
 
 
-							
+
 
                             map.panTo(muensterLoc);
                             map.setZoom(13);
-						
+
 
 
 		}
@@ -107,12 +107,12 @@
 <ul class="topnav" id="hide">
 	<li><a href="#header" onclick="display_inline()">Home</a></li>
 	<li><a href="#one" onclick="display_inline()">Information</a></li>
-	<li><a href="#two" onclick="display_inline()">Speakers</a></li>
+	<!-- <li><a href="#two" onclick="display_inline()">Speakers</a></li> -->
 	<li><a href="#three" onclick="display_inline()">Location</a></li>
 	<li><a href="#four" onclick="display_inline()">Programme</a></li>
 	<li><a href="#five" onclick="display_inline()">Abstracts and Posters</a></li>
 	<li><a href="#nine" onclick="display_inline()">Registration and Submission</a> </li>
-	<li><a href="#six" onclick="display_inline()">About us</a></li>
+	<!-- <li><a href="#six" onclick="display_inline()">About us</a></li> -->
 	<li><a href="#seven" onclick="display_inline()">Contact</a></li>
 	<li><a href="#eight" onclick="display_inline()">Sponsors</a></li>
 	<li class="icon">
@@ -142,10 +142,10 @@
 	</div>
 	<div class="inner">
 		<span class="image fit"><img src="images/logogm9.png" alt="" height="200" width="200"/></span>
-		<h1> <strong>GeoMundus 2017</strong><br /></h1>
-        <h2>Institute for Geoinformatics (IFGI), University of Münster, Germany <strong><br/>10<sup>th</sup> and 11<sup>th</sup> November </strong> </h2>
+		<h1> <strong>GeoMundus 2018</strong><br /></h1>
+        <h2>NOVA Information Management School - New University of Lisbon - Portugal <strong><br/>7<sup>th</sup> and 8<sup>th</sup> December </strong> </h2>
 		<button style="margin-top: 0%;"> Student Grant is Available</button>
-		<p><strong>'Mapping the Future'</strong></p>
+		<p><strong>'WebTeam is awesome!'</strong></p>
 		<ul class="actions">
 			<li><a href="#one" class="button  scrolly">Discover</a></li>
 		</ul>
@@ -167,27 +167,27 @@
                 </p>
 				<header><h2>Why GeoMundus?<br />
                     </h2></header>
-				<p> 
+				<p>
 It is an opportunity to learn and share scientific research, knowledge and skills with other peers in all things ‘Geo’. The emerging technologies featured in GeoMundus 2017 also presents an opportunity to learn about them and their applications in our everyday lives. GeoMundus is unique as it features workshops where participants can experience first-hand the future of geospatial technologies as well as a career session specially designed for students interested in a geospatial career.
 </p>
-        
+
                 			<header><h2>Who should participate in GeoMundus 2017?<br />
                     </h2></header>
 
                 <p>Everyone who is curious about geospatial technologies and its applications. We especially welcome students, researchers, industry players, and even members of the public. It is not only a great opportunity to learn, but also to network amongst the brightest minds in this exciting field.<br/><br/><br/>
 
                     Registration is <strong>free</strong> so <a href="#nine" style="color:red;">sign up now!</a></p>
-                
+
 			</div>
 		</div>
 	</div>
 </section>
 
 <!-- Two: SPEAKERS -->
-
+<!--
 
    <section id="two" class="main style2">
-       
+
         <div class="container">
             <header class="major">
                 <h2>SPEAKERS</h2>
@@ -211,9 +211,9 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 
                    </h5>
 				   <p align="justify"><strong>Dr. Pau Aragó</strong> is a forest engineer and holds a Master of Science and PhD in Geospatial Technologies.
-					   He has worked as a Geospatial technologies researcher and associate professor at University of Jaume I. 
-					   He also worked as a GIS expert in Stadia, a surveying company, and as a freelancer in a significant number of projects focusing on environmental 
-					   and GIS issues. His primary research interests lie in: Volunteered Geographic information; Big Data Analysis; environmental issues; 
+					   He has worked as a Geospatial technologies researcher and associate professor at University of Jaume I.
+					   He also worked as a GIS expert in Stadia, a surveying company, and as a freelancer in a significant number of projects focusing on environmental
+					   and GIS issues. His primary research interests lie in: Volunteered Geographic information; Big Data Analysis; environmental issues;
 					   modelling crime data in European Mediterranean towns: a vine copula approach. Castellón. Spain
 				   </p>
                </div>
@@ -283,10 +283,10 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                      <h3  align="center" style="background-color:#9dc66b; color:white;text-align: center;"><strong>
 						 Dr. Torsten Prinz
 					 </strong></h3>
-					 <p align="justify"> <strong>Dr. Torsten Prinz</strong> is adjunct professor and researcher at the institute for geoinformatics of 
-					 the University of Munster. He has coordinated the project IFGIcopter, construction and customizing of a geo-scientific UAV drone, 
-					 funded by the European Commission Joint Research Center. His primary research interests lie in the fields of Unmanned aerial vehicles (UAVs), 
-					 collecting, editing, and analyzing geoinformation related to environmental and other geospatial scientific purposes. He has published 
+					 <p align="justify"> <strong>Dr. Torsten Prinz</strong> is adjunct professor and researcher at the institute for geoinformatics of
+					 the University of Munster. He has coordinated the project IFGIcopter, construction and customizing of a geo-scientific UAV drone,
+					 funded by the European Commission Joint Research Center. His primary research interests lie in the fields of Unmanned aerial vehicles (UAVs),
+					 collecting, editing, and analyzing geoinformation related to environmental and other geospatial scientific purposes. He has published
 					 numerous papers in journals and conferences focusing on UAV’s versatility.
 
 
@@ -301,15 +301,14 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 		</div>
 
 
-	</section>
+	</section> -->
 
 
 <!-- Three: LOCATION of  MUENSTER -->
-<section id="three" class="main style1"> <!--class="main style1 special"-->
+<!-- <section id="three" class="main style1">
 	<div class="container">
 		<div class="row 150%">
 			<div  align="left" class="6u 12u$(medium)">
-				<!-- Photos: University and Muenster City-->
 				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 				<script type="text/javascript">
 					$(function(){
@@ -358,7 +357,6 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 					<div  id="scroller" style=" max-width:100%; width: 550px; height: 400px;">
 						<div class="innerScrollArea">
 							<ul>
-								<!-- Define photos here -->
 								<li><img src="images/muenster(14).jpg" width="600" height="400" /></li>
                                 <li><img src="images/muenster(15).jpg" width="600" height="400" /></li>
                                 <li><img src="images/muenster(16).jpg" width="600" height="400" /></li>
@@ -367,24 +365,24 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                 <li><img src="images/muenster(19).jpg" width="600" height="400" /></li>
                                 <li><img src="images/muenster(20).jpg" width="600" height="400" /></li>
                                 <li><img src="images/muenster(21).jpg" width="600" height="400" /></li>
-                           
+
 							</ul>
 						</div>
 					</div>
 			</div>
 			<div class="6u$ 12u$(medium)">
 				<header align="center" class="major">
-					<h2 align="center">	<a href="https://www.uni-muenster.de/" style="color: blue" target="_blank"> University of Münster</a><br /></h2>
-					<p align="center">	<a href="https://www.uni-muenster.de/Geoinformatics/" style="color: blue" target="_blank"> Institute for Geoinformatics (IFGI)</a></p>
+					<h2 align="center">	<a href="https://www.uni-muenster.de/" style="color: blue" target="_blank"> New University of Lisbon</a><br /></h2>
+					<p align="center">	<a href="https://www.uni-muenster.de/Geoinformatics/" style="color: blue" target="_blank"> Nova - IMS</a></p>
 				</header>
-				<p >GeoMundus 2017 will be held in Munster, a multi-faceted city. It is a city of science and learning, the City of Westphalian Peace, the capital city of bicycles and Germany’s Climate Protection Capital. 
+				<p >GeoMundus 2017 will be held in Munster, a multi-faceted city. It is a city of science and learning, the City of Westphalian Peace, the capital city of bicycles and Germany’s Climate Protection Capital.
 				The venue is Institute for Geoinformatics (IFGI). The Institute offers bachelor, master and PhD degrees in geoinformatics with research focus in areas of modelling spatio-temporal processes, semantic interoperability,
 				spatial assistance systems, cognitive engineering and sensor networks.</p>
 			</div>
 		</div>
 
 	</div>
-</section>
+</section> -->
 
 <section id="three" class="main style2 special">
 	<ul class="major-icons">
@@ -580,7 +578,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                     '</p>'+
                                     '</div>';
 
-                        
+
 
                             var contentDusseldorf = '<div id="content" style="color:#4686A0">' +
                                     '<h2 style="color:#4686A0">Düsseldorf Flughafen Terminal</h2>'+
@@ -611,7 +609,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 								icon: imageTrain,
                                 animation: google.maps.Animation.BOUNCE
 							});
-                            
+
                             muensterTrain.addListener('click', function() {
                                 infoMuenster.open(map, muensterTrain);
                             });
@@ -669,7 +667,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                 map: map,
                                 icon: imageIFGI,
                                 animation: google.maps.Animation.BOUNCE
-                                
+
                             });
 
 							DomplatzPark = new google.maps.Marker({
@@ -715,7 +713,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                     '<p align="left" style="color:#4a87d3">' +
                                     '<b style="color:#4a87d3">Address: </b>Aegidistraße 21<br>' +
                                     '<b style="color:#4a87d3">Economy Single, breakfast included</b><br>'+
-                                     '<b style="color:#4a87d3">72,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single, breakfast included</b><br>'+	
+                                     '<b style="color:#4a87d3">72,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single, breakfast included</b><br>'+
                                      '<b style="color:#4a87d3">	77,- € </b><br/>'+
                                     '<b style="color:#4a87d3">Web Page: </b><a href="https://www.stadthotel-muenster.de/en/">'+
                                     'https://www.stadthotel-muenster.de/en/</a></p>'+
@@ -726,7 +724,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                     '<p align="left" style="color:#4a87d3">' +
                                     '<b style="color:#4a87d3">Address: </b>Schmale Straße 2-4<br>' +
                                     '<b style="color:#4a87d3">Single room, Shower/WC, breakfast included</b><br>'+
-                                     '<b style="color:#4a87d3">77,- €</b> <br/>'+'<b style="color:#4a87d3">Double room, Shower/WC, breakfast included	</b><br>'+	
+                                     '<b style="color:#4a87d3">77,- €</b> <br/>'+'<b style="color:#4a87d3">Double room, Shower/WC, breakfast included	</b><br>'+
                                      '<b style="color:#4a87d3">	102,- € </b><br/>'+
                                     '<b style="color:#4a87d3">Web Page: </b><a href="http://www.hotel-am-schlosspark-muenster.de">'+
                                     'http://www.hotel-am-schlosspark-muenster.de</a></p>'+
@@ -737,7 +735,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                     '<p align="left" style="color:#4a87d3">' +
                                     '<b style="color:#4a87d3">Address: </b>Berliner Platz 2 <br>' +
                                     '<b style="color:#4a87d3">Economy Single, breakfast included</b><br>'+
-                                     '<b style="color:#4a87d3">75,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single, breakfast included</b><br>'+	
+                                     '<b style="color:#4a87d3">75,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single, breakfast included</b><br>'+
                                      '<b style="color:#4a87d3">	99,- € </b><br/>'+
                                     '<b style="color:#4a87d3">Web Page: </b><a href="http://www.hotel-conti-muenster.de">'+
                                     'http://www.hotel-conti-muenster.de</a></p>'+
@@ -748,12 +746,12 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                     '<p align="left" style="color:#4a87d3">' +
                                     '<b style="color:#4a87d3">Address: </b>Bismarckallee 5<br>' +
                                     '<b style="color:#4a87d3">Single room, Shower/WC, breakfast included</b><br>'+
-                                     '<b style="color:#4a87d3">65,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single room, Shower/WC, breakfast included	</b><br>'+	
+                                     '<b style="color:#4a87d3">65,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single room, Shower/WC, breakfast included	</b><br>'+
                                      '<b style="color:#4a87d3">	70,- € </b><br/>'+
                                      '<b style="color:#4a87d3">Double room / 1 person, Shower/WC, breakfast included</b><br>'+
-                                     '<b style="color:#4a87d3">70,- €</b> <br/>'+'<b style="color:#4a87d3">Double room, Shower/WC, breakfast included	</b><br>'+	
+                                     '<b style="color:#4a87d3">70,- €</b> <br/>'+'<b style="color:#4a87d3">Double room, Shower/WC, breakfast included	</b><br>'+
                                      '<b style="color:#4a87d3">	75,- € </b><br/>'+
-                                 '<b style="color:#4a87d3">Maisonette (45-55 qm) / 1 person	</b><br>'+	
+                                 '<b style="color:#4a87d3">Maisonette (45-55 qm) / 1 person	</b><br>'+
                                      '<b style="color:#4a87d3">	90,- € </b><br/>'+
                                     '<b style="color:#4a87d3">Web Page: </b><a href="http://www.agora-muenster.de/">'+
                                     'http://www.agora-muenster.de/</a></p>'+
@@ -764,11 +762,11 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                     '<p align="left" style="color:#4a87d3">' +
                                     '<b style="color:#4a87d3">Address: </b>Aegidistraße 21<br>' +
                                     '<b style="color:#4a87d3">Single room, Shower/WC, breakfast included</b><br>'+
-                                     '<b style="color:#4a87d3">70,- €</b> <br/>'+'<b style="color:#4a87d3">Single room / 1 person, Shower/WC, breakfast included</b><br>'+	
+                                     '<b style="color:#4a87d3">70,- €</b> <br/>'+'<b style="color:#4a87d3">Single room / 1 person, Shower/WC, breakfast included</b><br>'+
                                      '<b style="color:#4a87d3">	80,- € </b><br/>'+
-                                 '<b style="color:#4a87d3">Comfort Double room / 1 person, Shower/WC, breakfast included</b><br>'+	
+                                 '<b style="color:#4a87d3">Comfort Double room / 1 person, Shower/WC, breakfast included</b><br>'+
                                      '<b style="color:#4a87d3">	90,- € </b><br/>'+
-                                 '<b style="color:#4a87d3">Double room, Shower/WC, breakfast included</b><br>'+	
+                                 '<b style="color:#4a87d3">Double room, Shower/WC, breakfast included</b><br>'+
                                      '<b style="color:#4a87d3">	100,- € </b><br/>'+
                                     '<b style="color:#4a87d3">Web Page: </b><a href="http://www.seehotel-muenster.de/">'+
                                     'http://www.seehotel-muenster.de/</a></p>'+
@@ -779,16 +777,16 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                     '<p align="left" style="color:#4a87d3">' +
                                     '<b style="color:#4a87d3">Address: </b>Wolbecker Str. 1, 48155 Münster<br>' +
                                     '<b style="color:#4a87d3">8-bed room </b><br>'+
-                                     '<b style="color:#4a87d3">17,- €</b> <br/>'+'<b style="color:#4a87d3">4-bed room </b><br>'+	
+                                     '<b style="color:#4a87d3">17,- €</b> <br/>'+'<b style="color:#4a87d3">4-bed room </b><br>'+
                                      '<b style="color:#4a87d3">	20,- € </b><br/>'+
-                                 '<b style="color:#4a87d3">2-bed room </b><br>'+	
+                                 '<b style="color:#4a87d3">2-bed room </b><br>'+
                                      '<b style="color:#4a87d3">	27,- € </b><br/>'+
-                                 '<b style="color:#4a87d3">single room </b><br>'+	
+                                 '<b style="color:#4a87d3">single room </b><br>'+
                                      '<b style="color:#4a87d3">	35,- € </b><br/>'+
                                     '<b style="color:#4a87d3">Web Page: </b><a href="sleep-station.de/">'+
                                     'sleep-station.de/</a></p>'+
                                     '</div>';
-                           
+
 
                             var infostadhotel = new google.maps.InfoWindow({
                                 content: contentstad
@@ -868,7 +866,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                             sleephotel.addListener('click', function() {
                                 infosleephotel.open(map, sleephotel);
                             });
-                          
+
 
 							map.panTo(muensterLoc);
 							map.setZoom(13);
@@ -889,7 +887,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 	<div class="row 100%">
 		<div class="4u 12u$(medium)">
 			<h2>Conference Venue</h2>
-            
+
 			<p>
 				<a href="http://www.ifgi.de" target="_blank"> Institute for Geoinformatics</a><br/>
 				<a href="https://www.google.de/maps?f=q&source=embed&hl=en&geocode=&q=GEO+1,+Heisenbergstra%C3%9Fe+2,+M%C3%BCnster&aq=0&oq=Geo+1&sll=51.967539,7.594986&sspn=0.213004,0.528374&ie=UTF8&hq=&hnear=GEO+1,+Heisenbergstra%C3%9Fe+2,+48149+M%C3%BCnster,+Nordrhein-Westfalen&t=m&ll=51.982554,7.596531&spn=0.037004,0.072956&z=13&iwloc=A" target="_blank">Heisenbergstraße 2 </a>
@@ -914,7 +912,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 			<h2>Informal Meeting</h2>
 			<p> <a href='https://goo.gl/maps/9ML98ymmTvt' target="_blank"> Domplatz Munster</a><br>
 				<b>Thursday, 9th November at 19:00 </b></p>
-				
+
 		</div>
 
 	</div>
@@ -991,7 +989,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 								<td>11:10</td>
 								<td>Coffee break</td>
 							</tr>
-				
+
 							<tr>
 								<td>11:30</td>
 								<td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4686a0">+Poster Flash Session
@@ -1165,7 +1163,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 									<br/><br/>
 									<b style="color:#4CAF50">
 										Ahmed Zegrar</b><br/>
-									Multispectral Analysis for Forest Mapping and Identification of Regeneration in Area of the North West Algeria.									
+									Multispectral Analysis for Forest Mapping and Identification of Regeneration in Area of the North West Algeria.
 
 								</p></td>
 							</tr>
@@ -1176,16 +1174,16 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 							<tr>
 								<td>14:30</td>
 								<td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Keynote Presentation 4:Dr. Torsten Prinz</a><p style="display:none;"><b style="color:#4CAF50">Dr. Torsten Prinz <br>Unmanned Aireal Systems in Geosciences: More than an Eye in the Sky</b><br><br/>
-									Civil remote sensing by Unmanned Aerial Systems (UAS) is one of the most dynamic evolving technology of our decade. 
-									UAS are particularly useful in geosciences, as they provide different data products at high temporal, spectral and spatial resolution. 
-									Moreover, data acquisition costs are lower than those of conventional methods such as extensive ground sampling and survey, manned airplanes, 
-									or even satellite technologies. Depending on the type of UAS various use case scenarios and potential benefits in geosciences are conceivable 
-									as they vary in sensor sensitivity, data formats, operational coverage and accelerated data deployment times. Taking these facts into account, 
-									UAS represent modern and effective tools to support the detection, the monitoring and also the management of geoobjects and their related spatial aspects. 
-									In many cases UAS also utilize low-cost sensors, free-of-charge mission planning software, open source data analysis and GIS products to reduce operating 
-									costs and personnel expenditure, additionally increasing its overall efficiency. The analysis of rapidly calculated, accurate 2- and 3D UAS geodata enables 
-									the user to model the real world in various scales and perspectives. To highlight this new development in geosciences some selected use cases from 
-									traditional mapping-sciences, like geography, cartography  and geoecology, but also from archaeology or geoinformatics are presented which underline 
+									Civil remote sensing by Unmanned Aerial Systems (UAS) is one of the most dynamic evolving technology of our decade.
+									UAS are particularly useful in geosciences, as they provide different data products at high temporal, spectral and spatial resolution.
+									Moreover, data acquisition costs are lower than those of conventional methods such as extensive ground sampling and survey, manned airplanes,
+									or even satellite technologies. Depending on the type of UAS various use case scenarios and potential benefits in geosciences are conceivable
+									as they vary in sensor sensitivity, data formats, operational coverage and accelerated data deployment times. Taking these facts into account,
+									UAS represent modern and effective tools to support the detection, the monitoring and also the management of geoobjects and their related spatial aspects.
+									In many cases UAS also utilize low-cost sensors, free-of-charge mission planning software, open source data analysis and GIS products to reduce operating
+									costs and personnel expenditure, additionally increasing its overall efficiency. The analysis of rapidly calculated, accurate 2- and 3D UAS geodata enables
+									the user to model the real world in various scales and perspectives. To highlight this new development in geosciences some selected use cases from
+									traditional mapping-sciences, like geography, cartography  and geoecology, but also from archaeology or geoinformatics are presented which underline
 									the potential and important role of UAS technology in modern, global orientated sciences.
 									</p>
 
@@ -1204,14 +1202,14 @@ It is an opportunity to learn and share scientific research, knowledge and skill
                                             <img class=contact src="images/samuel.PNG" style="float:inherit;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" >
 											<br/><br/>
                                             <strong>Max Pfeiffer</strong>&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Samuel Navas</strong><br/><br/>
-                                            In the time of virtual and augmented realities (VR and AR), people are interacting with spatial information such as public maps in mid air and 
-											in mobile scenarios. It is still hard to generate haptic feedback in such scenarios with a reasonable variability. In human-computer interaction, 
-											electrical muscle stimulation evolved as a topic to face that challenge. In this case, the human's body is actuated to generate haptic feedback to 
-											simulate surface textures or virtual objects. Moreover, it is also used in pedestrian navigation scenarios to change the walking direction of the 
-											pedestrian for an automated navigation. In this workshop, the participants will get an overview about EMS-research, and it's application areas in HCI 
+                                            In the time of virtual and augmented realities (VR and AR), people are interacting with spatial information such as public maps in mid air and
+											in mobile scenarios. It is still hard to generate haptic feedback in such scenarios with a reasonable variability. In human-computer interaction,
+											electrical muscle stimulation evolved as a topic to face that challenge. In this case, the human's body is actuated to generate haptic feedback to
+											simulate surface textures or virtual objects. Moreover, it is also used in pedestrian navigation scenarios to change the walking direction of the
+											pedestrian for an automated navigation. In this workshop, the participants will get an overview about EMS-research, and it's application areas in HCI
 											followed by a hands-on experience and brainstorming session about application areas in geoscience.<br>
 											<br>
-											The workshop organisers would like to thank Axion GmbH for supporting them with EMS devices and electrodes that they will use during the workshop. 
+											The workshop organisers would like to thank Axion GmbH for supporting them with EMS devices and electrodes that they will use during the workshop.
 											Axion GmbH is a medical device manufacturer from Leonberg. Their main focus are high quality EMS and TENS devices. Visit them at tens-ems.com.<br>
 											<img src="images/axion.jpg" width="160" height="130" />
                                         </p></td></tr>
@@ -1290,14 +1288,14 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 			<h2>Call for Abstracts and Posters</h2>
 		</header>
 
-		<p style="color: yellow;">	<strong>Important dates to remember</strong>: 
+		<p style="color: yellow;">	<strong>Important dates to remember</strong>:
 		<br>
-			
+
             Abstract and Poster submission has been extended till to 25 August.
 		</p>
-    
 
-		
+
+
 
 		<p>
 			Thank you for your interest in participating in GeoMundus 2017 and we are excited to have you. All individuals interested in any aspect of geospatial technologies are invited to submit either an abstract of a paper OR a poster for consideration as a presentation at GeoMundus.
@@ -1323,7 +1321,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 			<li>				Geographic Information Science			</li>
 			<li>				Geography			</li>
 			<li>				Geoinformatics			</li>
-			<li>				Geospatial Databases			</li> 
+			<li>				Geospatial Databases			</li>
             <li>				Geospatial Data Mining			</li>
             </ul>
             <ul>
@@ -1338,7 +1336,7 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 			<li>				Surveying			</li>
                 <li>				Others			</li>
 		</ul>
-		
+
 		</div>
 		<br>
 		<p>
@@ -1361,14 +1359,14 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 		</ul>
         </div>
 		<h3 style="text-align: center;"> <u> <strong>Abstract preparation and formatting instructions:</strong></u>	</h3>
-		
-		
+
+
 		<p>
-			Click the <strong><a href="http://geomundus.org/2017/Sample_Abstract.doc" style="color: yellow"> Sample Abstract</a></strong> to view a perfectly formatted abstract. Feel free to	use it as a template to format your own.   
-		
+			Click the <strong><a href="http://geomundus.org/2017/Sample_Abstract.doc" style="color: yellow"> Sample Abstract</a></strong> to view a perfectly formatted abstract. Feel free to	use it as a template to format your own.
+
 			<br/>
 		</p>
-		
+
 		<ul type="disc">
 			<li>				Abstracts should be no longer than TWO pages in length.			</li>
 			<li>				No graphs or figures should be included.			</li>
@@ -1376,18 +1374,18 @@ It is an opportunity to learn and share scientific research, knowledge and skill
 			<li>				List the senior author first and Bold the presenting author.			</li>
 			<li>				Do not include professional titles of the authors.			</li>
 			<li>				For all other formatting, see sample.			</li>
-			
+
 		</ul>
-		
+
 		<h3 style="text-align: center;"> <u> <strong>Poster preparation and formatting instructions:</strong></u>	</h3>
         <p>For poster submissions, click this <a href="PosterGuidelines.doc" style="color:yellow;">Template</a>  to view the guidelines for posters.</p>
     <p>		For formatting questions, email <span style="color:yellow">info@geomundus.org</span></p>
-    <p> 
+    <p>
 After you have successfully completed the submission form and uploaded your abstract or poster, a confirmation email of receipt will be sent to you. Please keep a copy of this confirmation on file for your records.
 </p>
     <p>NOTE: If you don’t receive the email, please check your JUNK FOLDER for an email from info@geomundus.org, as sometimes servers will re-direct confirmation emails to this folder.</p>
     <p>Acceptance notification will be on 9 September 2017. After acceptance, the abstracts will be published on GeoMundus website.</p>
-		
+
 		<script>
 			function setVisibility(id) {
 				if(document.getElementById('bt1').value=='Hide Layer'){
@@ -1399,10 +1397,10 @@ After you have successfully completed the submission form and uploaded your abst
 				}
 			}
 		</script>
-        
+
 		<div id="sub3" class="container submission">
 			<div >
-                
+
 				<br>
 
 				</div>
@@ -1419,7 +1417,7 @@ After you have successfully completed the submission form and uploaded your abst
             Registration is from <strong>1 June</strong> to <strong>3 November</strong>.<br/>
             Abstract and poster submission is from <strong>1 June </strong> to <strong>25 August</strong>
 </p>
-        <h3> 
+        <h3>
 Participant Registration
 </h3>
         <p>
@@ -1434,10 +1432,10 @@ Participant Registration
 			</li>
 		</ul>
 	<p ><strong>Please Note</strong>: Seats at the dinner are limited</p>
-     
+
         <!-- <p style="text-align: center;"> <strong>Poster submission will on 1st June 2017! </strong></p>
-		
-		
+
+
 		 <p style="text-align: center;" >Click if you want to <strong>register</strong> at the 9<sup>th</sup> GeoMundus Conference</p>
 		<ul class="actions uniform"  style="text-align: center;">
 			<li><a class="button special" href='https://www.eventbrite.com/e/geomundus-2017-tickets-34394306296' target="_blank">Registration</a></li>
@@ -1451,11 +1449,11 @@ Participant Registration
 			<li><a class="button special" href="javascript:void(0);" target="_blank" style="background-color:darkred;">
 				Abstract or Poster Submission Closed!
 </a></li>
-		</ul> 
+		</ul>
 	</div>
 </section>
 <!-- Six: CONTACT -->
-<section id="six" class="main style2">
+<!-- <section id="six" class="main style2">
 	<div class="container">
 		<header class="major" style="text-align: center;">
 			<h2>2017 Team</h2>
@@ -1476,7 +1474,7 @@ Participant Registration
 					<p style="float:left;" >
 						<img  class=contact src="images/contact/Nikolina.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);"  alt="Nikolina Nisic" /> Nikolina Nisic<br/>
                         <a href="https://www.linkedin.com/in/nikolina-nisic-18087468/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
-						
+
 					</p>
 					<p style="float:left;" >
 						<img  class=contact src="images/contact/Bekish.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);"  alt="Bekish Twanabasu"/>Bikesh Twanabasu<br/>
@@ -1521,13 +1519,13 @@ Participant Registration
 						<a href="https://jm.linkedin.com/in/chaplin-williams-54600244/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
 					</p>
 			</div>
-		</div> 
+		</div>
 		<div class="row 150%">
 			<div class="4u 12u$(medium)">
 				<h4 style="background-color:#4686a0; color:white; text-align: center;">WEB TEAM</h4>
 				<p style="float:left;">
 					<img  class=contact src="images/contact/Gebru.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Gebru Welay" />Gebru Welay<br/>
-					<a href="https://www.linkedin.com/in/gebru-welay-gerezigiher-14675594/" class="icon alt fa-linkedin" target="_blank"> 
+					<a href="https://www.linkedin.com/in/gebru-welay-gerezigiher-14675594/" class="icon alt fa-linkedin" target="_blank">
                         <span class="label"> Linkedin</span></a>
 				</p>
 				<p style="float:left;" >
@@ -1536,7 +1534,7 @@ Participant Registration
 				</p>
                  <p style="float:left;" >
 					<img  class=contact src="images/contact/Mulu.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Mulu Welegebrial" />Mulu Weldegebreal
-					
+
 				</p>
 			</div>
 			<div class="4u 12u$(medium)">
@@ -1568,12 +1566,12 @@ Participant Registration
                 <p style="float:left;" >
 						<img  class=contact src="images/contact/Jati.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Muhammad Pramujati" /> Muhammad Pramujati<br/>
 						<a href="https://www.linkedin.com/in/wakhidpramujati/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
-					</p>	
+					</p>
 			</div>
-			
+
 		</div>
 	</div>
-</section>
+</section> -->
 <section id="seven" class="main style1">
 	<div class="container" >
 		<header class="major">
@@ -1604,7 +1602,7 @@ Participant Registration
         <h3>We would like to thank for the help and generosity of our sponsors and partners for making this event a success.</h3>
 		<h3>Should you wish to sponsor the 2017 GeoMundus conference, please contact the budget team at <strong>budget@geomundus.org</strong></h3>
 		<ul class="actions" align="center">
-            
+
 			<!-- <li><a href="Fundraising.pdf" class="button special" target="_blank">Sponsorship</a></li>-->
 		</ul>
 
@@ -1618,7 +1616,7 @@ Participant Registration
 			</div>
 		</div>
 	</div>
-</section> 
+</section>
 
 
 <!-- Footer: SOCIAL NETWORKS -->
