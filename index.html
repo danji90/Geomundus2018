@@ -1,0 +1,1677 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>Geomundus 2017</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="shortcut icon"
+		  href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/globe-24.png" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1K1qI88SQ1rk9N6zQ7yHk8vDnm_ldINc"></script>
+
+	<script type="text/javascript">
+		var map;
+		var markers;
+
+
+
+		function initMap() {
+			//document.getElementById('map_section').style.display = 'none'
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: new google.maps.LatLng(parseFloat(51.9607), parseFloat(7.6261)),
+				scrollwheel: false,
+				zoom: 13
+			});
+            var imageIFGI = {
+                                url: 'images/uni.png'
+                            };
+
+                           
+
+                            var muensterLoc = new google.maps.LatLng(51.9607, 7.6261);
+                            var IFGILoc = new google.maps.LatLng(51.969371, 7.595696);
+                            
+
+                            var contentIFGI = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">IFGI, ground floor, conference room </h2>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+									'<b style="color:#4a87d3">Address: </b> Institute for Geoinformatic <br>' +
+                                    '<b style="color:#4a87d3">Telephone: </b> +49 (251) 83-33083<br>' +
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="https://www.uni-muenster.de/Geoinformatics/en/">'+
+                                    'https://www.uni-muenster.de/Geoinformatics/en/</a></p>'+
+                                    '</div>';
+
+							
+                            var infoIfgi = new google.maps.InfoWindow({
+                                content: contentIFGI
+                            });
+
+							
+                            university = new google.maps.Marker({
+                                position:IFGILoc,
+                                map: map,
+                                icon: imageIFGI,
+                                animation: google.maps.Animation.BOUNCE,
+                                label:'Conference Venue: Institute for Geoinformatics'
+                            });
+
+							
+
+                            university.addListener('click', function() {
+                                infoIfgi.open(map, university);
+								infoDomplatz.close();
+                            });
+
+
+							
+
+                            map.panTo(muensterLoc);
+                            map.setZoom(13);
+						
+
+
+		}
+
+	</script>
+    <script>
+        function toggle(a) {
+            var x = a;
+            var b=a.innerHTML;
+            if (x.nextSibling.style.display === 'none') {
+                b= b.split('+');
+                b="-"+b[1];
+                a.innerHTML=b;
+                x.nextSibling.style.display = 'block';
+            } else {
+                b= b.split('-');
+                b="+"+b[1];
+                a.innerHTML=b;
+                x.nextSibling.style.display = 'none';
+            }
+        }
+    </script>
+
+</head>
+<body onload="initMap()">
+<ul class="topnav" id="hide">
+	<li><a href="#header" onclick="display_inline()">Home</a></li>
+	<li><a href="#one" onclick="display_inline()">Information</a></li>
+	<li><a href="#two" onclick="display_inline()">Speakers</a></li>
+	<li><a href="#three" onclick="display_inline()">Location</a></li>
+	<li><a href="#four" onclick="display_inline()">Programme</a></li>
+	<li><a href="#five" onclick="display_inline()">Abstracts and Posters</a></li>
+	<li><a href="#nine" onclick="display_inline()">Registration and Submission</a> </li>
+	<li><a href="#six" onclick="display_inline()">About us</a></li>
+	<li><a href="#seven" onclick="display_inline()">Contact</a></li>
+	<li><a href="#eight" onclick="display_inline()">Sponsors</a></li>
+	<li class="icon">
+		<a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+	</li>
+</ul>
+<!--</nav>-->
+
+<script>
+    function myFunction() {
+        document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+        document.getElementById("hide").style.display='block';
+    }
+    function display_inline()
+    {
+        if(document.getElementById("hide").style.display==='block')
+        {
+            document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+        }
+
+    }
+</script>
+
+
+<!-- Header: GEOMUNDUS PRESENTATION -->
+<section id="header">
+	</div>
+	<div class="inner">
+		<span class="image fit"><img src="images/logogm9.png" alt="" height="200" width="200"/></span>
+		<h1> <strong>GeoMundus 2017</strong><br /></h1>
+        <h2>Institute for Geoinformatics (IFGI), University of Münster, Germany <strong><br/>10<sup>th</sup> and 11<sup>th</sup> November </strong> </h2>
+		<button style="margin-top: 0%;"> Student Grant is Available</button>
+		<p><strong>'Mapping the Future'</strong></p>
+		<ul class="actions">
+			<li><a href="#one" class="button  scrolly">Discover</a></li>
+		</ul>
+	</div>
+	</div>
+
+</section>
+
+<!-- One: WHAT IS GEOMUNDUS -->
+<section id="one" class="main style1">
+	<div class="container">
+		<div class="row 150%">
+			<div class="12u 12u$(medium)">
+				<header class="major">
+					<h2>What is GeoMundus?<br />
+					</h2>
+				</header>
+				<p>GeoMundus is a free international symposium organised by the students from the <a href="http://mastergeotech.info/" style="color: blue" target="_blank"> Erasmus Mundus Master's of Science in Geospatial Technologies</a>. The symposium features broad aspects of geospatial technologies disciplines, including but not limited to, geographic information systems and science, environmental studies and management, urban planning and many more. The focus of this year’s GeoMundus is the emerging technologies within these fields and our programme highlights the cutting edge research that pushes the boundaries of geospatial analysis.
+                </p>
+				<header><h2>Why GeoMundus?<br />
+                    </h2></header>
+				<p> 
+It is an opportunity to learn and share scientific research, knowledge and skills with other peers in all things ‘Geo’. The emerging technologies featured in GeoMundus 2017 also presents an opportunity to learn about them and their applications in our everyday lives. GeoMundus is unique as it features workshops where participants can experience first-hand the future of geospatial technologies as well as a career session specially designed for students interested in a geospatial career.
+</p>
+        
+                			<header><h2>Who should participate in GeoMundus 2017?<br />
+                    </h2></header>
+
+                <p>Everyone who is curious about geospatial technologies and its applications. We especially welcome students, researchers, industry players, and even members of the public. It is not only a great opportunity to learn, but also to network amongst the brightest minds in this exciting field.<br/><br/><br/>
+
+                    Registration is <strong>free</strong> so <a href="#nine" style="color:red;">sign up now!</a></p>
+                
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Two: SPEAKERS -->
+
+
+   <section id="two" class="main style2">
+       
+        <div class="container">
+            <header class="major">
+                <h2>SPEAKERS</h2>
+            </header>
+
+           <p>We are excited to have with us four keynotes speakers sharing their expertise at our conference.
+			   Please visit their personal websites to find out more about them.  </p>
+
+			<div class="row 150%">
+               <div class="4u 12u$(medium)">
+                   <span class="image fit2"><img src="images/pau.jpg" alt="" /></span>
+                   <ul class="actions" align="center">
+
+                       <li><a href="https://www.linkedin.com/in/phd-pau-arag%C3%B3-galindo-ba94ab32/?ppe=1"  target="_blank">Dr. Pau Aragó</a></li>
+                   </ul>
+
+               </div>
+               <div class="8u 12u$(medium)">
+                   <h3  align="center" style="background-color:#8addaa; color:white;text-align: center;"><strong>Dr. Pau Aragó</strong></h3>
+                   <h5 align="center">
+
+                   </h5>
+				   <p align="justify"><strong>Dr. Pau Aragó</strong> is a forest engineer and holds a Master of Science and PhD in Geospatial Technologies.
+					   He has worked as a Geospatial technologies researcher and associate professor at University of Jaume I. 
+					   He also worked as a GIS expert in Stadia, a surveying company, and as a freelancer in a significant number of projects focusing on environmental 
+					   and GIS issues. His primary research interests lie in: Volunteered Geographic information; Big Data Analysis; environmental issues; 
+					   modelling crime data in European Mediterranean towns: a vine copula approach. Castellón. Spain
+				   </p>
+               </div>
+               <hr align="center" width="100%">
+           </div>
+			<div class="row 150%">
+				<div class="4u 12u$(medium)">
+					<span class="image fit2"><img src="images/fonte.jpg" alt="" /></span>
+					<ul class="actions" align="center">
+
+						<li><a href="https://www.uc.pt/en/org/inescc/people/cidalia_fonte"  target="_blank">Dr. Cidália Maria Parreira da Costa Fonte</a></li>
+					</ul>
+
+				</div>
+				<div class="8u 12u$(medium)">
+					<h3  align="center" style="background-color:#9dc66b; color:white;text-align: center;"><strong>Dr. Cidália Maria Parreira da Costa Fonte</strong></h3>
+					<h5 align="center">
+
+					</h5>
+					<p align="justify"><strong>Dr. Cidália Maria Parreira da Costa Fonte</strong>
+						has a PhD in Geomatic Engineering and is an Assistant Professor at the Department of Mathematics - Faculty of Sciences and Technology - University of Coimbra,  Portugal, where she coordinates the master course of Geospatial Information Engineering. She is also a researcher and member of the board of directors of the Institute for Systems Engineering and Computers at Coimbra. Her main research interests are spatial data validation and quality assessment; land use and land cover mapping; collection, validation and exploitation of volunteered geographic information and spatial data integration.
+
+					</p>
+				</div>
+				<hr align="center" width="100%">
+			</div>
+			<div class="row 150%">
+				<div class="4u 12u$(medium)">
+					<span class="image fit2"><img src="images/Li.jpg" alt="" /></span>
+					<ul class="actions" align="center">
+						<li><a href="http://www.albany.edu/~rl214236/"
+							   target="_blank"> Dr. Rui Li</a></li>
+					</ul>
+
+
+				</div>
+				<div class="8u 12u$(medium)">
+					<h3  align="center" style="background-color:#8addaa; color:white;text-align: center;"><strong>
+						Dr. Rui Li
+					</strong></h3>
+					<p align="justify"> <strong>Dr. Rui Li</strong>  is an Assistant Professor at the Department of Geography
+						and Planning, State University of New York at Albany. His research interests center on geographic
+						information science (GIScience) with a special focus on spatial cognition. In particular, his research
+						addresses human wayfinding behaviors and the ways to improve people’s spatial experiences in navigation
+						through mobile phones and in-vehicle navigation systems. As an inevitable step to inform the ergonomic
+						design of navigation systems, he investigates factors from both environment and individual differences
+						to investigate the reasons why people get lost in complex architecture or environment.
+
+
+
+					</p>
+				</div>
+				<hr align="center" width="100%">
+			</div>
+
+			<div class="row 150%">
+                 <div class="4u 12u$(medium)">
+                     <span class="image fit2"><img src="images/torsten.jpg" alt="" /></span>
+                     <ul class="actions" align="center">
+                         <li><a href="http://www.uni-muenster.de/Geoinformatics/en/institute/staff/index.php/123/Torsten_Prinz"
+								target="_blank"> Dr. Torsten Prinz</a></li>
+                         </ul>
+
+
+                 </div>
+                 <div class="8u 12u$(medium)">
+                     <h3  align="center" style="background-color:#9dc66b; color:white;text-align: center;"><strong>
+						 Dr. Torsten Prinz
+					 </strong></h3>
+					 <p align="justify"> <strong>Dr. Torsten Prinz</strong> is adjunct professor and researcher at the institute for geoinformatics of 
+					 the University of Munster. He has coordinated the project IFGIcopter, construction and customizing of a geo-scientific UAV drone, 
+					 funded by the European Commission Joint Research Center. His primary research interests lie in the fields of Unmanned aerial vehicles (UAVs), 
+					 collecting, editing, and analyzing geoinformation related to environmental and other geospatial scientific purposes. He has published 
+					 numerous papers in journals and conferences focusing on UAV’s versatility.
+
+
+					 </p>
+				 </div>
+                 <hr align="center" width="100%">
+             </div>
+
+
+
+
+		</div>
+
+
+	</section>
+
+
+<!-- Three: LOCATION of  MUENSTER -->
+<section id="three" class="main style1"> <!--class="main style1 special"-->
+	<div class="container">
+		<div class="row 150%">
+			<div  align="left" class="6u 12u$(medium)">
+				<!-- Photos: University and Muenster City-->
+				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+				<script type="text/javascript">
+					$(function(){
+						var scroller = $('#scroller div.innerScrollArea');
+						var scrollerContent = scroller.children('ul');
+						scrollerContent.children().clone().appendTo(scrollerContent);
+						var curX = 0;
+						scrollerContent.children().each(function(){
+							var $this = $(this);
+							$this.css('left', curX);
+							curX += $this.outerWidth(true);
+						});
+						var fullW = curX / 2;
+						var viewportW = scroller.width();
+
+						// Scrolling speed management
+						var controller = {curSpeed:0, fullSpeed:2};
+						var $controller = $(controller);
+						var tweenToNewSpeed = function(newSpeed, duration)
+						{
+							if (duration === undefined)
+								duration = 600;
+							$controller.stop(true).animate({curSpeed:newSpeed}, duration);
+						};
+
+						// Pause on hover
+						scroller.hover(function(){
+							tweenToNewSpeed(0);
+						}, function(){
+							tweenToNewSpeed(controller.fullSpeed);
+						});
+
+						// Scrolling management; start the automatical scrolling
+						var doScroll = function()
+						{
+							var curX = scroller.scrollLeft();
+							var newX = curX + controller.curSpeed;
+							if (newX > fullW*2 - viewportW)
+								newX -= fullW;
+							scroller.scrollLeft(newX);
+						};
+						setInterval(doScroll, 20);
+						tweenToNewSpeed(controller.fullSpeed);
+					});
+				</script>
+					<div  id="scroller" style=" max-width:100%; width: 550px; height: 400px;">
+						<div class="innerScrollArea">
+							<ul>
+								<!-- Define photos here -->
+								<li><img src="images/muenster(14).jpg" width="600" height="400" /></li>
+                                <li><img src="images/muenster(15).jpg" width="600" height="400" /></li>
+                                <li><img src="images/muenster(16).jpg" width="600" height="400" /></li>
+                                <li><img src="images/muenster(17).jpg" width="600" height="400" /></li>
+                                <li><img src="images/muenster(18).jpg" width="600" height="400" /></li>
+                                <li><img src="images/muenster(19).jpg" width="600" height="400" /></li>
+                                <li><img src="images/muenster(20).jpg" width="600" height="400" /></li>
+                                <li><img src="images/muenster(21).jpg" width="600" height="400" /></li>
+                           
+							</ul>
+						</div>
+					</div>
+			</div>
+			<div class="6u$ 12u$(medium)">
+				<header align="center" class="major">
+					<h2 align="center">	<a href="https://www.uni-muenster.de/" style="color: blue" target="_blank"> University of Münster</a><br /></h2>
+					<p align="center">	<a href="https://www.uni-muenster.de/Geoinformatics/" style="color: blue" target="_blank"> Institute for Geoinformatics (IFGI)</a></p>
+				</header>
+				<p >GeoMundus 2017 will be held in Munster, a multi-faceted city. It is a city of science and learning, the City of Westphalian Peace, the capital city of bicycles and Germany’s Climate Protection Capital. 
+				The venue is Institute for Geoinformatics (IFGI). The Institute offers bachelor, master and PhD degrees in geoinformatics with research focus in areas of modelling spatio-temporal processes, semantic interoperability,
+				spatial assistance systems, cognitive engineering and sensor networks.</p>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="three" class="main style2 special">
+	<ul class="major-icons">
+		<li><span onclick="setMapVisibility('flight');" class="icon style3 major fa-plane"></span></li>
+		<li><span onclick="setMapVisibility('train');" class="icon style3 major fa-train"></span></li>
+		<li><span onclick="setMapVisibility('location');"class="icon style3 major fa-map-marker"></span></li>
+		<li><span onclick="setMapVisibility('bed');"class="icon style4 major fa-bed"></span></li>
+	</ul>
+	<div id="map_section">
+		<div id="map" class="container submission"></div>
+		<script>
+
+
+			var osnabruckAirport;
+			var dusseldorfAirport;
+			var colgneAirport;
+            var DusseldorfWeezAirport;
+
+			var muensterTrain;
+			var dusseldorfTrain;
+
+            var university;
+            var DomplatzPark;
+
+            var stadhotel;
+            var amhotel;
+            var contihotel;
+            var dashotel;
+            var seehotel;
+            var sleephotel;
+
+
+            function clearObjectFromMap(object){
+                if(object!=null){
+                    object.setMap(null);
+                }
+            }
+
+			function setMapVisibility(itemClicked) {
+					//document.getElementById('map_section').style.display = 'inline';
+					window.location.hash = '#map_section';
+
+
+                clearObjectFromMap(osnabruckAirport);
+                clearObjectFromMap(dusseldorfAirport);
+                clearObjectFromMap(colgneAirport);
+                clearObjectFromMap(DusseldorfWeezAirport);
+                clearObjectFromMap(muensterTrain);
+                clearObjectFromMap(dusseldorfTrain);
+                clearObjectFromMap(university);
+                clearObjectFromMap(DomplatzPark);
+                clearObjectFromMap(stadhotel);
+                clearObjectFromMap(amhotel);
+                clearObjectFromMap(contihotel);
+                clearObjectFromMap(dashotel);
+                clearObjectFromMap(seehotel);
+                clearObjectFromMap(sleephotel);
+
+
+					switch(itemClicked) {
+						case "flight":
+						{
+							//var bounds = new google.maps.LatLngBounds();
+
+							//Airports
+							var imageAirport = {
+								url: 'images/airport.png'
+							};
+							align="left"
+							var muensterLoc = new google.maps.LatLng(52.130054,7.694928);
+							var dusseldorfLoc = new google.maps.LatLng(51.330538, 6.766791);
+							var colgneLoc = new google.maps.LatLng(50.929611, 7.102282);
+                            var weezLoc = new google.maps.LatLng(51.705230, 6.155888);
+
+							var contentMuenster = '<div id="content" style="color:#4686A0">' +
+									'<h2 style="color:#4686A0">Münster Osnabrück International Airport</h2>'+
+									'<p  style="color:#4686A0">' +
+									'<b style="color:#4686A0">Address: </b>Airportallee 1, 48268 Greven, Germany <br>' +
+									'<b style="color:#4686A0">Teléfono: </b> +49 2571 940 <br>' +
+									'<b style="color:#4686A0">Web Page: </b><a href="http://www.fmo.de/">'+
+									'http://www.fmo.de/</a></p>'+
+									'</div>';
+
+							var contentColgne = '<div id="content" style="color:#4686A0">' +
+									'<h2 style="color:#4686A0">Cologne Bonn Airport (CGN) Köln Bonn Airport</h2>'+
+									'<p align="left" style="color:#4686A0">' +
+									'<b style="color:#4686A0">Address: </b> Kennedystraße, 51147 Köln,Germany <br>' +
+									'<b style="color:#4686A0">Teléfono: </b>02203 404001 <br>' +
+									'<b style="color:#4686A0">Web Page: </b><a href="http://www.koeln-bonn-airport.de">'+
+									'http://www.dus.com</a></p>'+
+                                    '</p>'+
+									'</div>';
+
+							var contentDusseldorf= '<div id="content" style="color:#4686A0">' +
+									'<h2 style="color:#4686A0">Düsseldorf International Airport (DUS)</h2>'+
+									'<p align="left" style="color:#4686A0">' +
+									'<b style="color:#4686A0">Address: </b> Flughafenstraße 120, 40474 Düsseldorf, Germany <br>' +
+									'<b style="color:#4686A0">Teléfono: </b> 0211 4210 <br>' +
+									'<b style="color:#4686A0">Web Page: </b><a href="http://www.dus.com">'+
+									'www.dus.com</a></p>'+
+                                    '</a></p>'+
+									'</div>';
+                            var contentWeez = '<div id="content" style="color:#4686A0">' +
+									'<h2 style="color:#4686A0">Weeze International Airport </h2>'+
+									'<p align="left" style="color:#4686A0">' +
+									'<b style="color:#4686A0">Address: </b> Flughafen-Ring 1, 47652 Weeze, Germany <br>' +
+									'<b style="color:#4686A0">Teléfono: </b> 02837 666111 <br>' +
+									'<b style="color:#4686A0">Web Page: </b><a href="http://airport-weeze.de">'+
+									'airport-weeze.de</a></p>'+
+                                    '</a></p>'+
+									'</div>';
+
+							var infoMuenster = new google.maps.InfoWindow({
+								content: contentMuenster
+							});
+
+							var infoDusseldorf = new google.maps.InfoWindow({
+								content: contentDusseldorf
+							});
+
+							var infoColgne= new google.maps.InfoWindow({
+								content: contentColgne
+							});
+                            var infoWeez= new google.maps.InfoWindow({
+								content: contentWeez
+							});
+
+
+
+							osnabruckAirport = new google.maps.Marker({
+								position: muensterLoc,
+								map: map,
+								icon: imageAirport,
+                                animation: google.maps.Animation.BOUNCE,
+							});
+
+							dusseldorfAirport = new google.maps.Marker({
+								position: dusseldorfLoc,
+								map: map,
+								icon: imageAirport,
+                                animation: google.maps.Animation.BOUNCE,
+							});
+
+							colgneAirport = new google.maps.Marker({
+								position: colgneLoc,
+								map: map,
+								icon: imageAirport,
+                                animation: google.maps.Animation.BOUNCE,
+							});
+                             DusseldorfWeezAirport= new google.maps.Marker({
+								position: weezLoc,
+								map: map,
+								icon: imageAirport,
+                                animation: google.maps.Animation.BOUNCE,
+							});
+
+							map.panTo(muensterLoc);
+							map.setZoom(7);
+
+							osnabruckAirport.addListener('click', function() {
+								infoMuenster.open(map, osnabruckAirport);
+							});
+
+							dusseldorfAirport.addListener('click', function() {
+								infoDusseldorf.open(map, dusseldorfAirport);
+							});
+
+							colgneAirport.addListener('click', function() {
+								infoColgne.open(map, colgneAirport);
+							});
+                            DusseldorfWeezAirport.addListener('click', function() {
+								infoWeez.open(map, DusseldorfWeezAirport);
+							});
+
+
+
+						}
+							break;
+						case "train":
+						{
+							//Train
+							var imageTrain = {
+								url: 'images/train.png'
+							};
+
+							var muensterLoc = new google.maps.LatLng(51.956767,7.634647);
+							var dusseldorfLoc = new google.maps.LatLng(51.330538, 6.766791);
+
+                            var contentMuenster = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Münster Hauptbahnhof</h2>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b> 48143 Münster, Germany <br>' +
+                                    '</p>'+
+                                    '</div>';
+
+                        
+
+                            var contentDusseldorf = '<div id="content" style="color:#4686A0">' +
+                                    '<h2 style="color:#4686A0">Düsseldorf Flughafen Terminal</h2>'+
+                                    '<p align="left" style="color:#4686A0">' +
+                                    '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
+                                    '</div>';
+
+                            var infoMuenster = new google.maps.InfoWindow({
+                                content: contentMuenster
+                            });
+
+                            var infoDusseldorf = new google.maps.InfoWindow({
+                                content: contentDusseldorf
+                            });
+
+
+
+							muensterTrain = new google.maps.Marker({
+								position: muensterLoc,
+								map: map,
+								icon: imageTrain,
+                                animation: google.maps.Animation.BOUNCE
+							});
+
+							dusseldorfTrain = new google.maps.Marker({
+								position: dusseldorfLoc,
+								map: map,
+								icon: imageTrain,
+                                animation: google.maps.Animation.BOUNCE
+							});
+                            
+                            muensterTrain.addListener('click', function() {
+                                infoMuenster.open(map, muensterTrain);
+                            });
+
+                            dusseldorfTrain.addListener('click', function() {
+                                infoDusseldorf.open(map, dusseldorfTrain);
+                            });
+
+
+							map.panTo(muensterLoc);
+							map.setZoom(7);
+
+						}
+							break;
+						case "location":
+						{
+
+                            var imageIFGI = {
+                                url: 'images/uni.png'
+                            };
+
+                            var imageDomplatz = {
+                                url: 'images/park.png'
+                            };
+
+                            var muensterLoc = new google.maps.LatLng(51.9607, 7.6261);
+                            var IFGILoc = new google.maps.LatLng(51.969371, 7.595696);
+                            var domplatzLoc = new google.maps.LatLng(51.962309, 7.625387);
+
+                            var contentIFGI = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">IFGI, ground floor, conference room </h2>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+									'<b style="color:#4a87d3">Address: </b> Institute for Geoinformatic <br>' +
+                                    '<b style="color:#4a87d3">Telephone: </b> +49 (251) 83-33083<br>' +
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="https://www.uni-muenster.de/Geoinformatics/en/">'+
+                                    'https://www.uni-muenster.de/Geoinformatics/en/</a></p>'+
+                                    '</div>';
+
+							var contentDomplatz = '<div id="content" style="color:#4a87d3">' +
+									'<h2 style="color:#4a87d3">Meeting Point Domplatz</h2>'+
+									'<p align="left" style="color:#4a87d3">' +
+									'<b style="color:#4a87d3">Address: </b> Domplatz 48143 Münster,Germany <br></p>' +
+									'</div>';
+
+                            var infoIfgi = new google.maps.InfoWindow({
+                                content: contentIFGI
+                            });
+
+							var infoDomplatz = new google.maps.InfoWindow({
+								content: contentDomplatz
+							});
+
+                            university = new google.maps.Marker({
+                                position:IFGILoc,
+                                map: map,
+                                icon: imageIFGI,
+                                animation: google.maps.Animation.BOUNCE
+                                
+                            });
+
+							DomplatzPark = new google.maps.Marker({
+								position: domplatzLoc,
+								map: map,
+								icon: imageDomplatz,
+                                animation: google.maps.Animation.BOUNCE
+							});
+
+                            university.addListener('click', function() {
+                                infoIfgi.open(map, university);
+								infoDomplatz.close();
+                            });
+
+
+							DomplatzPark.addListener('click', function() {
+								infoDomplatz.open(map, DomplatzPark);
+                                infoIfgi.close();
+							});
+
+
+                            map.panTo(muensterLoc);
+                            map.setZoom(13);
+						}
+							break;
+						case "bed":
+						{
+                            var imageHotel = {
+                                url: 'images/hotel.png'
+                            };
+                            var muensterLoc = new google.maps.LatLng(51.9607, 7.6261);
+                            var stadLoc = new google.maps.LatLng(51.959265, 7.622277);
+                            var hotelamSchlosspark = new google.maps.LatLng(51.968161, 7.610469);
+                            var hotelConti = new google.maps.LatLng(51.957210, 7.633868);
+                            var dasSeehotel  = new google.maps.LatLng(51.955911, 7.617675);
+                            var seehotelMünster  = new google.maps.LatLng(51.953118, 7.610828);
+                            var sleepHotelLoc= new google.maps.LatLng(51.960867, 7.636275);
+
+
+                            var contentstad = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Stadthotel Münster</h2><br>'+
+                                    '<h3 style="color:#4a87d3">City Center</h3><br>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b>Aegidistraße 21<br>' +
+                                    '<b style="color:#4a87d3">Economy Single, breakfast included</b><br>'+
+                                     '<b style="color:#4a87d3">72,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single, breakfast included</b><br>'+	
+                                     '<b style="color:#4a87d3">	77,- € </b><br/>'+
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="https://www.stadthotel-muenster.de/en/">'+
+                                    'https://www.stadthotel-muenster.de/en/</a></p>'+
+                                    '</div>';
+                             var contenthotelamSchlosspark = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Hotel am Schlosspark </h2><br>'+
+                                    '<h3 style="color:#4a87d3">Close to IfGI</h3><br>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b>Schmale Straße 2-4<br>' +
+                                    '<b style="color:#4a87d3">Single room, Shower/WC, breakfast included</b><br>'+
+                                     '<b style="color:#4a87d3">77,- €</b> <br/>'+'<b style="color:#4a87d3">Double room, Shower/WC, breakfast included	</b><br>'+	
+                                     '<b style="color:#4a87d3">	102,- € </b><br/>'+
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="http://www.hotel-am-schlosspark-muenster.de">'+
+                                    'http://www.hotel-am-schlosspark-muenster.de</a></p>'+
+                                    '</div>';
+                             var contenthotelConti = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Hotel Conti 4*</h2><br>'+
+                                    '<h3 style="color:#4a87d3">Münster Central Station</h3><br>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b>Berliner Platz 2 <br>' +
+                                    '<b style="color:#4a87d3">Economy Single, breakfast included</b><br>'+
+                                     '<b style="color:#4a87d3">75,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single, breakfast included</b><br>'+	
+                                     '<b style="color:#4a87d3">	99,- € </b><br/>'+
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="http://www.hotel-conti-muenster.de">'+
+                                    'http://www.hotel-conti-muenster.de</a></p>'+
+                                    '</div>';
+                             var contentdasSeehotel = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Agora: das Seehotel </h2><br>'+
+                                    '<h3 style="color:#4a87d3">Aasee</h3><br>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b>Bismarckallee 5<br>' +
+                                    '<b style="color:#4a87d3">Single room, Shower/WC, breakfast included</b><br>'+
+                                     '<b style="color:#4a87d3">65,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single room, Shower/WC, breakfast included	</b><br>'+	
+                                     '<b style="color:#4a87d3">	70,- € </b><br/>'+
+                                     '<b style="color:#4a87d3">Double room / 1 person, Shower/WC, breakfast included</b><br>'+
+                                     '<b style="color:#4a87d3">70,- €</b> <br/>'+'<b style="color:#4a87d3">Double room, Shower/WC, breakfast included	</b><br>'+	
+                                     '<b style="color:#4a87d3">	75,- € </b><br/>'+
+                                 '<b style="color:#4a87d3">Maisonette (45-55 qm) / 1 person	</b><br>'+	
+                                     '<b style="color:#4a87d3">	90,- € </b><br/>'+
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="http://www.agora-muenster.de/">'+
+                                    'http://www.agora-muenster.de/</a></p>'+
+                                    '</div>';
+                             var contentseehotelMünster = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Seehotel Münste</h2><br>'+
+                                    '<h3 style="color:#4a87d3">Aasee</h3><br>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b>Aegidistraße 21<br>' +
+                                    '<b style="color:#4a87d3">Single room, Shower/WC, breakfast included</b><br>'+
+                                     '<b style="color:#4a87d3">70,- €</b> <br/>'+'<b style="color:#4a87d3">Single room / 1 person, Shower/WC, breakfast included</b><br>'+	
+                                     '<b style="color:#4a87d3">	80,- € </b><br/>'+
+                                 '<b style="color:#4a87d3">Comfort Double room / 1 person, Shower/WC, breakfast included</b><br>'+	
+                                     '<b style="color:#4a87d3">	90,- € </b><br/>'+
+                                 '<b style="color:#4a87d3">Double room, Shower/WC, breakfast included</b><br>'+	
+                                     '<b style="color:#4a87d3">	100,- € </b><br/>'+
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="http://www.seehotel-muenster.de/">'+
+                                    'http://www.seehotel-muenster.de/</a></p>'+
+                                    '</div>';
+                             var contentsleephotel = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Sleep Station Münster</h2><br>'+
+                                    '<h3 style="color:#4a87d3"> Münster Cathedral</h3><br>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b>Wolbecker Str. 1, 48155 Münster<br>' +
+                                    '<b style="color:#4a87d3">8-bed room </b><br>'+
+                                     '<b style="color:#4a87d3">17,- €</b> <br/>'+'<b style="color:#4a87d3">4-bed room </b><br>'+	
+                                     '<b style="color:#4a87d3">	20,- € </b><br/>'+
+                                 '<b style="color:#4a87d3">2-bed room </b><br>'+	
+                                     '<b style="color:#4a87d3">	27,- € </b><br/>'+
+                                 '<b style="color:#4a87d3">single room </b><br>'+	
+                                     '<b style="color:#4a87d3">	35,- € </b><br/>'+
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="sleep-station.de/">'+
+                                    'sleep-station.de/</a></p>'+
+                                    '</div>';
+                           
+
+                            var infostadhotel = new google.maps.InfoWindow({
+                                content: contentstad
+                            });
+                               var infoamhotel= new google.maps.InfoWindow({
+                                content: contenthotelamSchlosspark
+                            });
+                               var infocontihotel = new google.maps.InfoWindow({
+                                content: contenthotelConti
+                            });
+                               var infodashotel = new google.maps.InfoWindow({
+                                content: contentdasSeehotel
+                            });
+                               var infoseehotel = new google.maps.InfoWindow({
+                                content: contentseehotelMünster
+                            });
+                             var infosleephotel = new google.maps.InfoWindow({
+                                content: contentsleephotel
+                            });
+
+                            stadhotel = new google.maps.Marker({
+                                position: stadLoc,
+                                map: map,
+                                icon: imageHotel,
+                                animation: google.maps.Animation.BOUNCE
+                            });
+                             amhotel = new google.maps.Marker({
+                                position: hotelamSchlosspark,
+                                map: map,
+                                icon: imageHotel,
+                                animation: google.maps.Animation.BOUNCE
+                            });
+
+                             contihotel = new google.maps.Marker({
+                                position: hotelConti,
+                                map: map,
+                                icon: imageHotel,
+                                animation: google.maps.Animation.BOUNCE
+                            });
+
+                             dashotel = new google.maps.Marker({
+                                position: dasSeehotel,
+                                map: map,
+                                icon: imageHotel,
+                                animation: google.maps.Animation.BOUNCE
+                            });
+
+                             seehotel = new google.maps.Marker({
+                                position: seehotelMünster,
+                                map: map,
+                                icon: imageHotel,
+                                animation: google.maps.Animation.BOUNCE
+                            });
+                             sleephotel = new google.maps.Marker({
+                                position: sleepHotelLoc,
+                                map: map,
+                                icon: imageHotel,
+                                animation: google.maps.Animation.BOUNCE
+                            });
+
+
+                            stadhotel.addListener('click', function() {
+                                infostadhotel.open(map, stadhotel);
+                            });
+                            amhotel.addListener('click', function() {
+                                infoamhotel.open(map, amhotel);
+                            });
+                            contihotel.addListener('click', function() {
+                                infocontihotel.open(map, contihotel);
+                            });
+                            dashotel.addListener('click', function() {
+                                infodashotel.open(map, dashotel);
+                            });
+                            seehotel.addListener('click', function() {
+                                infoseehotel.open(map, seehotel);
+                            });
+                            sleephotel.addListener('click', function() {
+                                infosleephotel.open(map, sleephotel);
+                            });
+                          
+
+							map.panTo(muensterLoc);
+							map.setZoom(13);
+						}
+							break;
+						default:{
+						}
+					}
+			}
+
+			$(window).resize(function() {
+				google.maps.event.trigger(map, "resize");
+				map.setCenter(new google.maps.LatLng(51.9607, 7.6261));
+			});
+		</script>
+	</div>
+	<br>
+	<div class="row 100%">
+		<div class="4u 12u$(medium)">
+			<h2>Conference Venue</h2>
+            
+			<p>
+				<a href="http://www.ifgi.de" target="_blank"> Institute for Geoinformatics</a><br/>
+				<a href="https://www.google.de/maps?f=q&source=embed&hl=en&geocode=&q=GEO+1,+Heisenbergstra%C3%9Fe+2,+M%C3%BCnster&aq=0&oq=Geo+1&sll=51.967539,7.594986&sspn=0.213004,0.528374&ie=UTF8&hq=&hnear=GEO+1,+Heisenbergstra%C3%9Fe+2,+48149+M%C3%BCnster,+Nordrhein-Westfalen&t=m&ll=51.982554,7.596531&spn=0.037004,0.072956&z=13&iwloc=A" target="_blank">Heisenbergstraße 2 </a>
+			<br/>
+                D-48149 Münster<br/>
+			</p>
+                </div>
+		<div class="4u 12u$(medium)">
+			<h2>Conference Dinner</h2>
+           <a href="http://muenster.aposto.eu/" target="_blank"> Aposto Münster</a><br/>
+				Alter Steinweg 21,<br/>
+				48143 Münster<br/>
+				Friday, 10th November at 19:30
+
+			<!--
+			<p> Restaurant Gambrinus Borrull <br>
+				Plaza del Juez Borrull, 15, 12003 Castellón de la Plana<br>
+				<b>Friday at 20:30 </b></p>
+				-->
+		</div>
+		<div class="4u 12u$(medium)">
+			<h2>Informal Meeting</h2>
+			<p> <a href='https://goo.gl/maps/9ML98ymmTvt' target="_blank"> Domplatz Munster</a><br>
+				<b>Thursday, 9th November at 19:00 </b></p>
+				
+		</div>
+
+	</div>
+
+
+</section>
+
+<!-- Four: PROGRAM AND SCHEDULE -->
+<section id="four" class="main style1">
+	<div class="container">
+		<header class="major">
+			<h2>Programme</h2>
+		</header>
+		<p>Our programme is subject to change as we get closer to GeoMundus 2017. Please check our website frequently for the latest updates and follow us on our social networks to receive the latest news and announcements.
+
+<br><br/>
+            We would like to invite all the attendees of GeoMundus 2017 to an introductory tour around the historical center of Münster. Come prepared to get to know each other before the conference and share a drink together.
+<br/> <br/>The details are as follows:<br/>
+            When: 9th November 2017,19:00<br/> Where: <a href='https://goo.gl/maps/9ML98ymmTvt' target="_blank" style="color:blue"> Domplatz</a>
+</p>
+
+		<div id="responsiveTabsDemo" class="css3-tabstrip" >
+			<ul>
+				<li>
+					<input type="radio" name="css3-tabstrip-0" checked="checked" id="css3-tabstrip-0-1" /><label for="css3-tabstrip-0-1">Friday, 10th</label>
+					<div class="table-wrapper">
+						<table class="alt">
+							<thead>
+							<tr>
+								<th>Time</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>8:30</td>
+								<td>Registration (Coffee provided)</td>
+							</tr>
+							<tr>
+								<td>9:00</td>
+								<td>Poster and sponsor/exhibitor move-in</td>
+							</tr>
+							<tr>
+								<td>9:30</td>
+								<td>Opening Ceremony</td>
+							</tr>
+							<tr>
+								<td>9:45</td>
+								<td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Keynote Presentation 1:Dr. Pau Aragó</a><p style="display:none;" > <b style="color:#4CAF50">
+									Dr. Pau Aragó <br>Geospatial data from maps to Volunteered Geographical information</b><br><br/>
+									Maps were made to travel, to know the bounds of kingdoms, to build and plan roads, and for environmental management,
+									amongst many other things. Originally, maps were difficult to make, and kept in secret as valuable treasures.
+									Nowadays everything has changed, OpenStreetMap has made it possible to build a collaborative map by an army of volunteers
+									from different backgrounds. Geospatial data has grown from some lines and points on a paper map, to gigabytes of information.
+									However, this amount of information contains noise that must be filtered. Even more this filter is specific to the data source.
+									Spatial statistics is a tool able to manage this amount of data to extract the relevant information.
+									</p></td>
+							</tr>
+							<tr>
+								<td>10:30</td>
+								<td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4686a0">+Abstract Presentations 1
+									</a><p style="display:none;" > <b style="color:#4CAF50">
+									Abdelrahman Eltahhan</b><br/>
+									Comparison And Analysis Of Surface Urban Heat Island Spatial Variability In Cities
+									Of Sub Tropical Zone<br/><br/>
+									<b style="color:#4CAF50">
+										Ivan Radevski</b><br/>
+
+									Natural Regime Of Streamflow Trends In Macedonia
+
+								</p></td>
+							</tr>
+							<tr>
+								<td>11:10</td>
+								<td>Coffee break</td>
+							</tr>
+				
+							<tr>
+								<td>11:30</td>
+								<td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4686a0">+Poster Flash Session
+								</a><p style="display:none;" > <b style="color:#4CAF50">Panagiotis Koziokas
+								</b><br/>
+									Data Visualization: Approach from IOT Devices Data to GIS Software<br/><br/>
+									<b style="color:#4CAF50">
+										Vlad Mihai Rosca</b><br/>
+									Comparison of Pixel Based Image Classification Algorithms for the Classification
+									of Remotely Sensed Satellite Imagery<br/><br/>
+
+									<b style="color:#4CAF50">
+										Cristina Castrillo</b><br/>
+									Social Acceptance of Rescue Drones in the Beaches of Cadiz, Spain
+									<br/><br/>
+									<b style="color:#4CAF50">
+										William Alexander Martinez Blanco</b><br/>
+									Median Polish Kriging for Space Time Analysis
+								</p></td>
+
+
+								</td>
+							</tr>
+							<tr>
+								<td>13:00</td>
+								<td>Lunch</td>
+							</tr>
+							<tr>
+								<td>14:30</td>
+								<td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Keynote Presentation 2:Dr. Cidália Fonte</a><p style="display:none;"><b style="color:#4CAF50">
+									Dr. Cidália Maria Parreira da Costa Fonte
+									<br>Volunteered Geographic Information for the creation and validation of Land Use and Land Cover Maps
+								</b><br><br/>
+									A wide variety of Volunteered Geographic Information (VGI) is now available, such as photographs,
+									georeferenced text or vector maps. Some of these data enables the extraction of information on land use and land cover, which may be useful for the production and validation of Land Use/Land Cover Maps (LULCM). However, the use of VGI raises several problems. In this presentation the potential and limitations of using VGI for the creation and validation of LULCM are explained. Initiatives that provide potentially useful data are identified, examples
+									of VGI use for this aim are presented, and topics requiring further research are highlighted.
+									</p></td>
+							</tr>
+							<tr>
+								<td>15:15</td>
+								<td> <a href="javascript:void(0);" onclick="toggle(this)">+HERE: IOT connected to navigational maps
+									<br/><i>Frank van Haaren</i>
+								</a><p style="display:none;">
+									The Internet of Things (IoT) is a term used to describe the interconnectivity
+									of smart devices that are able collect and exchange data. We are all connected
+									to the IoT in our daily lives whether we know it or not. In this presentation,
+									HERE introduces how they leverage on the IoT in delivering mapping data and
+									services to individuals and companies. They explain how location content is
+									collected, processed and finally published on HERE applications like HERE Maps,
+									and also for GIS analyses.
+									<br/> <br/>
+									<a href="https://here.com/en"><img src="images/here.png"></a>
+								</p>
+								</td>
+							</tr>
+							<tr>
+								<td>15:45</td>
+								<td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4686a0">+Poster Session 1 + Coffee break
+								</a><p style="display:none;" > <b style="color:#4CAF50">Panagiotis Koziokas
+								</b><br/>
+									Data Visualization: Approach from IOT Devices Data to GIS Software.<br/><br/>
+									<b style="color:#4CAF50">
+										Vlad Mihai Rosca</b><br/>
+									Comparison of Pixel Based Image Classification Algorithms for the Classification.
+									of Remotely Sensed Satellite Imagery.
+								</p></td>
+							</tr>
+							<tr>
+								<td>16:30</td>
+                                <td><a href="javascript:void(0);" onclick="toggle(this)">+Career Development Session</a><p style="display:none;">
+									An interactive session providing a great opportunity for students interested in working professionally
+									in geoinformatics practice. <br/>The session will provide
+									insight on various queries of students such as:<br/>
+									1.	What are the possibilities and options for building your career in geoinfomatics?<br/>
+									2.	Should one pursue further studies (PhD), or go into the workforce?<br/>
+									3.	Critical ideas for entrepreneurs.<br/>
+									4.	Tips for moving forward.<br/><br/>
+
+
+									Panellists include our keynote speakers and invited guests.
+                                </p>
+								</td>
+							</tr>
+							<tr>
+								<td>17:30</td>
+								<td>Closing First Day</td>
+							</tr>
+							<tr>
+								<td>19:30</td>
+								<td>The conference Gala Dinner will take place at <a href="http://muenster.aposto.eu/" target="_blank">Aposto Münster</a>. We hope that you will join us to celebrate and connect!
+									Note: There is a participant limit, so if you would like to participate, please register well in advance.
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li>
+					<input type="radio" name="css3-tabstrip-0" id="css3-tabstrip-0-2" /><label for="css3-tabstrip-0-2">Saturday, 11th</label>
+					<div class="table-wrapper">
+						<table class="alt">
+							<thead>
+							<tr>
+								<th>Time</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>9:00</td>
+								<td>Registration (Coffee provided)</td>
+							</tr>
+							<tr>
+								<td>9:30</td>
+								<td>Opening Second Day</td>
+							</tr>
+							<tr>
+								<td>9:35</td>
+								<td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Keynote Presentation 3:Dr. Rui Li</a><p style="display:none;"><b style="color:#4CAF50">
+									Dr. Rui Li <br>Mapping beyond the Screens: Visualizing Direction and Distance to Distant Landmarks</b><br><br/>
+									Navigation systems on our mobile phones have greatly changed our traveling and exploring patterns. Despite the
+									convenience of using those systems in navigational tasks, the way instructions are given and the small size of screen
+									have hinder user’s capability of being spatially aware. While changing the way instructions is a research topic,
+									this presentation focus on the efforts on compensating the small size of representation by introducing methods
+									to visualize landmarks in distance which could not be displayed on screen at a large cartographic scale.
+									A series of studies was carried out investigate the use of visual variables, the fundamental cartographic principle on symbol
+									design, in symbol design for distant landmarks. Results include the designed prototypes using specific visual
+									variables, and user studies carried out to evaluate the influence of each visual variable on perceiving the distance.
+								</p></td>
+							</tr>
+							<tr>
+								<td>10:20</td>
+								<td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4686a0">+Abstract Presentations 2
+								</a><p style="display:none;" > <b style="color:#4CAF50">Chiranjib Patra
+								</b><br/>
+									Geospatial Monitoring Of Infectious Diseases By Unmanned Aerial Vehicles.<br/><br/>
+									<b style="color:#4CAF50">
+										Tina Baidar</b><br/>
+									Habitat Suitability Modeling Of Mikania Micrantha And Assessing Its Impact In Chitwan National Park, Nepal.
+								</p></td>
+							</tr>
+							<tr>
+								<td>11:00</td>
+								<td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4686a0">+Poster Session 2 + Coffee break
+								</a><p style="display:none;" > <b style="color:#4CAF50">Cristina Castrillo
+								</b><br/>
+									Social Acceptance of Rescue Drones in the Beaches of Cadiz, Spain.
+									<br/><br/>
+									<b style="color:#4CAF50">
+										William Alexander Martinez Blanco</b><br/>
+									Median Polish Kriging for Space Time Analysis.
+									<br/><br/>
+									<b style="color:#4CAF50">
+										Vengus Panhwar</b><br/>
+
+									Geospatial Tools For Tsunami Hazard Mapping: A Case Study Of Gwadar Port.
+								</p></td>
+							</tr>
+							<tr>
+								<td>11:30</td>
+								<td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4686a0">+Abstract Presentations 3
+								</a><p style="display:none;" > <b style="color:#4CAF50">Lorena Abad
+								</b><br/>
+									Exploring Space-Time Patterns Of Volunteered Cycling Data In An Intermediate City.
+									<br/><br/>
+
+									<b style="color:#4CAF50">Erdem Gündoğdu
+									</b><br/>
+
+									Determination Of Faults That Cause Earthquakes As A Type Of Natural Disasters By Landsat Satellite Image: Düvertepe Fault Zone (Balikesir, Turkey).
+									<br/><br/>
+									<b style="color:#4CAF50">
+										Ahmed Zegrar</b><br/>
+									Multispectral Analysis for Forest Mapping and Identification of Regeneration in Area of the North West Algeria.									
+
+								</p></td>
+							</tr>
+							<tr>
+								<td>13:00</td>
+								<td>Lunch</td>
+							</tr>
+							<tr>
+								<td>14:30</td>
+								<td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Keynote Presentation 4:Dr. Torsten Prinz</a><p style="display:none;"><b style="color:#4CAF50">Dr. Torsten Prinz <br>Unmanned Aireal Systems in Geosciences: More than an Eye in the Sky</b><br><br/>
+									Civil remote sensing by Unmanned Aerial Systems (UAS) is one of the most dynamic evolving technology of our decade. 
+									UAS are particularly useful in geosciences, as they provide different data products at high temporal, spectral and spatial resolution. 
+									Moreover, data acquisition costs are lower than those of conventional methods such as extensive ground sampling and survey, manned airplanes, 
+									or even satellite technologies. Depending on the type of UAS various use case scenarios and potential benefits in geosciences are conceivable 
+									as they vary in sensor sensitivity, data formats, operational coverage and accelerated data deployment times. Taking these facts into account, 
+									UAS represent modern and effective tools to support the detection, the monitoring and also the management of geoobjects and their related spatial aspects. 
+									In many cases UAS also utilize low-cost sensors, free-of-charge mission planning software, open source data analysis and GIS products to reduce operating 
+									costs and personnel expenditure, additionally increasing its overall efficiency. The analysis of rapidly calculated, accurate 2- and 3D UAS geodata enables 
+									the user to model the real world in various scales and perspectives. To highlight this new development in geosciences some selected use cases from 
+									traditional mapping-sciences, like geography, cartography  and geoecology, but also from archaeology or geoinformatics are presented which underline 
+									the potential and important role of UAS technology in modern, global orientated sciences.
+									</p>
+
+								</td>
+							</tr>
+							<tr>
+								<td>15:15</td>
+								<td><b style="color: #9dc66b">Concurrent Workshops</b>
+									<table  style="border:none;">
+										<tr><td>
+											Workshop 1:<a href="javascript:void(0);" onclick="toggle(this)">+Immersive Mobile Haptic Feedback in Interaction with
+											Spatial Information through Electrical Muscle Stimulation</a><p style="display:none;">
+                                            <br/> <img class=contact src="images/Max.jpg"
+													   style="float:inherit;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" >
+											&emsp; &emsp;
+                                            <img class=contact src="images/samuel.PNG" style="float:inherit;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" >
+											<br/><br/>
+                                            <strong>Max Pfeiffer</strong>&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Samuel Navas</strong><br/><br/>
+                                            In the time of virtual and augmented realities (VR and AR), people are interacting with spatial information such as public maps in mid air and 
+											in mobile scenarios. It is still hard to generate haptic feedback in such scenarios with a reasonable variability. In human-computer interaction, 
+											electrical muscle stimulation evolved as a topic to face that challenge. In this case, the human's body is actuated to generate haptic feedback to 
+											simulate surface textures or virtual objects. Moreover, it is also used in pedestrian navigation scenarios to change the walking direction of the 
+											pedestrian for an automated navigation. In this workshop, the participants will get an overview about EMS-research, and it's application areas in HCI 
+											followed by a hands-on experience and brainstorming session about application areas in geoscience.<br>
+											<br>
+											The workshop organisers would like to thank Axion GmbH for supporting them with EMS devices and electrodes that they will use during the workshop. 
+											Axion GmbH is a medical device manufacturer from Leonberg. Their main focus are high quality EMS and TENS devices. Visit them at tens-ems.com.<br>
+											<img src="images/axion.jpg" width="160" height="130" />
+                                        </p></td></tr>
+                                        <tr><td> Workshop 2:
+                                            <a href="javascript:void(0);" onclick="toggle(this)">+Demonstration Flight by the IFGIcopter Group including a Practical Data Image Analysis Follow-Up</a><p style="display:none;">
+                                                <br/><img class=contact src="images/torsten.jpg"
+														  style="float:inherit;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" >
+												&emsp;&emsp;
+												<img class=contact src="images/Jan.jpg"
+													 style="float:inherit;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" >
+												 &emsp;&emsp;
+												<img class=contact src="images/Simon.PNG"
+													 style="float:inherit;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" >
+
+												<br/><br/>
+                                                <strong>Torsten Prinz</strong>   &emsp;&emsp;        <strong>Jan Lehmann</strong>   &emsp;&emsp;&emsp;&emsp;&emsp;   <strong>Simon Schulte</strong><br/><br/>
+												The IFGIcopter group will give a brief insight into their UAS equipment and practical applications.
+												The workshop will include a short demonstration flight followed by data analysis for
+												geoinformatic purposes. In case of inclement weather,
+												the workshop will concentrate on data analysis using Matlab, Pix4D, Agisoft and ESRI products. <br/>
+												<img src="images/ifgicopter.png" style="height:100px;" title="IFGICopter"/>
+                                            </p></td></tr>
+                                        <tr><td>Workshop 3:
+                                            <a href="javascript:void(0);" onclick="toggle(this)">+Managing Geospatial data with R</a><p style="display:none;">
+                                                <br/> <img class=contact src="images/pau.jpg"
+														   style="float:inherit;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" >
+												 <br/><br/>
+                                               <strong>Pau Aragó</strong><br/>
+
+												R has become an important and useful programing language for statistical
+												computing. As an open source language, the community has contributed with a large amount
+												of packages available in the CRAN repository, within which there are several that deals
+												with geospatial data. In this workshop, we are going to learn how to open spatial files
+												directly in R, access their internal structure, and plot maps with R.
+												The goal is to prepare geospatial data for statistical computing in R.
+                                           </p>
+                                       </td></tr>
+                                        <tr><td>Workshop 4:
+                                            <a href="javascript:void(0);" onclick="toggle(this)">+HERE Map Creator and Developer Portal: A live web based editing tool for navigational maps
+											</a><p style="display:none;">
+                                                <br/>Eric Oeder and Georg Herring<br/><br/>
+												Following the presentation of the Internet of Things, HERE introduce their Map Creator, a web-based map editing tool
+												used to update the content of HERE Maps. The purpose of this web application is to tap on the local knowledge users
+												have about a location. Participants will be taught how to use the Map Creator to generate content on HERE Maps.
+												In the second part of this workshop, participants will be introduced to MAPILARY,
+												a platform to upload photos they have of a point of interest to contribute to a global database of street views of cities.
+												<br/><br/>
+
+												<a href="https://here.com/en"><img src="images/here.png" /> </a>
+                                            </p>
+                                        </td></tr>
+                                    </table>
+									<!--Under Construction <br>-->
+									<!--Under Construction </i> -->
+								</td>
+							</tr>
+							<tr>
+								<td>17:45</td>
+								<td>Closing Ceremony for the Conference</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</section>
+
+<!-- Five: REGISTRATION AND SUBMISSION -->
+
+<section id="five" class="main style2 special">
+	<div class="container" style="text-align: justify;">
+		<header class="major special">
+			<h2>Call for Abstracts and Posters</h2>
+		</header>
+
+		<p style="color: yellow;">	<strong>Important dates to remember</strong>: 
+		<br>
+			
+            Abstract and Poster submission has been extended till to 25 August.
+		</p>
+    
+
+		
+
+		<p>
+			Thank you for your interest in participating in GeoMundus 2017 and we are excited to have you. All individuals interested in any aspect of geospatial technologies are invited to submit either an abstract of a paper OR a poster for consideration as a presentation at GeoMundus.
+		</p>
+		<p>
+            The three best abstract submissions from students will be awarded travel grants to GeoMundus 2017 worth up to <strong> 500 EUR</strong>.
+			The grant covers <strong>hotel accommodation</strong> of up to <strong>200 EUR</strong> (booked by IFGI) and <strong>travel costs</strong> of up to <strong>300 EUR</strong>. Note that only travel costs supported by documentation will be reimbursed.
+		</p>
+		<p>
+			During the submission process, you will be asked to identify the most applicable topic for your abstract or poster. Potential topics include, but not limited to:
+		</p>
+
+		<div style="column-count: 2;column-gap: 0px;">
+
+		<ul type="disc">
+			<li>
+				Applications of Geospatial Technologies
+			</li>
+			<li>				Cadastre			</li>
+			<li>				Cartography			</li>
+			<li>				Environmental Management			</li>
+			<li>				Geodetics			</li>
+			<li>				Geographic Information Science			</li>
+			<li>				Geography			</li>
+			<li>				Geoinformatics			</li>
+			<li>				Geospatial Databases			</li> 
+            <li>				Geospatial Data Mining			</li>
+            </ul>
+            <ul>
+			<li>				Geostatistics			</li>
+			<li>				Interaction with GeoInformation			</li>
+			<li>				Landscape Ecology			</li>
+			<li>				Location Based Services			</li>
+			<li>				Navigation			</li>
+			<li>				Remote Sensing			</li>
+			<li>				Spatial Cognition			</li>
+			<li>				Spatial Data Science			</li>
+			<li>				Surveying			</li>
+                <li>				Others			</li>
+		</ul>
+		
+		</div>
+		<br>
+		<p>
+			We would also like to invite abstracts or posters about emerging technologies, the sub-theme of our conference. These include:
+		</p>
+        <div style="column-count: 2;column-gap: 0px;">
+		<ul type="disc">
+			<li>				3D Modelling			</li>
+			<li>				Big Data			</li>
+			<li>				Cloud Computing			</li>
+			<li>				Data Analytics			</li>
+			<li>				Data Visualisation			</li>
+            </ul>
+        <ul>
+			<li>				Drone Technologies			</li>
+			<li>				Open Source Solutions			</li>
+			<li>				Smart Cities			</li>
+			<li>				Unmanned Aerial Systems			</li>
+			<li>				Others			</li>
+		</ul>
+        </div>
+		<h3 style="text-align: center;"> <u> <strong>Abstract preparation and formatting instructions:</strong></u>	</h3>
+		
+		
+		<p>
+			Click the <strong><a href="http://geomundus.org/2017/Sample_Abstract.doc" style="color: yellow"> Sample Abstract</a></strong> to view a perfectly formatted abstract. Feel free to	use it as a template to format your own.   
+		
+			<br/>
+		</p>
+		
+		<ul type="disc">
+			<li>				Abstracts should be no longer than TWO pages in length.			</li>
+			<li>				No graphs or figures should be included.			</li>
+			<li>				Use the following formatting within titles: italics (for scientific	names), subscript for scientific formulas and superscript mathematic equations.			</li>
+			<li>				List the senior author first and Bold the presenting author.			</li>
+			<li>				Do not include professional titles of the authors.			</li>
+			<li>				For all other formatting, see sample.			</li>
+			
+		</ul>
+		
+		<h3 style="text-align: center;"> <u> <strong>Poster preparation and formatting instructions:</strong></u>	</h3>
+        <p>For poster submissions, click this <a href="PosterGuidelines.doc" style="color:yellow;">Template</a>  to view the guidelines for posters.</p>
+    <p>		For formatting questions, email <span style="color:yellow">info@geomundus.org</span></p>
+    <p> 
+After you have successfully completed the submission form and uploaded your abstract or poster, a confirmation email of receipt will be sent to you. Please keep a copy of this confirmation on file for your records.
+</p>
+    <p>NOTE: If you don’t receive the email, please check your JUNK FOLDER for an email from info@geomundus.org, as sometimes servers will re-direct confirmation emails to this folder.</p>
+    <p>Acceptance notification will be on 9 September 2017. After acceptance, the abstracts will be published on GeoMundus website.</p>
+		
+		<script>
+			function setVisibility(id) {
+				if(document.getElementById('bt1').value=='Hide Layer'){
+					document.getElementById('bt1').value = 'Show Layer';
+					document.getElementById(id).style.display = 'none';
+				}else{
+					document.getElementById('bt1').value = 'Hide Layer';
+					document.getElementById(id).style.display = 'inline';
+				}
+			}
+		</script>
+        
+		<div id="sub3" class="container submission">
+			<div >
+                
+				<br>
+
+				</div>
+			</div>
+
+	</div>
+</section>
+<section id="nine" class="main style1">
+	<div class="container" >
+		<header class="major">
+			<h2>Registration and Submission</h2>
+        </header>
+        <p>Important dates to remember:<br>
+            Registration is from <strong>1 June</strong> to <strong>3 November</strong>.<br/>
+            Abstract and poster submission is from <strong>1 June </strong> to <strong>25 August</strong>
+</p>
+        <h3> 
+Participant Registration
+</h3>
+        <p>
+            Simply click on the registration link below to register yourself for the GeoMundus Conference. Registration is free.
+		  </p>
+	         <ul class="actions uniform"  style="text-align: center;">
+			<!--<li><a class="button danger" href='https://goo.gl/forms/1Ls2EMb2OJ0yhEm93' target="_blank">Registration Closed! </a>
+			</li>-->
+				 <li>
+					 <a class="button special" href="javascript:void(0);" target="_blank" style="background-color:darkred; ">Registration Closed!
+					 </a>
+			</li>
+		</ul>
+	<p ><strong>Please Note</strong>: Seats at the dinner are limited</p>
+     
+        <!-- <p style="text-align: center;"> <strong>Poster submission will on 1st June 2017! </strong></p>
+		
+		
+		 <p style="text-align: center;" >Click if you want to <strong>register</strong> at the 9<sup>th</sup> GeoMundus Conference</p>
+		<ul class="actions uniform"  style="text-align: center;">
+			<li><a class="button special" href='https://www.eventbrite.com/e/geomundus-2017-tickets-34394306296' target="_blank">Registration</a></li>
+		</ul>  -->
+    <h3>Submissions of Abstracts and Posters</h3>
+    <p>Click the submission link below if you are interested in presenting an abstract or a poster at the 9<sup>th </sup>GeoMundus Conference</p>
+		<ul class="actions uniform" style="text-align: center;">
+			<!--<li><a class="button special" id='bt1' value='Show Layer'
+				   onclick="window.open('https://form.jotformeu.com/71303478585361')">Abstract or Poster Submission
+</a></li>-->
+			<li><a class="button special" href="javascript:void(0);" target="_blank" style="background-color:darkred;">
+				Abstract or Poster Submission Closed!
+</a></li>
+		</ul> 
+	</div>
+</section>
+<!-- Six: CONTACT -->
+<section id="six" class="main style2">
+	<div class="container">
+		<header class="major" style="text-align: center;">
+			<h2>2017 Team</h2>
+		</header>
+		<p>GeoMundus is a symposium held by the students from the consortium of <a href="http://mastergeotech.info/" style="color: yellow" target="_blank"> Erasmus Mundus Master's of Science in Geospatial Technologies.</a></p>
+		<div class="row 150%">
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#8addaa; color:white;text-align: center;">STEERING TEAM</h4>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Caitlin.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);"  alt="Caitlin Thorn" /> Caitlin Thorn<br/>
+                        <a href="https://www.linkedin.com/in/caitlinthorn/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Mahesh.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Mahesh Thapa" /> Mahesh Thapa<br/>
+						<a href="https://www.linkedin.com/in/mahesh-thapa-44507456/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Nikolina.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);"  alt="Nikolina Nisic" /> Nikolina Nisic<br/>
+                        <a href="https://www.linkedin.com/in/nikolina-nisic-18087468/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+						
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Bekish.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);"  alt="Bekish Twanabasu"/>Bikesh Twanabasu<br/>
+                        <a href="https://www.linkedin.com/in/bikesh-twanabasu-8091a459/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+                <p style="float:left;" >
+						<img  class=contact src="images/contact/Ditshui.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Ditsuhi Iskandaryan" /> Ditsuhi Iskandaryan<br/>
+                        <a href="https://www.linkedin.com/in/ditsuhi-iskandaryan-1a816993/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+			</div>
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#4a87d3; color:white; text-align: center;">PROGRAMME TEAM</h4>
+					<p style="float:left;" >
+                        <img  class=contact src="images/contact/Leon.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Leon Gaw" /> Leon Gaw</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Raquel.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Raquel Martin Pozouelo Ojalbo" />Raquel Martin-Pozuelo Ojalbo<br/>
+                        <a href="https://www.linkedin.com/in/raquelmartinpozuelo/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Starvesh.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Stravros Sakellariou"  /> Stravros Sakellariou
+					</p>
+					<p style="float:left;" >
+                        <img  class=contact src="images/contact/Pravesh.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Pravesh Yogol"/> Pravesh Yogol<br/>
+						<a href="https://www.linkedin.com/in/pravesh-yagol-58366942/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+                <p style="float:left;" >
+                    <img  class=contact src="images/contact/Sanjeevan.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Sanjeevan Shrestha"/> Sanjeevan Shrestha<br/>
+					<a href="https://www.linkedin.com/in/sanjeevan-shrestha-b198b6a1/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+			</div>
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#4CAF50; color:white; text-align: center;">BUDGET TEAM</h4>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Marc.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);"  alt="Marc Frederic Schröder"/> Marc Frederic Schröder<br/>
+						<a href="https://www.linkedin.com/in/marc-schröder-4bb565144/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Pedro.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Pedro Penedos" />Pedro Penedos
+					</p>
+                	<p style="float:left;" >
+						<img  class=contact src="images/contact/Chaplin.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Chaplin Williams" />Chaplin Williams<br/>
+						<a href="https://jm.linkedin.com/in/chaplin-williams-54600244/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+			</div>
+		</div> 
+		<div class="row 150%">
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#4686a0; color:white; text-align: center;">WEB TEAM</h4>
+				<p style="float:left;">
+					<img  class=contact src="images/contact/Gebru.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Gebru Welay" />Gebru Welay<br/>
+					<a href="https://www.linkedin.com/in/gebru-welay-gerezigiher-14675594/" class="icon alt fa-linkedin" target="_blank"> 
+                        <span class="label"> Linkedin</span></a>
+				</p>
+				<p style="float:left;" >
+					<img  class=contact src="images/contact/Anthony.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Anthony Twesigye" /> Anthony Twesigye <br/>
+					<a href="https://www.linkedin.com/in/anthony-twesigye-a911a6ba/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+				</p>
+                 <p style="float:left;" >
+					<img  class=contact src="images/contact/Mulu.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Mulu Welegebrial" />Mulu Weldegebreal
+					
+				</p>
+			</div>
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#9dc66b; color:white; text-align: center;">PUBLIC RELATIONS TEAM </h4>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Daria.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Daria Lüdtke" /> Daria Lüdtke<br/>
+						<a href="https://www.linkedin.com/in/daria-lüdtke-005b6b127/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Sarah.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Sarah Abdelkader" /> Sarah Abdelkader<br/>
+						<a href="https://www.linkedin.com/in/sarahkader8" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Caio.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Caio Mascarenhas" />Caio Mascarenhas
+					</p>
+
+			</div>
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#4FA49A; color:white; text-align: center;">LOCAL ORGANIZATION TEAM</h4>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Lisa.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Lisa Fischell" />Lisa Fischell<br/>
+						<a href="https://de.linkedin.com/in/lisa-fischell-842b8a8a/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/Eve.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Yevgeniya Litvinova" /> Yevgeniya Litvinova<br/>
+                        <a href="https://www.linkedin.com/in/yevgeniyalitvinova/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+                <p style="float:left;" >
+						<img  class=contact src="images/contact/Jati.jpg" style="float:left;-webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);-o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(1deg);" alt="Muhammad Pramujati" /> Muhammad Pramujati<br/>
+						<a href="https://www.linkedin.com/in/wakhidpramujati/" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>	
+			</div>
+			
+		</div>
+	</div>
+</section>
+<section id="seven" class="main style1">
+	<div class="container" >
+		<header class="major">
+			<h2>Contact</h2>
+        </header><p>If you have any questions, please contact us via email. Alternatively, please write to us at our mailing address listed below.</p>
+		<!--<p>Do you need help?, guidance? or you have a question? Kindly use one of the following options to get in touch with the GeoMundus Team and we shall get back to you. </p> -->
+		<div class="row 150%">
+			<div class="4u 12u$(medium)">
+				<h4>Email</h4>
+				<strong><a href="mailto:info@geomundus.org">info@geomundus.org<br/></a></strong>
+                <p></p>
+			</div>
+			<div class="u 12u$(medium)" style="text-align: left;">
+				<h4>Post address</h4>
+				<strong>Institute for Geoinformatics <br> Heisenbergstraβe 2, D-48149 <br> Münster Germany</strong>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Seven: Sponsors -->
+<section id="eight" class="main style2">
+	<div class="container">
+		<header class="major">
+			<h2>Sponsors & Partners</h2>
+		</header>
+        <h3>We would like to thank for the help and generosity of our sponsors and partners for making this event a success.</h3>
+		<h3>Should you wish to sponsor the 2017 GeoMundus conference, please contact the budget team at <strong>budget@geomundus.org</strong></h3>
+		<ul class="actions" align="center">
+            
+			<!-- <li><a href="Fundraising.pdf" class="button special" target="_blank">Sponsorship</a></li>-->
+		</ul>
+
+		<div class="row 150%">
+			<div  align="center" class="12u 12u$(medium)">
+					<a href="http://www.isegi.unl.pt/" target="_blank"><img src="http://geomundus.org/2015/img/nova.png" width="200" height="150"  class="img-circle"></a>
+					<a href="http://ujiapps.uji.es/" target="_blank"><img src="http://geomundus.org/2015/img/uji.png" width="200" height="150" class="img-circle"></a>
+					<a href="http://www.uni-muenster.de/en/" target="_blank"><img src="http://geomundus.org/2015/img/wwu.jpg" width="200" height="150"   class="img-circle"></a>
+					<a href="https://here.com/en" target="_blank"><img src="images/here.png" width="200" height="150" class="img-circle"></a>
+				   <a href="http://www.em-a.eu/" target="_blank"><img src="images/EMA.png" width="200" height="150" class="img-circle"></a>
+			</div>
+		</div>
+	</div>
+</section> 
+
+
+<!-- Footer: SOCIAL NETWORKS -->
+<section id="footer">
+		<div class="container">
+			<header class="major">
+				<h2>GeoMundus History</h2>
+				<p>The first GeoMundus conference was held successfully in 2009 at ISEGI, Lisbon, Portugal. Since then, the conference has been held annually always alternating between Castellón (Spain), Münster (Germany) and Lisbon (Portugal).</p>
+			</header>
+	<div class="select-wrapper">
+		<select
+				onchange="location.href=this.options[this.selectedIndex].value"
+				name="elige"
+				size="1">
+			<option value="http://geomundus.org/2016/"selected>
+				<span class="red-black-text">Castell&oacute;n, Spain 2016 <img src="http://geomundus.org/2014/images/spain.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">04<sup>th</sup>-05<sup>th</sup> of November 2016</span></option>
+			<option value="http://geomundus.org/2015/" >
+				<span class="red-black-text">Lisbon, Portugal 2015 <img src="http://geomundus.org/2014/images/portugal.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">20<sup>th</sup>-21<sup>th</sup> of November 2015</span></option>
+			<option value="http://geomundus.org/2014/">
+				<span class="red-black-text">M&uuml;nster, Germany 2014 <img src="http://geomundus.org/2014/images/german.png"  alt="SmashingConf M&uuml;nster, Germany 2014" /></span> <span class="date">7<sup>th</sup>-8<sup>th</sup> of November 2014</span></option>
+			<option value="http://geomundus.org/2013/">
+				<span class="red-black-text">Castell&oacute;n, Spain 2013 <img src="http://geomundus.org/2014/images/spain.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">15<sup>th</sup>-16<sup>th</sup> of November 2013</span></option>
+			<option value="http://geomundus.org/2012/index-2.html">
+				<span class="red-black-text">Lisbon, Portugal 2012 <img src="http://geomundus.org/2014/images/portugal.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">9<sup>th</sup>-10<sup>th</sup> of November 2012</span></option>
+			<option value="http://geomundus.org/2011/index2011.php">
+				<span class="red-black-text">M&uuml;nster, Germany 2011 <img src="http://geomundus.org/2014/images/german.png"  alt="SmashingConf Freiburg 2014" /></span> <span class="date">28<sup>th</sup>-29<sup>th</sup> of October 2011</span>
+			<option value="http://geomundus.wordpress.com/">
+				<span class="red-black-text">Castell&oacute;n, Spain 2010 <img src="http://geomundus.org/2014/images/spain.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">22<sup>th</sup>-23<sup>th</sup> of October 2010</span>
+			<option value="http://geomundus.wordpress.com/previous-editions/geomundus-2009/">
+				<span class="red-black-text">Lisbon, Portugal 2009 <img src="http://geomundus.org/2014/images/portugal.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">29<sup>th</sup>-30<sup>th</sup> of October 2009</span>
+		</select>
+            </div>
+		<br>
+
+	<ul class="icons">
+		<li><a href="https://twitter.com/geomundus" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+		<li><a href="https://www.facebook.com/geomundus/?fref=ts" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+		<li><a href="https://www.instagram.com/geomundus9/" class="icon alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+		<!--<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>-->
+	</ul>
+	<ul class="copyright">
+		<li>&copy; GeoMundus 2017</li><li>Designed by WebTeam</li>
+	</ul>
+</div>
+</section>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

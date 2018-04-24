@@ -1,0 +1,1273 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>Geomundus 2017</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="shortcut icon"
+		  href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/globe-24.png" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1K1qI88SQ1rk9N6zQ7yHk8vDnm_ldINc"></script>
+
+	<script type="text/javascript">
+		var map;
+		var markers;
+
+		var castellonPolygon;
+		var graoPolygon;
+
+		function initMap() {
+			//document.getElementById('map_section').style.display = 'none'
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: new google.maps.LatLng(parseFloat(51.9607), parseFloat(7.6261)),
+				scrollwheel: false,
+				zoom: 13
+			});
+
+            var ujiCoordsPoly = [
+                {lat: 39.98986226393736, lng: -0.06675481796264648},
+                {lat: 39.99550094112277, lng: -0.0626993179321289},
+                {lat: 39.99670094936444, lng: -0.06527423858642578},
+                {lat: 39.99650368918388, lng: -0.06726980209350586},
+                {lat: 39.99799134565671, lng: -0.07128238677978516},
+                {lat: 39.99467078609602, lng: -0.0786745548248291},
+                {lat: 39.993084422187906, lng: -0.07367491722106934},
+                {lat: 39.99253370693025, lng: -0.07401823997497559}
+            ];
+
+			var castellonCoordsPoly = [
+				{lat: 39.96712200067156, lng: -0.07673263549804688},
+				{lat: 39.96264869397871, lng: -0.064544677734375},
+				{lat: 39.96264869397871, lng: -0.051670074462890625},
+				{lat: 39.95435914620152, lng: -0.027980804443359375},
+				{lat: 39.964095972290416, lng: -0.020427703857421875},
+				{lat: 39.969884779173796, lng: -0.015106201171875},
+				{lat: 39.98238166771571, lng: -0.00823974609375},
+				{lat: 40.00026797264677, lng: -0.0116729736328125},
+				{lat: 40.014731410518195, lng: -0.021457672119140625},
+				{lat: 40.01999008267647, lng: -0.042743682861328125},
+				{lat: 40.00842046902367, lng: -0.0556182861328125},
+				{lat: 40.00434434252358, lng: -0.06643295288085938},
+				{lat: 39.99987347232366, lng: -0.08480072021484375},
+				{lat: 39.988563493907165, lng: -0.08960723876953125},
+				{lat: 39.97159501467053, lng: -0.08548736572265625},
+			];
+
+			var graoCoordsPoly = [
+				{lat: 39.948174225938324, lng: 0.001201629638671875},
+				{lat: 39.95422755797632, lng: 0.002231597900390625},
+				{lat: 39.95764876954889, lng: -0.00652313232421875},
+				{lat: 39.964227541526895, lng: -0.00446319580078125},
+				{lat: 39.96949010336696, lng: 0.00858306884765625},
+				{lat: 40.017229330321484, lng: 0.030040740966796875},
+				{lat: 40.01512582498669, lng: 0.03879547119140625},
+				{lat: 39.98277626907891, lng: 0.025577545166015625},
+				{lat: 39.97790935965889, lng: 0.024547576904296875},
+				{lat: 39.97527845347856, lng: 0.028324127197265625},
+				{lat: 39.972647446014925, lng: 0.028324127197265625},
+				{lat: 39.96830606227376, lng: 0.032787322998046875},
+				{lat: 39.95922773254976, lng: 0.030040740966796875},
+				{lat: 39.9600172003783, lng: 0.02643585205078125},
+				{lat: 39.966858873085926, lng: 0.028324127197265625},
+				{lat: 39.965411653261505, lng: 0.01750946044921875},
+				{lat: 39.9667273089133, lng: 0.0130462646484375},
+				{lat: 39.95962246760336, lng: 0.010128021240234375},
+				{lat: 39.95817509460007, lng: 0.0185394287109375},
+				{lat: 39.94738462139562, lng: 0.014247894287109375}
+			];
+
+            ujiPolygon = new google.maps.Polygon({
+                paths: ujiCoordsPoly,
+                strokeColor: '#FF6133',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF6133',
+                fillOpacity: 0.1
+            });
+
+            var contentUji = '<div id="content" style="color:#4a87d3">' +
+                    '<h2 style="color:#4a87d3">Jaume I University </h2>'+
+                    '<p align="left" style="color:#4a87d3">' +
+                    '<b style="color:#4a87d3">Address: </b> Avenida de Vicent Sos Baynat, s/n, 12071 Castellón <br>' +
+                    '<b style="color:#4a87d3">Teléfono: </b> +34 902320320<br>' +
+                    '<b style="color:#4a87d3">Web Page: </b><a href="https://www.uji.es">'+
+                    'https://www.uji.es</a></p>'+
+                    '</div>';
+
+            var infoUJI = new google.maps.InfoWindow({
+                content: contentUji
+            });
+
+
+            ujiPolygon.addListener('click', function() {
+                infoUJI.open(map, ujiPolygon);
+            });
+
+
+			castellonPolygon = new google.maps.Polygon({
+				paths: castellonCoordsPoly,
+				strokeColor: '#0080FF',
+				strokeOpacity: 0.8,
+				strokeWeight: 2,
+				fillColor: '#0080FF',
+				fillOpacity: 0.1
+			});
+
+			graoPolygon = new google.maps.Polygon({
+				paths: graoCoordsPoly,
+				strokeColor: '#0080FF',
+				strokeOpacity: 0.8,
+				strokeWeight: 2,
+				fillColor: '#0080FF',
+				fillOpacity: 0.1
+			});
+
+
+			castellonPolygon.setMap(map);
+			graoPolygon.setMap(map);
+            //ujiPolygon.setMap(map);
+
+
+		}
+
+	</script>
+</head>
+<body onload="initMap()">
+<ul class="topnav">
+	<li><a href="#header">Home</a></li>
+	<li><a href="#one">Information</a></li>
+	<li><a href="#two">Speakers</a></li>
+	<li><a href="#three">Location</a></li>
+	<li><a href="#four">Program</a></li>
+	<li><a href="#five">Registration and Submission</a></li>
+	<li><a href="#six">About us</a></li>
+	<li><a href="#seven">Contact</a></li>
+	<li><a href="#eight">Sponsors</a></li>
+	<li class="icon">
+		<a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+	</li>
+</ul>
+<!--</nav>-->
+
+<script>
+	function myFunction() {
+		document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+	}
+</script>
+
+
+<!-- Header: GEOMUNDUS PRESENTATION -->
+<section id="header">
+	<div class="inner">
+		<!--<span class="image fit"><img src="images/logo.png" alt="" height="200" width="200"/></span>-->
+		<h1> <strong>GEOMUNDUS 2017</strong><br /></h1>
+		<h2>Institute for Geoinformatics at the University of Münster, Germany <strong>9th-10th November,2017</strong> </h2>
+		<p><strong>"Together we map the world"</strong></p>
+		<ul class="actions">
+			<li><a href="#one" class="button  scrolly">Discover</a></li>
+		</ul>
+	</div>
+</section>
+
+<!-- One: WHAT IS GEOMUNDUS -->
+<section id="one" class="main style1">
+	<div class="container">
+		<div class="row 150%">
+			<div class="12u 12u$(medium)">
+				<header class="major">
+					<h2>What is Geomundus?<br />
+					</h2>
+				</header>
+				<p>Geomundus is an international symposium on Geography, Earth and Environmental Studies, held by the students from the consortium of Erasmus Mundus (EM) International Master's program in Geospatial Technologies and the GEO-C Joint Doctorate in Geoinformatics: Enabling Open Cities, funded in the Marie Curie International Training Networks (ITN) program. It is a free conference organized by students, for students. This year (2017) the conference will be held in Münster, Germany, from 9th to 11th of November.</p>
+				<h2>Why Geomundus?<br />
+				</h2>
+				</header>
+				<p> 
+It stands as an opportunity to learn, to share scientific research and knowledge, and to meet other peers whose work and study in the immense world of “Geo”. It comprehends (but is not limited to) the Geographic Information Science, from Data Analysis and Management to the new emerging topics - Data Modelling, GeoApps, Augmented Reality, Big Data, Sensors, Open Data and Software, Machine Learning , and all the fields they can be applied to – Agriculture, Ecology, Climate Change, Disaster Management.
+We aim to encourage the professional development of Erasmus Mundus, GEO-C as well as other students by providing an opportunity for them to share, present and discuss their own research but also learn from the work of other fellows and professionals. The symposium also creates a forum to meet students from all over the world, with a wide range of backgrounds.
+</p>
+				<ul class="actions">
+					<!-- <li><a href="#" class="button">Discover</a></li> -->
+				</ul>
+			</div>
+			<!--<div class="4u$ 12u$(medium) important(medium)">
+				<span class="image fit"><img src="images/introduction.jpg" alt="" /></span>
+			</div>-->
+		</div>
+	</div>
+</section>
+
+<!-- Two: SPEAKERS -->
+
+
+   <!-- <section id="two" class="main style2">
+        <div class="container">
+            <header class="major">
+                <h2>SPEAKERS</h2>
+            </header>
+            <p>Watch this space for all of our latest speaker announcements! Make sure to visit their blogs or websites, and also follow them on Twitter.</p>
+
+			<div class="row 150%">
+				<div class="4u 12u$(medium)">
+					<span class="image fit2"><img src="images/user2.png" alt="" /></span>
+					<ul class="actions" align="center">
+						<li><a href="http://geog.ucsb.edu/~amurray/" class="button" target="_blank">Personal Web</a></li>
+						<li><a href="" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+						<li><a href="" class="icon alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+					</ul>
+
+				</div>
+				<div class="8u 12u$(medium)">
+					<h3  align="center" style="background-color:#8addaa; color:white;text-align: center;"><strong>Alan Murray </strong></h3>
+					<h5 align="center">
+						<i> Professor, Department of Geography at University of California, Santa Barbara<br>
+							Associate editor for Socio-Economic Planning Sciences and Annals of the Association of American Geographers<br>
+							</i>
+					</h5>
+					<p align="justify"> Alan Murray is a Professor in the Department of Geography at University of California at Santa Barbara. He previously held academic appointments at Drexel University, Arizona State University and Ohio State University. He is editor of International Regional Science Review, associate editor for Socio-Economic Planning Sciences and Annals of the Association of American Geographers. His research and teaching interests include: geographic information science; spatial optimization; health informatics; urban growth and development; land use planning; urban, regional, and natural resource planning and development; and, infrastructure and transportation systems. He is the author of two books and over 220 research articles, book chapters and proceedings papers.</p>
+				</div>
+				<hr align="center" width="100%">
+			</div>
+
+			<div class="row 150%">
+				<div class="4u 12u$(medium)">
+					<span class="image fit2"><img src="images/user1.png" alt="" /></span>
+					<ul class="actions" align="center">
+						<li><a href="http://sites.psu.edu/arobinson/" class="button" target="_blank">Personal Web</a></li>
+						<li><a href="https://twitter.com/A_C_Robinson" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.linkedin.com/in/anthony-robinson-6b318511" class="icon alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+					</ul>
+
+				</div>
+				<div class="8u 12u$(medium)">
+					<h3  align="center" style="background-color:#9dc66b; color:white;text-align: center;"><strong>Anthony C. Robinson</strong></h3>
+					<h5 align="center">
+						<i>Assistant Professor, Department of Geography, University of Pennsylvania<br>
+							Director for Online Geospatial Education, John A. Dutton e-Education Institute<br>
+							Assistant Director, GeoVISTA Center</i>
+					</h5>
+					<p align="justify"> Dr. Anthony Robinson is Assistant Professor, Director for Online Geospatial Education programs, and Assistant Director for the GeoVISTA research center in the Department of Geography at Penn State University. Dr. Robinson's research focuses on the science of interface and interaction design for geographic visualization software tools. He has developed interface design and usability assessment methods for integrating geographic visualization tools with work in epidemiology, crisis management, and homeland security. He currently serves as the Chair of the Commission on Visual Analytics for the International Cartographic Association. In support of geospatial education, Robinson directs Penn State’s Online Geospatial Education efforts, including its Master of GIS and Post-Baccalaureate GIS Certificate programs, which have served over 5000 students since 1999. Robinson also teaches Maps and the Geospatial Revolution on Coursera, a MOOC that has enrolled over 100,000 students around the world.</p>
+				</div>
+				<hr align="center" width="100%">
+			</div>
+
+			<div class="row 150%">
+				<div class="4u 12u$(medium)">
+					<span class="image fit2"><img src="images/user3.png" alt="" style="width:300px;height:340px;"/></span>
+					<ul class="actions" align="center">
+						<li><a href="http://www.itc.nl/resumes/sliuzas" class="button" target="_blank">Personal Web</a></li>
+						<li><a href="https://twitter.com/richardsliuzas" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+						<li><a href="" class="icon alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+					</ul>
+
+				</div>
+				<div class="8u 12u$(medium)">
+					<h3  align="center" style="background-color:#6bd4c8; color:white;text-align: center;"><strong>Richard Sliuzas</strong></h3>
+					<h5 align="center">
+						<i>Associate Professor in Urban Planning, Department Urban an Regional Planning, </br> Faculty of Geo-information Science and Earth Observation, University of Twente</i>
+					</h5>
+					<p align="justify">Richard graduated as a Town Planner from the University of South Australia (formerly SAIT) in 1979. He completed a Post-graduate Diploma and MSc degree in Urban Survey and Human Settlements Analysis at the ITC in 1980 and 1988 respectively. In 2004 he obtained a PhD from the Faculty of Geographical Sciences, Utrecht University, for his research entitled "Managing informal settlements: a study using geographic information technology in Dar es Salaam Tanzania". He joined ITC in December 1983 where he is currently Associate Professor in Urban Planning within the Department of Urban and Regional Planning and Geo-information Management.</p>
+				</div>
+				<hr align="center" width="100%">
+			</div>
+		</div>
+	</section>-->
+
+
+<!-- Three: LOCATION CASTELLÓN DE LA PLANA -->
+<section id="three" class="main style1"> <!--class="main style1 special"-->
+	<div class="container">
+		<div class="row 150%">
+			<div  align="left" class="6u 12u$(medium)">
+				<!-- Photos: University and Castellón de la Plana-->
+				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+				<script type="text/javascript">
+					$(function(){
+						var scroller = $('#scroller div.innerScrollArea');
+						var scrollerContent = scroller.children('ul');
+						scrollerContent.children().clone().appendTo(scrollerContent);
+						var curX = 0;
+						scrollerContent.children().each(function(){
+							var $this = $(this);
+							$this.css('left', curX);
+							curX += $this.outerWidth(true);
+						});
+						var fullW = curX / 2;
+						var viewportW = scroller.width();
+
+						// Scrolling speed management
+						var controller = {curSpeed:0, fullSpeed:2};
+						var $controller = $(controller);
+						var tweenToNewSpeed = function(newSpeed, duration)
+						{
+							if (duration === undefined)
+								duration = 600;
+							$controller.stop(true).animate({curSpeed:newSpeed}, duration);
+						};
+
+						// Pause on hover
+						scroller.hover(function(){
+							tweenToNewSpeed(0);
+						}, function(){
+							tweenToNewSpeed(controller.fullSpeed);
+						});
+
+						// Scrolling management; start the automatical scrolling
+						var doScroll = function()
+						{
+							var curX = scroller.scrollLeft();
+							var newX = curX + controller.curSpeed;
+							if (newX > fullW*2 - viewportW)
+								newX -= fullW;
+							scroller.scrollLeft(newX);
+						};
+						setInterval(doScroll, 20);
+						tweenToNewSpeed(controller.fullSpeed);
+					});
+				</script>
+					<div  id="scroller" style=" max-width:100%; width: 550px; height: 400px;">
+						<div class="innerScrollArea">
+							<ul>
+								<!-- Define photos here -->
+								<li><img src="images/image1.jpg" width="600" height="400" /></li>
+								<li><img src="images/image2.jpg" width="600" height="400" /></li>
+								<li><img src="images/image3.jpg" width="600" height="400" /></li>
+								<li><img src="images/image4.jpg" width="600" height="400" /></li>
+							</ul>
+						</div>
+					</div>
+			</div>
+			<div class="6u$ 12u$(medium)">
+				<header align="center" class="major">
+					<h2 align="center">Münster<br />
+						Universitat Jaume I<br /></h2>
+					<p align="center">	INIT - Institute of New Imaging Technologies</p>
+				</header>
+				<p align="center">GeoMundus 2016 will be held in Castellón de la Plana, a pleasant, sunlit town that lies between the Desert de les Palmes hills and the Mediterranean Sea, and is surrounded by orange groves. It is the capital of the province of Castellon, Spain and situated 65 km north of Valencia and 285 south of Barcelona. The venue is Universitat Jaume I, Avenida de Vicent Sos Baynat, s/n, 12071 Castellón, Spain.</p>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="three" class="main style2 special">
+	<ul class="major-icons">
+		<li><span onclick="setMapVisibility('flight');" class="icon style3 major fa-plane"></span></li>
+		<li><span onclick="setMapVisibility('train');" class="icon style3 major fa-train"></span></li>
+		<li><span onclick="setMapVisibility('location');"class="icon style3 major fa-map-marker"></span></li>
+		<li><span onclick="setMapVisibility('bed');"class="icon style4 major fa-bed"></span></li>
+	</ul>
+	<div id="map_section">
+		<div id="map" class="container submission"></div>
+		<script>
+
+
+			var castellonAirport;
+			var valenciaAirport;
+			var barcelonaAirport;
+
+			var castellonTrain;
+			var valenciaTrain;
+			var barcelonaTrain;
+
+            var university;
+            var grao;
+            var ribaltaPark;
+
+            var hotelLuz;
+
+
+            function clearObjectFromMap(object){
+                if(object!=null){
+                    object.setMap(null);
+                }
+            }
+
+			function setMapVisibility(itemClicked) {
+					//document.getElementById('map_section').style.display = 'inline';
+					window.location.hash = '#map_section';
+
+
+                clearObjectFromMap(castellonAirport);
+                clearObjectFromMap(valenciaAirport);
+                clearObjectFromMap(barcelonaAirport);
+                clearObjectFromMap(castellonTrain);
+                clearObjectFromMap(valenciaTrain);
+                clearObjectFromMap(barcelonaTrain);
+                clearObjectFromMap(university);
+                clearObjectFromMap(grao);
+                clearObjectFromMap(ribaltaPark);
+                clearObjectFromMap(hotelLuz);
+
+
+					switch(itemClicked) {
+						case "flight":
+						{
+							//var bounds = new google.maps.LatLngBounds();
+
+							//Airports
+							var imageAirport = {
+								url: 'images/airport.png'
+							};
+							align="left"
+							var castellonLoc = new google.maps.LatLng(40.212595 ,0.073004);
+							var valenciaLoc = new google.maps.LatLng(39.489216 ,-0.478004);
+							var barcelonaLoc = new google.maps.LatLng(41.297276 ,2.083326);
+
+							var contentCastellon = '<div id="content" style="color:#4686A0">' +
+									'<h2 style="color:#4686A0">Castellón–Costa Azahar Airport</h2>'+
+									'<p  style="color:#4686A0">' +
+									'<b style="color:#4686A0">Address: </b> Carretera CV-13, Km 2.4, 12181 Benlloch, Castelló, Spain <br>' +
+									'<b style="color:#4686A0">Teléfono: </b> +34 964 23 90 18 <br>' +
+									'<b style="color:#4686A0">Web Page: </b><a href="http://www.aeropuerto-castellon.com/home">'+
+									'http://www.aeropuerto-castellon.com/home</a></p>'+
+									'</div>';
+
+							var contentBarcelona = '<div id="content" style="color:#4686A0">' +
+									'<h2 style="color:#4686A0">Barcelona–El Prat Airport</h2>'+
+									'<p align="left" style="color:#4686A0">' +
+									'<b style="color:#4686A0">Address: </b> 08820 El Prat de Llobregat, Barcelona, Spain <br>' +
+									'<b style="color:#4686A0">Teléfono: </b> +34 902 40 47 04 <br>' +
+									'<b style="color:#4686A0">Web Page: </b><a href="http://www.aeropuertobarcelona-elprat.com">'+
+									'http://www.aeropuertobarcelona-elprat.com</a></p>'+
+                                    '<b style="color:#4686A0">Transit: </b><a href="http://bit.ly/1VHDCtk">'+
+                                    'How to get Castellón </a></p>'+
+									'</div>';
+
+							var contentValencia = '<div id="content" style="color:#4686A0">' +
+									'<h2 style="color:#4686A0">Manises Valencia Airport</h2>'+
+									'<p align="left" style="color:#4686A0">' +
+									'<b style="color:#4686A0">Address: </b> Carretera del Aeropuerto, s/n, 46940 Manises, Valencia, Spain <br>' +
+									'<b style="color:#4686A0">Teléfono: </b> +34 902 40 47 04 <br>' +
+									'<b style="color:#4686A0">Web Page: </b><a href="http://www.aeropuerto-valencia.com">'+
+									'http://www.aeropuerto-valencia.com</a></p>'+
+                                    '<b style="color:#4686A0">Transit: </b><a href="http://bit.ly/1ZrmRl6">'+
+                                    'How to get Castellón </a></p>'+
+									'</div>';
+
+							var infoCastellon = new google.maps.InfoWindow({
+								content: contentCastellon
+							});
+
+							var infoValencia = new google.maps.InfoWindow({
+								content: contentValencia
+							});
+
+
+							var infoBarcelona = new google.maps.InfoWindow({
+								content: contentBarcelona
+							});
+
+
+
+							castellonAirport = new google.maps.Marker({
+								position: castellonLoc,
+								map: map,
+								icon: imageAirport,
+                                animation: google.maps.Animation.BOUNCE,
+							});
+
+							valenciaAirport = new google.maps.Marker({
+								position: valenciaLoc,
+								map: map,
+								icon: imageAirport,
+                                animation: google.maps.Animation.BOUNCE,
+							});
+
+							barcelonaAirport = new google.maps.Marker({
+								position: barcelonaLoc,
+								map: map,
+								icon: imageAirport,
+                                animation: google.maps.Animation.BOUNCE,
+							});
+
+							map.panTo(castellonLoc);
+							map.setZoom(7);
+
+							castellonAirport.addListener('click', function() {
+								infoCastellon.open(map, castellonAirport);
+							});
+
+							valenciaAirport.addListener('click', function() {
+								infoValencia.open(map, valenciaAirport);
+							});
+
+							barcelonaAirport.addListener('click', function() {
+								infoBarcelona.open(map, barcelonaAirport);
+							});
+
+
+
+						}
+							break;
+						case "train":
+						{
+							//Train
+							var imageTrain = {
+								url: 'images/train.png'
+							};
+
+							var castellonLoc = new google.maps.LatLng(39.987890, -0.052657);
+							var valenciaLoc = new google.maps.LatLng(39.465981, -0.377467);
+							var barcelonaLoc = new google.maps.LatLng(41.379093, 2.140134);
+
+                            var contentCastellon = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Castelló Railway Station</h2>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b> Calle Pintor Oliet 2, 12006  Castellón de la Plana <br>' +
+                                    '<b style="color:#4a87d3">Teléfono: </b> +34 902320320<br>' +
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="http://www.renfe.com/EN/viajeros/index.html">'+
+                                    'http://www.renfe.com/EN/viajeros/index.html</a></p>'+
+                                    '</div>';
+
+                            var contentBarcelona = '<div id="content" style="color:#4686A0">' +
+                                    '<h2 style="color:#4686A0">Barcelona Sants railway station</h2>'+
+                                    '<p align="left" style="color:#4686A0">' +
+                                    '<b style="color:#4686A0">Address: </b> Carrer del Rector Triadó 75, 08014 Barcelona <br>' +
+                                    '<b style="color:#4686A0">Teléfono: </b> +34 902 320 320 <br>' +
+                                    '<b style="color:#4686A0">Web Page: </b><a href="http://www.renfe.com/EN/viajeros/index.html">'+
+                                    'http://www.renfe.com/EN/viajeros/index.html</a></p>'+
+                                    '</div>';
+
+                            var contentValencia = '<div id="content" style="color:#4686A0">' +
+                                    '<h2 style="color:#4686A0">Estació del Nord, Valencia</h2>'+
+                                    '<p align="left" style="color:#4686A0">' +
+                                    '<b style="color:#4686A0">Address: </b> Carrer de Alacant 25, 46004 Valencia <br>' +
+                                    '<b style="color:#4686A0">Teléfono: </b> +34 902 320 320 <br>' +
+                                    '<b style="color:#4686A0">Web Page: </b><a href="http://www.renfe.com/viajeros/cercanias/valencia/">'+
+                                    'http://www.renfe.com/viajeros/cercanias/valencia/</a></p>'+
+                                    '</div>';
+
+                            var infoCastellon = new google.maps.InfoWindow({
+                                content: contentCastellon
+                            });
+
+                            var infoValencia = new google.maps.InfoWindow({
+                                content: contentValencia
+                            });
+
+
+                            var infoBarcelona = new google.maps.InfoWindow({
+                                content: contentBarcelona
+                            });
+
+							castellonTrain = new google.maps.Marker({
+								position: castellonLoc,
+								map: map,
+								icon: imageTrain,
+                                animation: google.maps.Animation.BOUNCE
+							});
+
+							valenciaTrain = new google.maps.Marker({
+								position: valenciaLoc,
+								map: map,
+								icon: imageTrain,
+                                animation: google.maps.Animation.BOUNCE
+							});
+
+							barcelonaTrain = new google.maps.Marker({
+								position: barcelonaLoc,
+								map: map,
+								icon: imageTrain,
+                                animation: google.maps.Animation.BOUNCE
+							});
+
+                            castellonTrain.addListener('click', function() {
+                                infoCastellon.open(map, castellonTrain);
+                            });
+
+                            valenciaTrain.addListener('click', function() {
+                                infoValencia.open(map, valenciaTrain);
+                            });
+
+                            barcelonaTrain.addListener('click', function() {
+                                infoBarcelona.open(map, barcelonaTrain);
+                            });
+
+							map.panTo(castellonLoc);
+							map.setZoom(7);
+
+						}
+							break;
+						case "location":
+						{
+
+                            var imageUJI = {
+                                url: 'images/uni.png'
+                            };
+
+                            var imageGrao = {
+                                url: 'images/port.png'
+                            };
+
+                            var imageRibalta = {
+                                url: 'images/park.png'
+                            };
+
+                            var castellonLoc = new google.maps.LatLng(39.987890, -0.052657);
+                            var ujiLoc = new google.maps.LatLng(39.993785, -0.073790);
+                            var graoLoc = new google.maps.LatLng(39.9832, -0.03537);
+                            var ribaltaLoc = new google.maps.LatLng(39.9877029, -0.0448365);
+
+
+
+                            var contentEspaitec = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Espaitec 2, 2nd floor, conference room </h2>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+									'<b style="color:#4a87d3">Address: </b> Universitat Jaume I, Castelló de la Plana <br>' +
+                                    '<b style="color:#4a87d3">Telephone: </b> +34 964387390<br>' +
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="http://espaitec.uji.es">'+
+                                    'http://espaitec.uji.es</a></p>'+
+                                    '</div>';
+
+                            var contentGrao = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">CONFERENCE DINNER - RESTAURANTE GAMBRINUS BORRULL </h2>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b> Plaza del Juez Borrull, 15, 12003 Castellón de la Plana <br>' +
+                                    '<b style="color:#4a87d3">Telephone: </b> +34 964 22 99 00<br>' +
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="http://gambrinus.es/">'+
+                                    'http://www.gambrinus.es/</a></p>'+
+                                    '</div>';
+
+							var contentRibalta = '<div id="content" style="color:#4a87d3">' +
+									'<h2 style="color:#4a87d3">MEETING POINT /RIBALTA PARK - LA FAROLA</h2>'+
+									'<p align="left" style="color:#4a87d3">' +
+									'<b style="color:#4a87d3">Address: </b> Parque De Ribalta - La Farola, Castellón de la Plana, Spain <br>' +
+									'</div>';
+
+                            var infoEspaitec = new google.maps.InfoWindow({
+                                content: contentEspaitec
+                            });
+
+                            var infoGrao = new google.maps.InfoWindow({
+                                content: contentGrao
+                            });
+
+							var infoRibalta = new google.maps.InfoWindow({
+								content: contentRibalta
+							});
+
+                            university = new google.maps.Marker({
+                                position: ujiLoc,
+                                map: map,
+                                icon: imageUJI,
+                                animation: google.maps.Animation.BOUNCE
+                            });
+
+                            grao = new google.maps.Marker({
+                                position: graoLoc,
+                                map: map,
+                                icon: imageGrao,
+                                animation: google.maps.Animation.BOUNCE
+                            });
+
+							ribaltaPark = new google.maps.Marker({
+								position: ribaltaLoc,
+								map: map,
+								icon: imageRibalta,
+                                animation: google.maps.Animation.BOUNCE
+							});
+
+                            university.addListener('click', function() {
+                                infoEspaitec.open(map, university);
+                                infoGrao.close();
+								infoRibalta.close();
+                            });
+
+                            grao.addListener('click', function() {
+                                infoGrao.open(map, grao);
+                                infoEspaitec.close();
+								infoRibalta.close();
+                            });
+
+							ribaltaPark.addListener('click', function() {
+								infoRibalta.open(map, ribaltaPark);
+                                infoEspaitec.close();
+								infoGrao.close();
+							});
+
+
+                            map.panTo(castellonLoc);
+                            map.setZoom(13);
+						}
+							break;
+						case "bed":
+						{
+                            var imageHotel = {
+                                url: 'images/hotel.png'
+                            };
+
+                            var hotelLuzLoc = new google.maps.LatLng(39.989323, -0.050653);
+
+                            var contentHotel = '<div id="content" style="color:#4a87d3">' +
+                                    '<h2 style="color:#4a87d3">Sercotel Luz Castellón</h2><br>'+
+                                    '<h3 style="color:#4a87d3">Deluxe Collection Hotel</h3><br>'+
+                                    '<p align="left" style="color:#4a87d3">' +
+                                    '<b style="color:#4a87d3">Address: </b> Carrer del Pintor Oliet, 3, 12006 Castellón <br>' +
+                                    '<b style="color:#4a87d3">Teléfono: </b> +34 964201010<br>' +
+                                    '<b style="color:#4a87d3">Web Page: </b><a href="http://en.hotelluz.com">'+
+                                    'http://en.hotelluz.com</a></p>'+
+                                    '</div>';
+
+                            var infoHotel = new google.maps.InfoWindow({
+                                content: contentHotel
+                            });
+
+                            hotelLuz = new google.maps.Marker({
+                                position: hotelLuzLoc,
+                                map: map,
+                                icon: imageHotel,
+                                animation: google.maps.Animation.BOUNCE
+                            });
+
+                            hotelLuz.addListener('click', function() {
+                                infoHotel.open(map, hotelLuz);
+                            });
+
+							map.panTo(castellonLoc);
+							map.setZoom(13);
+						}
+							break;
+						default:{
+						}
+					}
+			}
+
+			$(window).resize(function() {
+				google.maps.event.trigger(map, "resize");
+				map.setCenter(new google.maps.LatLng(40.212595 ,0.073004));
+			});
+		</script>
+	</div>
+	<br>
+	<div class="row 100%">
+		<div class="4u 12u$(medium)">
+			<h2>Conference Venue</h2>
+			<p> Universitat Jaume I	- Espaitec 2,2n floor, conference room <br>
+				Avenida de Vicent Sos Baynat, 12071 Castellón de la Plana<br>
+				<b>Friday and Saturday </b></p>
+		</div>
+		<div class="4u 12u$(medium)">
+			<h2>Conference Dinner</h2>
+			<p> Restaurant Gambrinus Borrull <br>
+				Plaza del Juez Borrull, 15, 12003 Castellón de la Plana<br>
+				<b>Friday at 20:30 </b></p>
+		</div>
+		<div class="4u 12u$(medium)">
+			<h2>Informa Meeting</h2>
+			<p> Parque Ribalta, Plaça La Farola,12003 Castellón de la Plana<br>
+				<b>Thursday at 19:00 </b></p>
+		</div>
+
+	</div>
+
+
+</section>
+
+<!-- Four: PROGRAM AND SCHEDULE -->
+<section id="four" class="main style1">
+	<div class="container">
+		<header class="major">
+			<h2>Program</h2>
+		</header>
+		<p>Our programme is constantly evolving as we get closer to the event. You can keep up to date with all new announcements on our social networks. </p>
+
+		<div id="responsiveTabsDemo" class="css3-tabstrip" >
+			<ul>
+				<li>
+					<input type="radio" name="css3-tabstrip-0" id="css3-tabstrip-0-0" /><label for="css3-tabstrip-0-0">Thursday, 3th</label>
+					<div class="table-wrapper">
+						<table class="alt">
+							<thead>
+							<tr>
+								<th>Time</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>19:00</td>
+								<td><b style="color:#18af8a">Welcome to Münster</b><br> Meeting point: <u><a href='http://bit.ly/parqueribaltafarola' target="_blank">Informal event. Meet outside Domplatz.</a></u><br> We will see the most important places of Münster, like Plaza Mayor, Plaza Santa Clara and eventually we will end up at Tascas</td>
+							</tr>
+							<tr>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li>
+					<input type="radio" name="css3-tabstrip-0" checked="checked" id="css3-tabstrip-0-1" /><label for="css3-tabstrip-0-1">Friday, 4th</label>
+					<div class="table-wrapper">
+						<table class="alt">
+							<thead>
+							<tr>
+								<th>Time</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>8:30</td>
+								<td>Registration</td>
+							</tr>
+							<tr>
+								<td>9:15</td>
+								<td>Opening Ceremony</td>
+							</tr>
+							<tr>
+								<td>9:30</td>
+								<td><b style="color:#4CAF50">Dr. Alan Murray "Why You Should Care About Advanced Spatial Analytics"</b><br>
+									This talk discusses a number of important urban, economic, social and environmental planning problem contexts, highlighting the need for advanced spatial analytics. The evolution of spatial analytics from simplified assumptions to more nuanced formalizations is reviewed. Computing, finer data and geographic information science are shown to be central in advancements. Empirical findings are presented, illustrating the significance and substantive importance of advanced spatial analytical capabilities.</td>
+							</tr>
+							<tr>
+								<td>10:15</td>
+								<td><b style="color:#4686a0">Paper Presentation</b><br>
+									<b>Dr. Erdem, Canakkale Onsekiz Mart University </b> "Use of ALOS-PALSAR and LANDSAT Satellite Images Combined with Field Data for Structural Analysis: Examples from Western Anatolia (Turkey)"</td>
+							</tr>
+							<tr>
+								<td>10:45</td>
+								<td>Coffee Break</td>
+							</tr>
+				
+							<tr>
+								<td>12:00</td>
+								<td><b style="color:#4686a0">Paper Presentation</b><br>
+									<b>Sangey Pasang, Masaryk University </b>"Earthquake Induced Landslide Susceptibility Assessment in Bhutan"<br>
+									<b>Albert Sanchez, Universitat Jaume I </b>"Me, my place and my people"<br>
+
+								</td>
+							</tr>
+							<tr>
+								<td>13:00</td>
+								<td>Lunch</td>
+							</tr>
+							<tr>
+								<td>14:30</td>
+								<td><b style="color:#11af85">Dr. Richard Sliuzas "Slum mapping: maps as infrastructures or infrastructuring mapping?"</b><br>
+									Estimates of the number of slum dwellers in the world vary considerably and may be as high as 1 billion persons or more. The level of variability in these estimates depends upon many issues such as: questions of definition; the levels of political and societal importance given to slum related issues; and the technological approaches and practices that may be available to count or estimate slum dwellers or to map the extents and characteristics of slum areas. This presentation differentiates several different types of slum mapping requirements and reviews the main approaches for slum mapping including terrestrial, aerial and space based methods. It considers whether slum maps should be considered as products or rather as processes, and how the notion of infrastructuring, with its emphasis on relational settings in which natural, physical, cultural, political and scientific concerns interplay, may provide a more useful lens to improve the coverage and the quality of slum maps globally. </td>
+							</tr>
+							<tr>
+								<td>15:15</td>
+								<td><b style="color: #9dc66b">Workshop 1: Geovisual Analytics: Problems, Datasets, and Tools</b></br>
+									Facilitator: Anthony C. Robinson<br>
+
+									This workshop will explore key problems, datasets, and tools in Geovisual Analytics, with a focus on practical advice to help participants define the scope of a project and craft a sensible solution. Participants will collaborate to develop and critique new project ideas, including the creation of sketch mockups to help clarify goals. In order to accomplish these tasks, participants should come with a laptop that is able to connect to the internet.</i>
+								</td>
+							</tr>
+							<tr>
+								<td>16:45</td>
+								<td>Coffee Break</td>
+							</tr>
+							<tr>
+								<td>17:15</td>
+								<td><b>Career Development Session</b></td>
+							</tr>
+							<tr>
+								<td>18:00</td>
+								<td>Closing First Day</td>
+							</tr>
+							<tr>
+								<td>20:30</td>
+								<td>Conference Dinner</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li>
+					<input type="radio" name="css3-tabstrip-0" id="css3-tabstrip-0-2" /><label for="css3-tabstrip-0-2">Saturday, 5th</label>
+					<div class="table-wrapper">
+						<table class="alt">
+							<thead>
+							<tr>
+								<th>Time</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>9:30</td>
+								<td>Opening Day</td>
+							</tr>
+							<tr>
+								<td>9:45</td>
+								<td><b style="color:#4CAF50">Dr. Anthony C. Robinson "Making Maps that Matter: New Challenges in Geovisual Analytics"</b>
+									The reach and impact of cartography is more impressive than ever. Big spatial data sources, new map interaction paradigms, and scalable computing are combining to place mapping at the center of solutions to major human and environmental problems. While our discipline benefits from a tremendously rich history of scientific advances in understanding how people can make, use, and interpret maps, new gaps in our knowledge are emerging. These new frontiers are forming as a result of the torrent of data we are receiving, higher expectations from broader audiences of users, and problem contexts that are dynamic and will never have simple solutions. It is in this context that members of the International Cartographic Association (ICA) have been collaborating to develop a new research agenda for cartography in the era of big data. In this talk I will show examples of the challenges we are facing, identifying broad challenges that will require long-term research engagement as well as shorter-term opportunities that can be tackled right away. Two key themes that cut across these challenges are the need to address both the artistic as well as scientific aspects of Cartography, and to ground our work in problem contexts that truly matter to the well-being of people and our planet. Put simply, we have the opportunity to center our research on the goal of making maps that matter - an aim that can concentrate our efforts to solve important problems with geographic information.
+								</td>
+							</tr>
+							<tr>
+								<td>10:30</td>
+								<td>Coffee Break</td>
+							</tr>
+							<tr>
+								<td>11:15</td>
+								<td><b style="color:#4686a0">Paper Presentation</b><br>
+									<b>Fernando Benitez, Universitat Jaume I </b>"A different way to display information to developers and analysts in cities' open data portals, CityData 3.0"<br>
+									<b>Diego Pajarito, Universitat Jaume I </b>" A gamified promotion of green commuting"<br>
+									<b>Edward Pultar</b> "Real-time dashboards for Industrial IoT"<br>
+
+								</td>
+							</tr>
+							<tr>
+								<td>13:00</td>
+								<td>Lunch</td>
+							</tr>
+							<tr>
+								<td>14:30</td>
+								<td><b style="color:#4686a0">Paper Presentation</b><br>
+									<b>Khoi Manh Ngo, Universitat Jaume I </b>"Participatory sensing framework"<br>
+									<b>Manuel Portela, Universitat Jaume I </b>"Situational awareness as a service"<br>
+									<b>Apurva Kochar,  University of Münster </b>"Using Map-Augmented Reality for Forced Migrants"<br>
+
+								</td>
+							</tr>
+							<tr>
+								<td>15:30</td>
+								<td><b style="color: #9dc66b">Workshop 1: Building Geo-Ideas and Exploring Data to create a Smart Cities-Apps</b></br>
+									Facilitator: Fernando Benitez<br>
+									The workshop will be focused in building ideas for developing Geospatial application (that could be used in smart cities i.e. BikesApp, Spatial Literacy, Education Facilities, Health Facilities etc.). During this session the team should also explore, find, download, and research, all the available data that they think could be useful or relevant for the challenge that they choose. At the end of the session, the idea should be, with the information that they discovered, the barriers and suggestions they have, to create a short presentation to expose the issues.</i>
+								</td>
+							</tr>
+							<tr>
+								<td>17:45</td>
+								<td>Closing Ceremony of the end of Conference</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- Five: REGISTRATION AND SUBMISSION -->
+
+<section id="five" class="main style2 special">
+	<div class="container">
+		<header class="major special">
+			<h2>Registration and Submission</h2>
+		</header>
+		<p>Click if you want to <strong>register</strong> in the GeoMundus Conference</p>
+		<ul class="actions uniform">
+			<li><a class="button special" href='https://www.eventbrite.com/e/geomundus-2016-tickets-25859349009' target="_blank">Registration</a></li>
+		</ul>
+
+		<p>Click if you want to <strong>participate</strong> in the GeoMundus Conference</p>
+		<ul class="actions uniform">
+			<li><a class="button special" id='bt1' value='Show Layer' onclick="window.open('https://form.jotformeu.com/61883162780360')">Submit Paper</a></li>
+		</ul>
+
+		<script>
+			function setVisibility(id) {
+				if(document.getElementById('bt1').value=='Hide Layer'){
+					document.getElementById('bt1').value = 'Show Layer';
+					document.getElementById(id).style.display = 'none';
+				}else{
+					document.getElementById('bt1').value = 'Hide Layer';
+					document.getElementById(id).style.display = 'inline';
+				}
+			}
+		</script>
+		<div id="sub3" class="container submission">
+			<div >
+				<br>
+				<P>Submission for either extended abstracts or posters is open starting from <strong><font color="#adff2f">June 1st</font></strong>, 2016 till <strong><font color="#adff2f">July 25th</font></strong>, 2016.
+					Acceptance notification will be on <strong><font color="#adff2f">August 10th</font></strong>.
+					After acceptance,the extended abstracts will be published on Geomundus website. </p><br>
+				<div align=center>
+					<u><h4>Extended Abstract Submission</h4></u>
+					<p>Title (10 words or fewer)<br>
+						Author/Presenter name(s)<br>
+						Institution / Company name <br>
+						Complete address, phone, and email information<br>
+						Brief presenter biography plus photo (optional)<br>
+						Abstract (one paragraph)<br>
+						Keywords<br>
+						Conclusions<br>
+						References<br>
+						2-4 pages long document<br>
+						Format: PDF <br>
+						Duration presentation: 10 mim <br>
+						<br>
+						<strong style="color:#8addaa;"><a href="templateExtendedAbstract.docx">Template for Extended Abstract </a><br></strong>
+					</p>
+
+				</div>
+			</div>
+
+			<!--<form action="https://getsimpleform.com/messages?form_api_token=04eb6199859171525b0e58a04002ba41" method="post" enctype="multipart/form-data">-->
+            <form action="MAILTO:info@geomundus.org" method="post" enctype="multipart/form-data">
+				<div class="row uniform 50%">
+					<div class="6u 12u$(xsmall)" style="color:black;">
+						<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" style="color:black;"/>
+					</div>
+					<div class="6u$ 12u$(xsmall)">
+						<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" required />
+					</div>
+					<div class="12u$">
+						<div class="select-wrapper">
+							<select name="demo-category" id="demo-category">
+								<option value="">- Category -</option>
+								<option value="1">GIS</option>
+								<option value="1">Remote Sensing</option>
+								<option value="1">GeoScience</option>
+								<option value="1">GeoInformatics</option>
+								<option value="1">Other</option>
+							</select>
+						</div>
+					</div>
+					<div class="12u$">
+						<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+					</div>
+					<div class="12u$">
+						Select paper to upload:
+						<input type="file" name="fileToUpload" id="fileToUpload" required>
+					</div>
+					<div class="12u$">
+						<ul class="actions">
+							<li><input  type="submit" value="Send Message" class="special" /></li>
+						</ul>
+					</div>
+				</div>
+			</form>
+			<p><em>Alternatively you can send us the document via e-mail.
+				If you have any questions, please contact us and we'll get back to you as soon as possible.</em>
+				<strong>info@geomundus.org</strong>
+			</p>
+		</div>
+	</div>
+</section>
+
+<!-- Six: CONTACT -->
+<!--<section id="six" class="main style1">
+	<div class="container">
+		<header class="major" style="text-align: center;">
+			<h2>2016 Team</h2>
+		</header>
+		<p>GeoMundus is a symposium held by the students from the consortium of Erasmus Mundus (EM) International Master's program in Geospatial Technologies and the GEO-C Joint Doctorate in Geoinformatics.</p>
+		<div class="row 150%">
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#8addaa; color:white;text-align: center;">STEERING TEAM</h4>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/tami.jpg" style="float:left;" alt="Tami Palmer" /> Tami Palmer</br>
+						<a href="https://www.linkedin.com/in/tami-palmer-66048274?" class="icon alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a>
+					</p>
+
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/adeoluwa.jpg" style="float:left;" alt="Adeoluwa Akande" /> Adeoluwa Akande</br>
+						<a href="https://www.linkedin.com/in/adeoluwaakande?" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/jana.jpg" style="float:left;"  /> Jana Lodi Martins <br>
+						<a href="https://www.linkedin.com/in/jana-lodi-martins-b1573637?" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/edorta.jpg" style="float:left;"  /> Edorta Iraegui</br>
+						<a href="https://www.linkedin.com/in/edorta-iraegui-40565865?" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+			</div>
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#4a87d3; color:white; text-align: center;">PROGRAM TEAM</h4>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/apurva.jpg" style="float:left;" alt="Apurva Anil" /> Apurva Kochar </br>
+						<a href="" class="icon alt fa-linkedin" target="_blank"><span class="label"> Linkedin</span></a>
+					</p></br>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/jean.jpg" style="float:left;" alt="Jean Caldieron" />Jean Martin Caldieron </br>
+						<a href="https://www.linkedin.com/in/jean-martin-caldieron-ph-d-3695085?" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p></br>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/angela.jpg" style="float:left;"  /> Angela Afonso</br>
+						<a href="https://www.linkedin.com/in/angela-rodrigues-8ba8b511b?" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p></br>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/abhash.jpg" style="float:left;" /> Abhasha Joshi</br>
+						<a href="https://www.linkedin.com/in/abhasha-joshi-b4062677?" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p></br>
+			</div>
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#4CAF50; color:white; text-align: center;">BUDGET TEAM</h4>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/adrian.png" style="float:left;" /> Adrian Baba</br>
+						<a href="https://ro.linkedin.com/in/adrianbaba89" class="icon alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a>
+					</p></br>
+
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/qadir.jpg" style="float:left;" alt="Qadir Mamode" /> Abdal Qadir Mamode</br>
+						<a href="" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p></br>
+			</div>
+		</div>
+		<div class="row 150%">
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#4686a0; color:white; text-align: center;">WEB TEAM</h4>
+				<p style="float:left;" >
+					<img  class=contact src="images/contact/gina.jpg" style="float:left;" alt="Gina Martinez" />Gina Martinez</br>
+					<a href="https://www.linkedin.com/in/gina-mart%C3%ADnez-prat-47b53790" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+				</p>
+				<p style="float:left;" >
+					<img  class=contact src="images/contact/david.jpg" style="float:left;" alt="David Pardo" /> David Pardo</br>
+					<a href="https://www.linkedin.com/in/david-juli%C3%A1n-pardo-5b847350?" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+				</p>
+			</div>
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#9dc66b; color:white; text-align: center;">PUBLIC RELATIONS TEAM </h4>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/kiana.jpg" style="float:left;" alt="Kiana Kazemi" /> Kiana Kazemi</br>
+						<a href="https://www.linkedin.com/in/kiana-kazemi-566b0056?" class="icon alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/julia.png" style="float:left;" alt="Julia Desiree Velastegui" /> Julia Desiree Velastegui</br>
+						<a href="https://www.linkedin.com/in/julia-velastegui-a8512a9a?" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/laura.jpg" style="float:left;" alt="Laura Giuffrida" /> Laura Giuffrida</br>
+						<a href="https://it.linkedin.com/in/laura-giuffrida-5a628393" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+
+			</div>
+			<div class="4u 12u$(medium)">
+				<h4 style="background-color:#4FA49A; color:white; text-align: center;">LOCAL ORGANIZATION TEAM</h4>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/sushil.jpg" style="float:left;" alt="Sushil Thapa" />Sushil Thapa</br>
+						<a href="" class="icon alt fa-linkedin" target="_blank"><span class="label">Linkedin</span></a>
+					</p>
+					<p style="float:left;" >
+						<img  class=contact src="images/contact/birhane.jpg" style="float:left;" alt="Birhane Guesh" /> Birhane Guesh</br>
+						<a href="https://www.linkedin.com/in/birhane-guesh-848b88b3?" class="icon alt fa-linkedin" target="_blank"> <span class="label">Linkedin</span></a>
+					</p>
+			</div>
+			<div >
+				<h4 style="background-color:#c3e895; color:white; text-align: center;">GEO-C Team</h4>
+				<p style="float:left;" >
+					<img  class=contact src="images/contact/fernando.jpg" style="float:left;" alt="Fernando" />  Fernando Benítez</br>
+
+				</p>
+				<p style="float:left;" >
+					<img  class=contact src="images/contact/khoi.jpg" style="float:left;" alt="Fernando" /> Khoi Manh Ngo</br>
+
+				</p>
+				<p style="float:left;" >
+					<img  class=contact src="images/contact/diego.jpg" style="float:left;" alt="Fernando" />  Diego Pajarito</br>
+
+				</p>
+				<p style="float:left;" >
+					<img  class=contact src="images/contact/manuel.jpg" style="float:left;" alt="Fernando" /> Manuel Portela</br>
+
+				</p>
+				<p style="float:left;" >
+					<img  class=contact src="images/contact/albert.jpg" style="float:left;" alt="Fernando" />Albert Acedo</br>
+
+				</p>
+			</div>
+		</div>
+	</div>
+</section>-->
+<section id="seven" class="main style2">
+	<div class="container" >
+		<header class="major">
+			<h2>Contact</h2>
+		</header>
+		<p>You need help? You have questions? Please use one of the following options to get in touch with us. </p>
+		<div class="row 150%">
+			<div class="4u 12u$(medium)">
+				<h4>Email</h4>
+				<strong>info@geomundus.org</strong>
+			</div>
+			<div class="u 12u$(medium)" style="text-align: left;">
+				<h4>Post address</h4>
+				<strong>Institute for Geoinformatics <br> Heisenbergstraβe 2, D-48149 <br> Münster Germany</strong>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Seven: Sponsors 
+<section id="eight" class="main style1">
+	<div class="container">
+		<header class="major">
+			<h2>Sponsors & Partners</h2>
+		</header>
+		<h3>Should you whish to sponsor the 2016 Geomundus conference, please click the link below</h3>
+		<ul class="actions" align="center">
+			<li><a href="Fundraising.pdf" class="button special" target="_blank">Sponsorship</a></li>
+		</ul>
+
+		<div class="row 150%">
+			<div  align="center" class="12u 12u$(medium)">
+					<a href="http://www.em-a.eu/" target="_blank"><img src="http://geomundus.org/2015/img/ema.jpg"  class="img-circle"></a>
+					<a href="http://www.isegi.unl.pt/" target="_blank"><img src="http://geomundus.org/2015/img/nova.png" class="img-circle"></a>
+					<a href="http://ujiapps.uji.es/" target="_blank"><img src="http://geomundus.org/2015/img/uji.png" class="img-circle"></a>
+					<a href="http://www.uni-muenster.de/en/" target="_blank"><img src="http://geomundus.org/2015/img/wwu.jpg"  class="img-circle"></a>
+					<a href="http://www.geo-c.eu/" target="_blank"><img src="images/contact/geoc.png" height="200" width="200" class="img-circle"></a>
+			</div>
+		</div>
+	</div>
+</section>-->
+
+
+<!-- Footer: SOCIAL NETWORKS -->
+<section id="footer">
+		<div class="container">
+			<header class="major">
+				<h2>Geomundus History</h2>
+				<p>The first GeoMundus conference was held successfully in 2009 at ISEGI, Lisbon, Portugal. Since then, the conference has been held annually always alternating between Castellón (Spain), Münster (Germany) and Lisbon (Portugal).</p>
+			</header>
+	<div class="select-wrapper">
+		<select
+				onchange="location.href=this.options[this.selectedIndex].value"
+				name="elige"
+				size="1">
+			<option value="http://geomundus.org/2016/"selected>
+				<span class="red-black-text">Castell&oacute;n, Spain 2016 <img src="http://geomundus.org/2014/images/spain.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">04<sup>th</sup>-05<sup>th</sup> of November 2016</span></option>
+			<option value="http://geomundus.org/2015/" >
+				<span class="red-black-text">Lisbon, Portugal 2015 <img src="http://geomundus.org/2014/images/portugal.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">20<sup>th</sup>-21<sup>th</sup> of November 2015</span></option>
+			<option value="http://geomundus.org/2014/">
+				<span class="red-black-text">M&uuml;nster, Germany 2014 <img src="http://geomundus.org/2014/images/german.png"  alt="SmashingConf M&uuml;nster, Germany 2014" /></span> <span class="date">7<sup>th</sup>-8<sup>th</sup> of November 2014</span></option>
+			<option value="http://geomundus.org/2013/">
+				<span class="red-black-text">Castell&oacute;n, Spain 2013 <img src="http://geomundus.org/2014/images/spain.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">15<sup>th</sup>-16<sup>th</sup> of November 2013</span></option>
+			<option value="http://geomundus.org/2012/index-2.html">
+				<span class="red-black-text">Lisbon, Portugal 2012 <img src="http://geomundus.org/2014/images/portugal.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">9<sup>th</sup>-10<sup>th</sup> of November 2012</span></option>
+			<option value="http://geomundus.org/2011/index2011.php">
+				<span class="red-black-text">M&uuml;nster, Germany 2011 <img src="http://geomundus.org/2014/images/german.png"  alt="SmashingConf Freiburg 2014" /></span> <span class="date">28<sup>th</sup>-29<sup>th</sup> of October 2011</span>
+			<option value="http://geomundus.wordpress.com/">
+				<span class="red-black-text">Castell&oacute;n, Spain 2010 <img src="http://geomundus.org/2014/images/spain.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">22<sup>th</sup>-23<sup>th</sup> of October 2010</span>
+			<option value="http://geomundus.wordpress.com/previous-editions/geomundus-2009/">
+				<span class="red-black-text">Lisbon, Portugal 2009 <img src="http://geomundus.org/2014/images/portugal.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">29<sup>th</sup>-30<sup>th</sup> of October 2009</span>
+		</select>
+		<br>
+
+	<ul class="icons">
+		<li><a href="https://twitter.com/geomundus" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+		<li><a href="https://www.facebook.com/geomundus/?fref=ts" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+		<li><a href="https://www.instagram.com/geomundus8/" class="icon alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+		<!--<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>-->
+	</ul>
+	<ul class="copyright">
+		<li>&copy; GeoMundus 2016</li><li>Designed by WebTeam</a></li>
+	</ul>
+</section>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
