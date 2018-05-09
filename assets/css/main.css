@@ -2341,9 +2341,8 @@
 
 			.img-circle{
 				border: 10px solid #8addaa;
-
 				height: 200px;
-				border-radius: 50%;
+				border-radius: 70%;
 				margin: 0 2% 2% 0;
 				outline: none;
 			}
