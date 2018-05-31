@@ -19,6 +19,7 @@
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1K1qI88SQ1rk9N6zQ7yHk8vDnm_ldINc"></script>
 	<script type="text/javascript">
+
 		var map;
 		var markers;
 
@@ -527,7 +528,7 @@
 		<div id="responsiveTabsDemo" class="css3-tabstrip" >
 			<ul class="table_list">
 				<li>
-					<input type="radio" name="css3-tabstrip-0" checked="unchecked" id="css3-tabstrip-0-1" /><label for="css3-tabstrip-0-1">Thursday, 6th</label>
+					<input type="radio" name="css3-tabstrip-0" id="css3-tabstrip-0-1" /><label for="css3-tabstrip-0-1">Thursday, 6th</label>
 					<div class="table-wrapper">
 						<table class="alt">
 							<thead>
@@ -539,14 +540,18 @@
 							<tbody>
 								<tr>
 									<td>19:00</td>
-									<td>Introductory tour around the historical centre of Lisbon</td>
+									<td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Introductory tour around the historical centre of Lisbon</a><p style="display:none;" >
+									We would like to invite all the attendees of GeoMundus 2018 to an introductory tour around the historical center of Lisbon.
+									Please join the event to know each other before the conference. Details about the meeting point will be announced soon!
+									</p>
+									</td>
 								</tr>
 						</tbody>
 						</table>
 					</div>
 				</li>
 				<li>
-					<input type="radio" name="css3-tabstrip-0" id="css3-tabstrip-0-2" checked="checked"/><label for="css3-tabstrip-0-2">Friday, 7th</label>
+					<input type="radio" name="css3-tabstrip-0" checked id="css3-tabstrip-0-2" /><label for="css3-tabstrip-0-2">Friday, 7th</label>
 					<div class="table-wrapper">
 						<table class="alt">
 							<thead>
@@ -603,7 +608,18 @@
 							</tr>
 							<tr>
 								<td>16:15</td>
-                <td>Career Development Session</td>
+                <td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Career Development Session</a><p style="display:none;">
+									It is an interactive forum providing a great opportunity for students interested professionally on the practices of geoinformation technologies.<br>
+									Students and the attendees can have a face to face career- perspective-questionnaire like: <br/>
+									1. What are the possibilities and options for building your career in geoinfomatics?<br/>
+									2. Should one pursue further studies (PhD), or go into the workforce after the master degree? <br/>
+									3. Critical ideas for entrepreneurs.<br/>
+									4. How can we influence society through GI knowledge? What are the challenges in such project?<br/>
+									5. Tips for moving the career forward.<br/><br>
+
+
+									Panellists include our keynote speakers and invited guests.
+                                </p></td>
 							</tr>
 							<tr>
 								<td>17:30</td>
@@ -662,12 +678,15 @@
 							</tr>
 							<tr>
 								<td>15:15</td>
-								<td><b style="color: #9dc66b">Concurrent Workshops</b>
+								<td><b style="color: #9dc66b">Concurrent Workshops</b><br>
+									This session includes 4 concurrent workshops.<br> The aim is to provide participants with practical, hands-on exercises and activities.<br>
 									<table  style="border:none;">
-										<tr><td>Workshop 1 (Geoinformatics)</td></tr>
-                  	<tr><td>Workshop 2 (AI in GIS)</td></tr>
+										<tr><td>Workshop 1 <a href="javascript:void(0);" onclick="toggle(this)">+Geoinformatics</a><p style="display:none;">Will be based on the scopes of Geoinformatics in various domain.
+											</p></td></tr>
+                  	<tr><td>Workshop 2 <a href="javascript:void(0);" onclick="toggle(this)">+AI in GIS</a><p style="display:none;">Will focus on application of Artificial Intelligence in Geoinformatics.
+											</p></td></tr>
                   </table>
-
+									Details about the rest two workshops will be announced soon!
 								</td>
 							</tr>
 							<tr>
@@ -692,8 +711,12 @@
 				<h2>Call for Short Papers and Posters</h2>
 			</header>
 		<p>
-			Thank you for your interest in participating in GeoMundus 2018.We are excited to have you! All individuals interested in any aspect of geospatial technologies are invited to submit either a short paper or a poster for consideration as a presentation at GeoMundus.
+			Short paper and Poster submission opens from <strong>June 1<sup>st</sup></strong> to <strong>August 31<sup>st</sup></strong>, 2018.
 		</p>
+		<p>Thank you for your interest in participating in GeoMundus 2018. <br>
+			All individuals interested in any aspect of geospatial technologies are invited to submit either a short paper
+			(<a style="color:orange" href="docs/Short_Paper_Template.docx">Template</a> and <a style="color:orange" href="docs/Short_Paper_Guidelines.docx">Guidelines</a>)
+			OR a <a style="color:orange" href="docs/Poster_Guideline.docx">poster</a> for the presentation at GeoMundus. Participants will be notified about the acceptance of the paper.</p>
 		<p>
             The three best short paper submissions from students will be awarded travel grants to GeoMundus 2018 worth up to <strong> 500 EUR</strong>.
 			The grant covers <strong>hotel accommodation</strong> of up to <strong>200 EUR</strong> (booked by NOVA IMS) and <strong>travel costs</strong> of up to <strong>300 EUR</strong>. Note that only travel costs supported by documentation will be reimbursed.
@@ -703,21 +726,100 @@
 					Please note that GeoMundus <strong>does not provide</strong> invitations and <strong>does not support </strong>Visa Processes.
 				</p>
 
+				<p>
+			During the submission process, you will be asked to identify the most applicable topic for your short paper or poster.<br>
+			Potential topics along with applications of Geospatial Technologies and its Interaction include, but are not limited to:
+
+		</p>
+
+		<div style="column-count: 2;column-gap: 0px;">
+
+		<ul type="disc">
+			<li>				Cadastre			</li>
+			<li>				Cartography			</li>
+			<li>				Environmental Management			</li>
+			<li>				Geodetics			</li>
+			<li>				Geographic Information Science			</li>
+			<li>				Geography			</li>
+			<li>				Geoinformatics			</li>
+			<li>				Geospatial Databases			</li>
+            <li>				Geospatial Data Mining			</li>
+            </ul>
+            <ul>
+			<li>				Geostatistics			</li>
+			<li>				Landscape Ecology			</li>
+			<li>				Location Based Services			</li>
+			<li>				Navigation			</li>
+			<li>				Remote Sensing			</li>
+			<li>				Spatial Cognition			</li>
+			<li>				Spatial Data Science			</li>
+			<li>				Surveying			</li>
+                <li>				Others			</li>
+		</ul>
+
+		</div>
+		<br>
+		<p>
+			We would also like to invite short papers or posters about Artificial Intelligence in Geoinformatics, the sub-theme of our conference.<br> These include:
+		</p>
+        <div style="column-count: 2;column-gap: 0px;">
+		<ul type="disc">
+			<li>				Big Data			</li>
+			<li>				Cloud Computing			</li>
+			<li>				Data Analytics			</li>
+			<li>				Data Visualisation			</li>
+			<li>				Machine Learning			</li>
+			<li>				Deep Learning			</li>
+		</ul>
+<ul>
+			<li>				Unmanned Aerial Systems/LIDAR			</li>
+			<li>				Satellite imageries			</li>
+			<li>				Cognitive Science			</li>
+			<li>				User Adaptivity			</li>
+			<li>				Others			</li>
+		</ul>
+        </div>
+				<div>
+					A confirmation email of receipt will be sent to you after successfully completing the submission form. <br>Please keep a copy of this confirmation for your records.
+				</div>
+				<p>
+					Acceptance notification will be on <strong>9 September 2018</strong>.<br>
+				</p>
+					<p >
+						The accepted short paper and poster will be published on GeoMundus website.
+						For any confusion on templates, formatting and submission, please write an email on <a href="mailto:program@geomundus.org">program@geomundus.org</a>
+
+					</p>
+
+
 
 	</section>
 	<section id="nine" class="main style1">
 		<div class="container">
 			<header class="major">
-				<h2>Registration</h2>
+				<h2>Participant Registration</h2>
 			</header>
-			Registration is free and opens on June 1st, 2018.
+			<p>
+				Simply click on the registration link below to <strong>register</strong> yourself for the 10<sup>th</sup> GeoMundus Conference. Registration is free.<br>
+			Registration is from <strong>1 June</strong> to <strong>30 November</strong> <br>
+			Please Note: Seats at the dinner are limited</p>
+
+		<ul class="actions uniform"  style="text-align: center;">
+			<li><a class="button special" href='https://docs.google.com/forms/d/e/1FAIpQLSfBKXVgLqHwsb0BdCvjvQVe6FS82ALO-VN1AlbLNfZ69lquZg/viewform' target="_blank">Registration</a></li>
+		</ul>
 	</section>
 	<section id="ten" class="main style2">
 		<div class="container">
 			<header class="major">
-				<h2>Submission</h2>
+				<h2>Submissions of Short papers and Posters</h2>
 			</header>
-			Dates will be announced soon!
+			<p>Click the submission link below if you are interested in presenting a short paper or a poster at the 10<sup>th </sup> GeoMundus Conference. Please make sure to follow the templates provided for the submission and indicate if you want to apply for the student travel grant.
+<br>Short paper and poster submission is from <strong>1 June</strong> to <strong>1 August</strong></p>
+		<ul class="actions uniform" style="text-align: center;">
+<li><a class="button special" id='bt1' value='Show Layer'
+				   onclick="window.open('https://form.jotformeu.com/81374121939358')">Short Paper or Poster Submission
+</a></li>
+</ul>
 	</section>
 	<!-- Six: CONTACT -->
 	<section id="six" class="main style1">
@@ -949,7 +1051,7 @@
 				<li>&copy; GeoMundus 2018</li>
 				<li>Designed by GeoMundus WebTeam</li>
 			</ul>
-			<p class="copyright">Website last updated: <time datetime="2018-05-15 23:59">May 15th 2018</time></p>
+			<p class="copyright">Website last updated: <time datetime="2018-05-15 23:59">May 31<sup>th</sup> 2018</time></p>
 		</div>
 	</section>
 
