@@ -6,15 +6,6 @@
 -->
 <html>
 <head>
-	<title>Geomundus 2018</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/globe-24.png" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120535601-1"></script>
 <script>
@@ -24,8 +15,16 @@
 
   gtag('config', 'UA-120535601-1');
 </script>
+	<title>Geomundus 2018</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/globe-24.png" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
-	
+
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1K1qI88SQ1rk9N6zQ7yHk8vDnm_ldINc"></script>
@@ -49,6 +48,12 @@
 
 		var LisbonPortelaAirport;
 		var university;
+    var hotelMundial;
+    var theIndependente;
+    var inspiraSantaMarta;
+    var eurostarsDasLetras;
+    var lisbonSaoBentoHotel;
+    var novotelLisbon;
 		var contentNovaIMS = '<div id="content" style="color:#4a87d3">' +
 			'<h2 style="color:#4a87d3">NOVA Information Management School (NOVA IMS)</h2>' +
 			'<p align="left" style="color:#4a87d3">' +
@@ -77,6 +82,12 @@
 			window.location.hash = '#map_section';
 			clearObjectFromMap(LisbonPortelaAirport);
 			clearObjectFromMap(university);
+      clearObjectFromMap(hotelMundial);
+      clearObjectFromMap(theIndependente);
+      clearObjectFromMap(inspiraSantaMarta);
+      clearObjectFromMap(eurostarsDasLetras);
+      clearObjectFromMap(lisbonSaoBentoHotel);
+      clearObjectFromMap(novotelLisbon);
 
 
 			switch (itemClicked) {
@@ -128,6 +139,184 @@
 						map.setZoom(13);
 					}
 					break;
+          case 'bed':
+          {
+
+            var imageHotel = {
+                url: 'images/hotel.png'
+            };
+            var hotelMundialLoc = new google.maps.LatLng(38.7148437236847, -9.13698690004688);
+            var theIndependenteLoc = new google.maps.LatLng(38.7148526484081, -9.14462266362903);
+            var inspiraSantaMartaLoc = new google.maps.LatLng(38.7231701994101, -9.14558482494839);
+            var eurostarsDasLetrasLoc = new google.maps.LatLng(38.7199082178771, -9.14885469940544);
+            var lisbonSaoBentoHotelLoc  = new google.maps.LatLng(38.7189245217267, -9.15567166364558);
+            var novotelLisbonLoc  = new google.maps.LatLng(38.7363093293204, -9.16210923037327);
+            // var sleepHotelLoc= new google.maps.LatLng(51.960867, 7.636275);
+
+
+              var contenthotelMundial = '<div id="content" style="color:#4a87d3">' +
+                      '<h2 style="color:#4a87d3">Hotel Mundial</h2><br>'+
+                      // '<h3 style="color:#4a87d3">City Center</h3><br>'+
+                      '<p align="left" style="color:#4a87d3">' +
+                      '<b style="color:#4a87d3">Address: </b>Praca Martim Moniz 2<br>' +
+                      // '<b style="color:#4a87d3">Economy Single, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">72,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">	77,- € </b><br/>'+
+                      // '<b style="color:#4a87d3">Web Page: </b><a href="https://www.stadthotel-muenster.de/en/">'+
+                      // 'https://www.stadthotel-muenster.de/en/</a></p>'+
+                      '</div>';
+               var contenttheIndependente = '<div id="content" style="color:#4a87d3">' +
+                      '<h2 style="color:#4a87d3">Hotel The Independente  </h2><br>'+
+                      // '<h3 style="color:#4a87d3">Close to IfGI</h3><br>'+
+                      '<p align="left" style="color:#4a87d3">' +
+                      '<b style="color:#4a87d3">Address: </b>Rua De São Pedro De Alcântara 81<br>' +
+                      // '<b style="color:#4a87d3">Single room, Shower/WC, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">77,- €</b> <br/>'+'<b style="color:#4a87d3">Double room, Shower/WC, breakfast included	</b><br>'+
+                       // '<b style="color:#4a87d3">	102,- € </b><br/>'+
+                      // '<b style="color:#4a87d3">Web Page: </b><a href="http://www.hotel-am-schlosspark-muenster.de">'+
+                      // 'http://www.hotel-am-schlosspark-muenster.de</a></p>'+
+                      '</div>';
+               var contentinspiraSantaMarta = '<div id="content" style="color:#4a87d3">' +
+                      '<h2 style="color:#4a87d3">Inspira Santa Marta</h2><br>'+
+                      // '<h3 style="color:#4a87d3">Münster Central Station</h3><br>'+
+                      '<p align="left" style="color:#4a87d3">' +
+                      '<b style="color:#4a87d3">Address: </b>Rua de Santa Marta, 48<br>' +
+                      // '<b style="color:#4a87d3">Economy Single, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">75,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">	99,- € </b><br/>'+
+                      // '<b style="color:#4a87d3">Web Page: </b><a href="http://www.hotel-conti-muenster.de">'+
+                      // 'http://www.hotel-conti-muenster.de</a></p>'+
+                      '</div>';
+               var contenteurostarsDasLetras = '<div id="content" style="color:#4a87d3">' +
+                      '<h2 style="color:#4a87d3">Eurostars Das Letras </h2><br>'+
+                      // '<h3 style="color:#4a87d3">Aasee</h3><br>'+
+                      '<p align="left" style="color:#4a87d3">' +
+                      '<b style="color:#4a87d3">Address: </b>Rua Castilho, 6 - 12<br>' +
+                      // '<b style="color:#4a87d3">Single room, Shower/WC, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">65,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single room, Shower/WC, breakfast included	</b><br>'+
+                       // '<b style="color:#4a87d3">	70,- € </b><br/>'+
+                       // '<b style="color:#4a87d3">Double room / 1 person, Shower/WC, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">70,- €</b> <br/>'+'<b style="color:#4a87d3">Double room, Shower/WC, breakfast included	</b><br>'+
+                       // '<b style="color:#4a87d3">	75,- € </b><br/>'+
+                   // '<b style="color:#4a87d3">Maisonette (45-55 qm) / 1 person	</b><br>'+
+                       // '<b style="color:#4a87d3">	90,- € </b><br/>'+
+                      // '<b style="color:#4a87d3">Web Page: </b><a href="http://www.agora-muenster.de/">'+
+                      // 'http://www.agora-muenster.de/</a></p>'+
+                      '</div>';
+               var contentlisbonSaoBentoHotel = '<div id="content" style="color:#4a87d3">' +
+                      '<h2 style="color:#4a87d3">Lisbon Sao Bento Hotel</h2><br>'+
+                      // '<h3 style="color:#4a87d3">Aasee</h3><br>'+
+                      '<p align="left" style="color:#4a87d3">' +
+                      '<b style="color:#4a87d3">Address: </b>Rua de São Bento, 353<br>' +
+                      // '<b style="color:#4a87d3">Single room, Shower/WC, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">70,- €</b> <br/>'+'<b style="color:#4a87d3">Single room / 1 person, Shower/WC, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">	80,- € </b><br/>'+
+                   // '<b style="color:#4a87d3">Comfort Double room / 1 person, Shower/WC, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">	90,- € </b><br/>'+
+                   // '<b style="color:#4a87d3">Double room, Shower/WC, breakfast included</b><br>'+
+                       // '<b style="color:#4a87d3">	100,- € </b><br/>'+
+                      // '<b style="color:#4a87d3">Web Page: </b><a href="http://www.seehotel-muenster.de/">'+
+                      // 'http://www.seehotel-muenster.de/</a></p>'+
+                      '</div>';
+               var contentnovotelLisbon = '<div id="content" style="color:#4a87d3">' +
+                      '<h2 style="color:#4a87d3">Novotel Lisbon</h2><br>'+
+                   //    '<h3 style="color:#4a87d3"> Münster Cathedral</h3><br>'+
+                   //    '<p align="left" style="color:#4a87d3">' +
+                   //    '<b style="color:#4a87d3">Address: </b>Wolbecker Str. 1, 48155 Münster<br>' +
+                   //    '<b style="color:#4a87d3">8-bed room </b><br>'+
+                   //     '<b style="color:#4a87d3">17,- €</b> <br/>'+'<b style="color:#4a87d3">4-bed room </b><br>'+
+                   //     '<b style="color:#4a87d3">	20,- € </b><br/>'+
+                   // '<b style="color:#4a87d3">2-bed room </b><br>'+
+                   //     '<b style="color:#4a87d3">	27,- € </b><br/>'+
+                   // '<b style="color:#4a87d3">single room </b><br>'+
+                   //     '<b style="color:#4a87d3">	35,- € </b><br/>'+
+                   //    '<b style="color:#4a87d3">Web Page: </b><a href="sleep-station.de/">'+
+                   //    'sleep-station.de/</a></p>'+
+                      '</div>';
+
+
+              var infohotelMundial = new google.maps.InfoWindow({
+                  content: contenthotelMundial
+              });
+                 var infotheIndependente= new google.maps.InfoWindow({
+                  content: contenttheIndependente
+              });
+                 var infoinspiraSantaMarta = new google.maps.InfoWindow({
+                  content: contentinspiraSantaMarta
+              });
+                 var infoeurostarsDasLetras = new google.maps.InfoWindow({
+                  content: contenteurostarsDasLetras
+              });
+                 var infolisbonSaoBentoHotel = new google.maps.InfoWindow({
+                  content: contentlisbonSaoBentoHotel
+              });
+               var infonovotelLisbon = new google.maps.InfoWindow({
+                  content: contentnovotelLisbon
+              });
+
+              hotelMundial = new google.maps.Marker({
+                  position: hotelMundialLoc,
+                  map: map,
+                  icon: imageHotel,
+                  animation: google.maps.Animation.BOUNCE
+              });
+               theIndependente = new google.maps.Marker({
+                  position: theIndependenteLoc,
+                  map: map,
+                  icon: imageHotel,
+                  animation: google.maps.Animation.BOUNCE
+              });
+
+               inspiraSantaMarta = new google.maps.Marker({
+                  position: inspiraSantaMartaLoc,
+                  map: map,
+                  icon: imageHotel,
+                  animation: google.maps.Animation.BOUNCE
+              });
+
+               eurostarsDasLetras = new google.maps.Marker({
+                  position: eurostarsDasLetrasLoc,
+                  map: map,
+                  icon: imageHotel,
+                  animation: google.maps.Animation.BOUNCE
+              });
+
+               lisbonSaoBentoHotel = new google.maps.Marker({
+                  position: lisbonSaoBentoHotelLoc,
+                  map: map,
+                  icon: imageHotel,
+                  animation: google.maps.Animation.BOUNCE
+              });
+               novotelLisbon = new google.maps.Marker({
+                  position: novotelLisbonLoc,
+                  map: map,
+                  icon: imageHotel,
+                  animation: google.maps.Animation.BOUNCE
+              });
+
+
+              hotelMundial.addListener('click', function() {
+                  infohotelMundial.open(map, hotelMundial);
+              });
+              theIndependente.addListener('click', function() {
+                  infotheIndependente.open(map, theIndependente);
+              });
+              inspiraSantaMarta.addListener('click', function() {
+                  infoinspiraSantaMarta.open(map, inspiraSantaMarta);
+              });
+              eurostarsDasLetras.addListener('click', function() {
+                  infoeurostarsDasLetras.open(map, eurostarsDasLetras);
+              });
+              lisbonSaoBentoHotel.addListener('click', function() {
+                  infolisbonSaoBentoHotel.open(map, lisbonSaoBentoHotel);
+              });
+              novotelLisbon.addListener('click', function() {
+                  infonovotelLisbon.open(map, novotelLisbon);
+              });
+							map.panTo(hotelMundialLoc);
+							map.setZoom(13);
+          }
+          break;
 				default:
 					{}
 			}
@@ -407,7 +596,7 @@
 	</section>
 
 
-	<!-- Three: LOCATION of  MUENSTER -->
+	<!-- Three: LOCATION of  LISBON -->
 	<section id="three" class="main style1">
 		<div class="container">
 			<div class="row 150%">
@@ -489,7 +678,7 @@
 			<li><span onclick="setMapVisibility('flight');" class="icon style3 major fa-plane"></span></li>
 			<!-- <li><span onclick="setMapVisibility('train');" class="icon style3 major fa-train"></span></li> -->
 			<li><span onclick="setMapVisibility('location');" class="icon style3 major fa-map-marker"></span></li>
-			<!-- <li><span onclick="setMapVisibility('bed');" class="icon style4 major fa-bed"></span></li> -->
+			<li><span onclick="setMapVisibility('bed');" class="icon style4 major fa-bed"></span></li>
 		</ul>
 		<div id="map_section">
 			<div id="map" class="container submission"></div>
