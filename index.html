@@ -15,8 +15,7 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120535601-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -25,8 +24,7 @@
 
   gtag('config', 'UA-120535601-1');
 </script>
-
-
+  
 
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
@@ -57,6 +55,13 @@
     var eurostarsDasLetras;
     var lisbonSaoBentoHotel;
     var novotelLisbon;
+    var CampolideTrain;
+    var RuaDeCampolideBus;
+    var PalacioDaJusticiaBus;
+    var SaoSebastiaoMetro;
+    var PracadeEspanhaMetro;
+
+
 		var contentNovaIMS = '<div id="content" style="color:#4a87d3">' +
 			'<h2 style="color:#4a87d3">NOVA Information Management School (NOVA IMS)</h2>' +
 			'<p align="left" style="color:#4a87d3">' +
@@ -91,6 +96,13 @@
       clearObjectFromMap(eurostarsDasLetras);
       clearObjectFromMap(lisbonSaoBentoHotel);
       clearObjectFromMap(novotelLisbon);
+      clearObjectFromMap(CampolideTrain);
+      clearObjectFromMap(RuaDeCampolideBus);
+      clearObjectFromMap(PalacioDaJusticiaBus);
+      clearObjectFromMap(SaoSebastiaoMetro);
+      clearObjectFromMap(PracadeEspanhaMetro);
+
+
 
 
 			switch (itemClicked) {
@@ -318,6 +330,159 @@
               });
 							map.panTo(hotelMundialLoc);
 							map.setZoom(13);
+          }
+          break;
+          case 'publicTransport':
+          {
+            var imageBus = {
+              url: 'images/front-bus.png'
+            };
+
+            var busRuaDeCampolideLoc = new google.maps.LatLng(38.7295818537027, -9.16147883968775);
+            var busPalacioDaJusticiaLoc = new google.maps.LatLng(38.7309865923032, -9.15653214537912);
+
+            var contentRuaDeCampolide = '<div id="content" style="color:#4686A0">' +
+                    '<h2 style="color:#4686A0">Bus stop: Rua De Campolide</h2>'+
+                    '<p align="left" style="color:#4686A0">' +
+                    // '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
+                    '</div>';
+
+            var contentPalacioDaJusticia = '<div id="content" style="color:#4686A0">' +
+                    '<h2 style="color:#4686A0">Bus stop: Palacio Da Justicia</h2>'+
+                    '<p align="left" style="color:#4686A0">' +
+                    // '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
+                    '</div>';
+
+            var infoRuaDeCampolide = new google.maps.InfoWindow({
+                content: contentRuaDeCampolide
+            });
+
+            var infoPalacioDaJusticia = new google.maps.InfoWindow({
+                content: contentPalacioDaJusticia
+            });
+
+            RuaDeCampolideBus = new google.maps.Marker({
+              position: busRuaDeCampolideLoc,
+              map: map,
+              icon: imageBus,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+
+            PalacioDaJusticiaBus = new google.maps.Marker({
+              position: busPalacioDaJusticiaLoc,
+              map: map,
+              icon: imageBus,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+            RuaDeCampolideBus.addListener('click', function() {
+                infoRuaDeCampolide.open(map, RuaDeCampolideBus);
+            });
+
+            PalacioDaJusticiaBus.addListener('click', function() {
+                infoPalacioDaJusticia.open(map, PalacioDaJusticiaBus);
+            });
+
+            // map.panTo(busRuaDeCampolideLoc);
+            // map.setZoom(16);
+
+            // Metro
+
+            var imageMetro = {
+              url: 'images/subway.png'
+            };
+
+            var SaoSebastiaoMetroLoc = new google.maps.LatLng(38.7344481768096, -9.15418470961285);
+            var PracadeEspanhaMetroLoc = new google.maps.LatLng(38.7377465837062, -9.15835157972236);
+
+
+            var contentSaoSebastiao = '<div id="content" style="color:#4686A0">' +
+                    '<h2 style="color:#4686A0">Metro: Sao Sebastiao</h2>'+
+                    '<p align="left" style="color:#4686A0">' +
+                    // '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
+                    '</div>';
+
+            var contentPracadeEspanha = '<div id="content" style="color:#4686A0">' +
+                    '<h2 style="color:#4686A0">Metro: Pracade Espanha</h2>'+
+                    '<p align="left" style="color:#4686A0">' +
+                    // '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
+                    '</div>';
+
+
+            var infoSaoSebastiao = new google.maps.InfoWindow({
+                content: contentSaoSebastiao
+            });
+
+            var infoPracadeEspanha = new google.maps.InfoWindow({
+                content: contentPracadeEspanha
+            });
+
+
+            SaoSebastiaoMetro = new google.maps.Marker({
+              position: SaoSebastiaoMetroLoc,
+              map: map,
+              icon: imageMetro,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+            PracadeEspanhaMetro = new google.maps.Marker({
+              position: PracadeEspanhaMetroLoc,
+              map: map,
+              icon: imageMetro,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+                          SaoSebastiaoMetro.addListener('click', function() {
+                              infoSaoSebastiao.open(map, SaoSebastiaoMetro);
+                          });
+
+                          PracadeEspanhaMetro.addListener('click', function() {
+                              infoPracadeEspanha.open(map, PracadeEspanhaMetro);
+                          });
+
+
+            // map.panTo(SaoSebastiaoMetroLoc);
+            // map.setZoom(14);
+
+            //Train
+            var imageTrain = {
+              url: 'images/train.png'
+            };
+
+
+            var trainstationCampolideLoc = new google.maps.LatLng(38.7332879542611, -9.16701009151308);
+
+                          var contentCampolide = '<div id="content" style="color:#4a87d3">' +
+                                  '<h2 style="color:#4a87d3">Train station: Campolide</h2>'+
+                                  '<p align="left" style="color:#4a87d3">' +
+                                  // '<b style="color:#4a87d3">Address: </b> 48143 Münster, Germany <br>' +
+                                  '</p>'+
+                                  '</div>';
+
+
+                          var infoCampolide = new google.maps.InfoWindow({
+                              content: contentCampolide
+                          });
+
+
+
+            CampolideTrain = new google.maps.Marker({
+              position: trainstationCampolideLoc,
+              map: map,
+              icon: imageTrain,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+
+            CampolideTrain.addListener('click', function() {
+                infoCampolide.open(map, CampolideTrain);
+            });
+
+
+            map.panTo(trainstationCampolideLoc);
+            map.setZoom(15);
+
           }
           break;
 				default:
@@ -695,7 +860,9 @@
 	<section id="three" class="main style2 special">
 		<ul class="major-icons">
 			<li><span onclick="setMapVisibility('flight');" class="icon style3 major fa-plane"></span></li>
-			<!-- <li><span onclick="setMapVisibility('train');" class="icon style3 major fa-train"></span></li> -->
+			<li><span onclick="setMapVisibility('publicTransport');" class="icon style3 major fa-train"></span></li>
+      <!-- <li><span onclick="setMapVisibility('bus');" class="icon style3 major fa-bus"></span></li>
+      <li><span onclick="setMapVisibility('metro');" class="icon style3 major fa-subway"></span></li> -->
 			<li><span onclick="setMapVisibility('location');" class="icon style3 major fa-map-marker"></span></li>
 			<li><span onclick="setMapVisibility('bed');" class="icon style4 major fa-bed"></span></li>
 		</ul>
