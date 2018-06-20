@@ -330,10 +330,10 @@
 							map.setZoom(13);
           }
           break;
-          case 'bus':
+          case 'publicTransport':
           {
             var imageBus = {
-              url: 'images/bus_stop.png'
+              url: 'images/front-bus.png'
             };
 
             var busRuaDeCampolideLoc = new google.maps.LatLng(38.7295818537027, -9.16147883968775);
@@ -382,15 +382,13 @@
                 infoPalacioDaJusticia.open(map, PalacioDaJusticiaBus);
             });
 
-            map.panTo(busRuaDeCampolideLoc);
-            map.setZoom(16);
+            // map.panTo(busRuaDeCampolideLoc);
+            // map.setZoom(16);
 
-          }
-          break;
-          case 'metro':
-          {
+            // Metro
+
             var imageMetro = {
-              url: 'images/metro.png'
+              url: 'images/subway.png'
             };
 
             var SaoSebastiaoMetroLoc = new google.maps.LatLng(38.7344481768096, -9.15418470961285);
@@ -442,52 +440,49 @@
                           });
 
 
-            map.panTo(SaoSebastiaoMetroLoc);
+            // map.panTo(SaoSebastiaoMetroLoc);
+            // map.setZoom(14);
+
+            //Train
+            var imageTrain = {
+              url: 'images/train.png'
+            };
+
+
+            var trainstationCampolideLoc = new google.maps.LatLng(38.7332879542611, -9.16701009151308);
+
+                          var contentCampolide = '<div id="content" style="color:#4a87d3">' +
+                                  '<h2 style="color:#4a87d3">Train station: Campolide</h2>'+
+                                  '<p align="left" style="color:#4a87d3">' +
+                                  // '<b style="color:#4a87d3">Address: </b> 48143 Münster, Germany <br>' +
+                                  '</p>'+
+                                  '</div>';
+
+
+                          var infoCampolide = new google.maps.InfoWindow({
+                              content: contentCampolide
+                          });
+
+
+
+            CampolideTrain = new google.maps.Marker({
+              position: trainstationCampolideLoc,
+              map: map,
+              icon: imageTrain,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+
+            CampolideTrain.addListener('click', function() {
+                infoCampolide.open(map, CampolideTrain);
+            });
+
+
+            map.panTo(trainstationCampolideLoc);
             map.setZoom(14);
+
           }
           break;
-          case "train":
-						{
-							//Train
-							var imageTrain = {
-								url: 'images/train.png'
-							};
-
-
-							var trainstationCampolideLoc = new google.maps.LatLng(38.7332879542611, -9.16701009151308);
-
-                            var contentCampolide = '<div id="content" style="color:#4a87d3">' +
-                                    '<h2 style="color:#4a87d3">Train station: Campolide</h2>'+
-                                    '<p align="left" style="color:#4a87d3">' +
-                                    // '<b style="color:#4a87d3">Address: </b> 48143 Münster, Germany <br>' +
-                                    '</p>'+
-                                    '</div>';
-
-
-                            var infoCampolide = new google.maps.InfoWindow({
-                                content: contentCampolide
-                            });
-
-
-
-							CampolideTrain = new google.maps.Marker({
-								position: trainstationCampolideLoc,
-								map: map,
-								icon: imageTrain,
-                                animation: google.maps.Animation.BOUNCE
-							});
-
-
-              CampolideTrain.addListener('click', function() {
-                  infoCampolide.open(map, CampolideTrain);
-              });
-
-
-							map.panTo(trainstationCampolideLoc);
-							map.setZoom(14);
-
-						}
-							break;
 				default:
 					{}
 			}
@@ -847,9 +842,9 @@
 	<section id="three" class="main style2 special">
 		<ul class="major-icons">
 			<li><span onclick="setMapVisibility('flight');" class="icon style3 major fa-plane"></span></li>
-			<li><span onclick="setMapVisibility('train');" class="icon style3 major fa-train"></span></li>
-      <li><span onclick="setMapVisibility('bus');" class="icon style3 major fa-bus"></span></li>
-      <li><span onclick="setMapVisibility('metro');" class="icon style3 major fa-subway"></span></li>
+			<li><span onclick="setMapVisibility('publicTransport');" class="icon style3 major fa-train"></span></li>
+      <!-- <li><span onclick="setMapVisibility('bus');" class="icon style3 major fa-bus"></span></li>
+      <li><span onclick="setMapVisibility('metro');" class="icon style3 major fa-subway"></span></li> -->
 			<li><span onclick="setMapVisibility('location');" class="icon style3 major fa-map-marker"></span></li>
 			<li><span onclick="setMapVisibility('bed');" class="icon style4 major fa-bed"></span></li>
 		</ul>
