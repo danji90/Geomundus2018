@@ -6,16 +6,7 @@
 -->
 <html>
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120535601-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-120535601-1');
-</script>
-	<title>Geomundus 2018</title>
+	<title>GeoMundus 2018</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -24,8 +15,9 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
-
 	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120535601-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -34,7 +26,7 @@
 
   gtag('config', 'UA-120535601-1');
 </script>
-
+  
 
 
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -66,6 +58,15 @@
     var eurostarsDasLetras;
     var lisbonSaoBentoHotel;
     var novotelLisbon;
+
+
+    var CampolideTrain;
+    var RuaDeCampolideBus;
+    var PalacioDaJusticiaBus;
+    var SaoSebastiaoMetro;
+    var PracadeEspanhaMetro;
+
+
 		var contentNovaIMS = '<div id="content" style="color:#4a87d3">' +
 			'<h2 style="color:#4a87d3">NOVA Information Management School (NOVA IMS)</h2>' +
 			'<p align="left" style="color:#4a87d3">' +
@@ -100,6 +101,16 @@
       clearObjectFromMap(eurostarsDasLetras);
       clearObjectFromMap(lisbonSaoBentoHotel);
       clearObjectFromMap(novotelLisbon);
+
+
+      clearObjectFromMap(CampolideTrain);
+      clearObjectFromMap(RuaDeCampolideBus);
+      clearObjectFromMap(PalacioDaJusticiaBus);
+      clearObjectFromMap(SaoSebastiaoMetro);
+      clearObjectFromMap(PracadeEspanhaMetro);
+
+
+
 
 
 			switch (itemClicked) {
@@ -329,6 +340,159 @@
 							map.setZoom(13);
           }
           break;
+          case 'publicTransport':
+          {
+            var imageBus = {
+              url: 'images/front-bus.png'
+            };
+
+            var busRuaDeCampolideLoc = new google.maps.LatLng(38.7295818537027, -9.16147883968775);
+            var busPalacioDaJusticiaLoc = new google.maps.LatLng(38.7309865923032, -9.15653214537912);
+
+            var contentRuaDeCampolide = '<div id="content" style="color:#4686A0">' +
+                    '<h2 style="color:#4686A0">Bus stop: Rua De Campolide</h2>'+
+                    '<p align="left" style="color:#4686A0">' +
+                    // '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
+                    '</div>';
+
+            var contentPalacioDaJusticia = '<div id="content" style="color:#4686A0">' +
+                    '<h2 style="color:#4686A0">Bus stop: Palacio Da Justicia</h2>'+
+                    '<p align="left" style="color:#4686A0">' +
+                    // '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
+                    '</div>';
+
+            var infoRuaDeCampolide = new google.maps.InfoWindow({
+                content: contentRuaDeCampolide
+            });
+
+            var infoPalacioDaJusticia = new google.maps.InfoWindow({
+                content: contentPalacioDaJusticia
+            });
+
+            RuaDeCampolideBus = new google.maps.Marker({
+              position: busRuaDeCampolideLoc,
+              map: map,
+              icon: imageBus,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+
+            PalacioDaJusticiaBus = new google.maps.Marker({
+              position: busPalacioDaJusticiaLoc,
+              map: map,
+              icon: imageBus,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+            RuaDeCampolideBus.addListener('click', function() {
+                infoRuaDeCampolide.open(map, RuaDeCampolideBus);
+            });
+
+            PalacioDaJusticiaBus.addListener('click', function() {
+                infoPalacioDaJusticia.open(map, PalacioDaJusticiaBus);
+            });
+
+            // map.panTo(busRuaDeCampolideLoc);
+            // map.setZoom(16);
+
+            // Metro
+
+            var imageMetro = {
+              url: 'images/subway.png'
+            };
+
+            var SaoSebastiaoMetroLoc = new google.maps.LatLng(38.7344481768096, -9.15418470961285);
+            var PracadeEspanhaMetroLoc = new google.maps.LatLng(38.7377465837062, -9.15835157972236);
+
+
+            var contentSaoSebastiao = '<div id="content" style="color:#4686A0">' +
+                    '<h2 style="color:#4686A0">Metro: Sao Sebastiao</h2>'+
+                    '<p align="left" style="color:#4686A0">' +
+                    // '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
+                    '</div>';
+
+            var contentPracadeEspanha = '<div id="content" style="color:#4686A0">' +
+                    '<h2 style="color:#4686A0">Metro: Pracade Espanha</h2>'+
+                    '<p align="left" style="color:#4686A0">' +
+                    // '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
+                    '</div>';
+
+
+            var infoSaoSebastiao = new google.maps.InfoWindow({
+                content: contentSaoSebastiao
+            });
+
+            var infoPracadeEspanha = new google.maps.InfoWindow({
+                content: contentPracadeEspanha
+            });
+
+
+            SaoSebastiaoMetro = new google.maps.Marker({
+              position: SaoSebastiaoMetroLoc,
+              map: map,
+              icon: imageMetro,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+            PracadeEspanhaMetro = new google.maps.Marker({
+              position: PracadeEspanhaMetroLoc,
+              map: map,
+              icon: imageMetro,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+                          SaoSebastiaoMetro.addListener('click', function() {
+                              infoSaoSebastiao.open(map, SaoSebastiaoMetro);
+                          });
+
+                          PracadeEspanhaMetro.addListener('click', function() {
+                              infoPracadeEspanha.open(map, PracadeEspanhaMetro);
+                          });
+
+
+            // map.panTo(SaoSebastiaoMetroLoc);
+            // map.setZoom(14);
+
+            //Train
+            var imageTrain = {
+              url: 'images/train.png'
+            };
+
+
+            var trainstationCampolideLoc = new google.maps.LatLng(38.7332879542611, -9.16701009151308);
+
+                          var contentCampolide = '<div id="content" style="color:#4a87d3">' +
+                                  '<h2 style="color:#4a87d3">Train station: Campolide</h2>'+
+                                  '<p align="left" style="color:#4a87d3">' +
+                                  // '<b style="color:#4a87d3">Address: </b> 48143 Münster, Germany <br>' +
+                                  '</p>'+
+                                  '</div>';
+
+
+                          var infoCampolide = new google.maps.InfoWindow({
+                              content: contentCampolide
+                          });
+
+
+
+            CampolideTrain = new google.maps.Marker({
+              position: trainstationCampolideLoc,
+              map: map,
+              icon: imageTrain,
+                              animation: google.maps.Animation.BOUNCE
+            });
+
+
+            CampolideTrain.addListener('click', function() {
+                infoCampolide.open(map, CampolideTrain);
+            });
+
+
+            map.panTo(trainstationCampolideLoc);
+            map.setZoom(15);
+
+          }
+          break;
 				default:
 					{}
 			}
@@ -550,7 +714,10 @@
 					<span class="image fit2"><img src="images/contact/missing.png" alt="" /></span>
 					<ul class="actions" align="center">
 						<li><a href="#"
+
+
 							   target="_blank"> To be announced</a></li>
+
 					</ul>
 
 
@@ -571,7 +738,10 @@
           <span class="image fit2"><img src="images/contact/missing.png" alt="" /></span>
           <ul class="actions" align="center">
             <li><a href="#"
+
+ 
                  target="_blank"> To be announced</a></li>
+
           </ul>
 
 
@@ -703,7 +873,9 @@
 	<section id="three" class="main style2 special">
 		<ul class="major-icons">
 			<li><span onclick="setMapVisibility('flight');" class="icon style3 major fa-plane"></span></li>
-			<!-- <li><span onclick="setMapVisibility('train');" class="icon style3 major fa-train"></span></li> -->
+			<li><span onclick="setMapVisibility('publicTransport');" class="icon style3 major fa-train"></span></li>
+      <!-- <li><span onclick="setMapVisibility('bus');" class="icon style3 major fa-bus"></span></li>
+      <li><span onclick="setMapVisibility('metro');" class="icon style3 major fa-subway"></span></li> -->
 			<li><span onclick="setMapVisibility('location');" class="icon style3 major fa-map-marker"></span></li>
 			<li><span onclick="setMapVisibility('bed');" class="icon style4 major fa-bed"></span></li>
 		</ul>
@@ -767,7 +939,7 @@
 							<tbody>
 								<tr>
 									<td>19:00</td>
-									<td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Introductory tour around the historical centre of Lisbon</a><p style="display:none;" >
+									<td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+ Introductory tour around the historical centre of Lisbon</a><p style="display:none;" >
 									We cordially invite all the participants of GeoMundus 2018 to a tour around the astonishing Lisbon city center. Be ready to meet amazing people, share a drink and get into GeoMundus conference mood. The details are as follows:<br>
 									<strong>When: </strong>Thursday 6th December 2018, 19:00<br>
 									<strong>Where: </strong>Praça do Comércio
@@ -799,7 +971,10 @@
 							</tr>
 							<tr>
 								<td>9:15</td>
-                <td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Keynote Presentation 1:Dr. Monica Wachowicz</a><p style="display: none;"> <b style="color:#4CAF50">
+
+                <td> <a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+ Keynote Presentation 1:Dr. Monica Wachowicz</a><p style="display: none;"> <b style="color:#4CAF50">
+
+
 									Dr. Monica Wachowicz <br> What’s next? Analytics Everywhere Ecosystems</b><br><br>
 								The Internet of Things (IoT) is transforming public infrastructure into digital things that can enhance the quality of life of citizens. But the unquestionable change for digital transformation in our cities may come from citizens themselves. The Internet of Things generate an unprecedented amount of data streams about citizen experience that is impossible to handle using traditional GIS. Mainly because the data streams usually exhibit high data rates with out-of-order arrival problems, communication loss, and they are usually noisy, incomplete, and unreliable. The research challenges are related to how we can analyze these data streams in a timely way considering computing power, storage capability, network communication, privacy, security, and energy limitations of IoT environments. In this presentation we will explore how analytics everywhere ecosystems are modernizing analytical workflows in order to allow data scientists to collect and analyze data streams as they are being transported through distributed resources such as edge, fog and cloud computing. These ecosystems will deliver new insights for improving a citizen’s ability to understand what is happening and take an action accordingly.
 									</p></td>
@@ -814,7 +989,7 @@
 							</tr>
 							<tr>
 								<td>10:50</td>
-								<td>Short Documentary About Geomundus History</td>
+								<td>Short Documentary About GeoMundus History</td>
 							</tr>
 							<tr>
 								<td>11:10</td>
@@ -839,7 +1014,7 @@
 							</tr>
 							<tr>
 								<td>16:15</td>
-                <td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Career Development Session</a><p style="display:none;">
+                <td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+ Career Development Session</a><p style="display:none;">
 									It is an interactive forum providing a great opportunity for students interested professionally on the practices of geoinformation technologies.<br>
 									Students and attendees will have a face to face career-perspective discussion, finding answers to questions like: <br/>
 									1. What are the possibilities and options for building your career in geoinfomatics?<br/>
@@ -858,8 +1033,10 @@
 							</tr>
 							<tr>
 								<td>19:30</td>
-                <td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+ The Conference Dinner</a><p style="display:none;">
-									The conference Gala Dinner will take place at <strong><a href="https://www.restaurantelaurentina.pt/index.php?lang=uk&id=home" target="_blank">Laurentina Restaurant</a></strong>. We hope that you will join us to celebrate and connect! <br/>Note: There is a participant limit, so if you would like to participate, please register well in advance.
+
+                <td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+ The Conference Dinner (Free)</a><p style="display:none;">
+									The free conference Gala Dinner will take place at <strong><a href="https://www.restaurantelaurentina.pt/index.php?lang=uk&id=home" target="_blank">Laurentina Restaurant</a></strong>. We hope that you will join us to celebrate and connect! <br/>Note: There is a participant limit, so if you would like to participate, please register well in advance.
+
                 </p></td>
 							</tr>
 							</tbody>
@@ -911,7 +1088,7 @@
 							</tr>
 							<tr>
 								<td>15:15</td>
-								<td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+Concurrent Workshops</a><p style="display:none;">
+								<td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+ Concurrent Workshops</a><p style="display:none;">
 									This session includes 4 concurrent workshops. The aim is to provide participants with practical, hands-on exercises and activities.<br>
 									<br>
 									Workshop 1 will cover one of the applications of Geoinformatics. <br>
@@ -942,7 +1119,7 @@
 				<h2>Call for Short Papers and Posters</h2>
 			</header>
 		<p>
-			Short paper and Poster submission opens from <strong>June 1<sup>st</sup></strong> to <strong>August 31<sup>st</sup></strong>, 2018.
+			Short paper and Poster submission is open from <strong>June 1<sup>st</sup></strong> to <strong>August 31<sup>st</sup></strong>, 2018.
 		</p>
 		<p>Thank you for your interest in participating in GeoMundus 2018. <br>
 			All individuals interested in any aspect of geospatial technologies are invited to submit either a short paper
@@ -1015,7 +1192,7 @@
 					Acceptance notification will be emailed to the corresponding author on the <strong>9<sup>th</sup> of September 2018</strong>. The accepted short papers and posters will be published on GeoMundus website.
 				</p>
 					<p >
-						For any questions about templates, formatting and submission, please write an email on <a href="mailto:program@geomundus.org">program@geomundus.org</a>
+						For any questions about templates, formatting and submission, please write an email to <a href="mailto:program@geomundus.org">program@geomundus.org</a>
 
 					</p>
 
@@ -1245,7 +1422,7 @@
 			<div class="select-wrapper">
 				<select onchange="location.href=this.options[this.selectedIndex].value" name="elige" size="1">
 			<option value="placeholder" selected>
-				<span class="red-black-text">Select previous Geomundus Conference...</span>
+				<span class="red-black-text">Select previous GeoMundus Conference...</span>
 			<option value="http://geomundus.org/2017/">
 				<span class="red-black-text">M&uuml;nster, Germany 2017 <img src="http://geomundus.org/2014/images/german.png" alt="SmashingConf Freiburg 2014" /></span> <span class="date">10<sup>th</sup>-11<sup>th</sup> of November 2017</span></option>
 			<option value="http://geomundus.org/2016/" >
@@ -1279,7 +1456,7 @@
 				<li>&copy; GeoMundus 2018</li>
 				<li>Designed by GeoMundus WebTeam</li>
 			</ul>
-			<p class="copyright">Website last updated: <time datetime="2018-05-15 23:59">May 31<sup>st</sup> 2018</time></p>
+			<p class="copyright">Website last updated: <time datetime="2018-06-21 23:59">June 21<sup>st</sup> 2018</time></p>
 		</div>
 	</section>
 
