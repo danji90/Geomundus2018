@@ -126,7 +126,7 @@
 		function setMapVisibility(itemClicked) {
 			window.location.hash = '#map_section';
 			clearObjectFromMap(LisbonPortelaAirport);
-			clearObjectFromMap(university);
+			//clearObjectFromMap(university);
       clearObjectFromMap(hotelMundial);
       clearObjectFromMap(theIndependente);
       clearObjectFromMap(inspiraSantaMarta);
@@ -175,14 +175,14 @@
 						infoNovaIMS = new google.maps.InfoWindow({
 							content: contentNovaIMS
 						});
-
-						university = new google.maps.Marker({
-							position: NovaIMSLoc,
-							map: map,
-							icon: imageNovaIMS,
-							title: novaIMSTooltip,
-							animation: google.maps.Animation.BOUNCE
-						});
+						if(!university)
+							university = new google.maps.Marker({
+								position: NovaIMSLoc,
+								map: map,
+								icon: imageNovaIMS,
+								title: novaIMSTooltip,
+								animation: google.maps.Animation.BOUNCE
+							});
 
 
 						university.addListener('click', function() {
@@ -762,7 +762,7 @@
 				<div align="center" class="4u 12u$(medium)">
 					<span class="image fit2"><img src="images/contact/francisco_pinto.jpg" alt="" /></span>
 					<ul class="actions" align="center">
-						<li>Francisco Pinto</li>
+						<li>Francisco Pinto Espinosa</li>
 
 					</ul>
 
@@ -770,7 +770,7 @@
 				</div>
 				<div class="8u 12u$(medium)">
 					<h3  align="center" style="background-color:#8addaa; color:white;text-align: center;"><strong>
-						Francisco Pinto
+						Francisco Pinto Espinosa
 					</strong></h3>
 					<p align="justify"> <strong></strong>
             Francisco Pinto Espinosa is an Associate Scientist at the International Maize and Wheat Improvement Center (CIMMYT) global wheat program. CIMMYT works to improve livelihoods and foster more productive, sustainable maize and wheat farming. Pinto’s work focuses on remote sensing imagery and UAV for data acquisition. He obtained a PhD in agriculture from the University of Bonn and the Jülich Research Center in 2015. His research interests include the use of remote sensing for field phenotyping and understanding ecophysiological dynamics of crops at different spatio-temporal scales and the development of high-throughput phenotyping approaches for improving genetic gain and for quantifying physiological traits. He is also interested in the use and validation of sun-induced chlorophyll fluorescence for crop canopies. We are excited to have him to teach us about the application of remote sensing in the field of agriculture!
