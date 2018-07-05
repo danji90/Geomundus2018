@@ -66,6 +66,20 @@
     var SaoSebastiaoMetro;
     var PracadeEspanhaMetro;
 
+		var infoRuaDeCampolide
+		var infoPalacioDaJusticia
+		var infoSaoSebastiao
+		var infoPracadeEspanha
+		var infoCampolide
+		var infoNovaIMS
+		var infoPortelaAirport
+		var infoNovaIMS
+		var infohotelMundial
+		var infotheIndependente
+		var infoinspiraSantaMarta
+		var infoeurostarsDasLetras
+		var infolisbonSaoBentoHotel
+		var infonovotelLisbon
 
 		var contentNovaIMS = '<div id="content" style="color:#4a87d3">' +
 			'<h2 style="color:#4a87d3">NOVA Information Management School (NOVA IMS)</h2>' +
@@ -91,6 +105,24 @@
 					object.setMap(null);
 				}
 			}
+
+			function clearInforWindows()
+		{
+			if(infoRuaDeCampolide) infoRuaDeCampolide.close();
+			if(infoPalacioDaJusticia) infoPalacioDaJusticia.close();
+			if(infoSaoSebastiao) infoSaoSebastiao.close();
+			if(infoPracadeEspanha) infoPracadeEspanha.close();
+			if(infoCampolide) infoCampolide.close();
+			if(infoNovaIMS) infoNovaIMS.close();
+			if(infoPortelaAirport) infoPortelaAirport.close();
+			if(infoNovaIMS) infoNovaIMS.close();
+			if(infohotelMundial) infohotelMundial.close();
+			if(infotheIndependente	) infotheIndependente.close();
+			if(infoinspiraSantaMarta) infoinspiraSantaMarta.close();
+			if(infoeurostarsDasLetras) infoeurostarsDasLetras.close();
+			if(infolisbonSaoBentoHotel) infolisbonSaoBentoHotel.close();
+			if(infonovotelLisbon) infonovotelLisbon.close();
+		}
 		function setMapVisibility(itemClicked) {
 			window.location.hash = '#map_section';
 			clearObjectFromMap(LisbonPortelaAirport);
@@ -118,7 +150,7 @@
 					{
 						//Airports
 
-						var infoPortelaAirport = new google.maps.InfoWindow({
+						infoPortelaAirport = new google.maps.InfoWindow({
 							content: contentPortelaAirport
 						});
 
@@ -132,6 +164,7 @@
 						map.panTo(portelaAirportLoc);
 						map.setZoom(12);
 						LisbonPortelaAirport.addListener('click', function() {
+							clearInforWindows()
 							infoPortelaAirport.open(map, LisbonPortelaAirport);
 						});
 					}
@@ -139,7 +172,7 @@
 				case "location":
 					{
 
-						var infoNovaIMS = new google.maps.InfoWindow({
+						infoNovaIMS = new google.maps.InfoWindow({
 							content: contentNovaIMS
 						});
 
@@ -153,6 +186,7 @@
 
 
 						university.addListener('click', function() {
+							clearInforWindows()
 							infoNovaIMS.open(map, university);
 							//infoDomplatz.close();
 						});
@@ -258,22 +292,22 @@
                       '</div>';
 
 
-              var infohotelMundial = new google.maps.InfoWindow({
+              infohotelMundial = new google.maps.InfoWindow({
                   content: contenthotelMundial
               });
-                 var infotheIndependente= new google.maps.InfoWindow({
+                 infotheIndependente= new google.maps.InfoWindow({
                   content: contenttheIndependente
               });
-                 var infoinspiraSantaMarta = new google.maps.InfoWindow({
+                 infoinspiraSantaMarta = new google.maps.InfoWindow({
                   content: contentinspiraSantaMarta
               });
-                 var infoeurostarsDasLetras = new google.maps.InfoWindow({
+                 infoeurostarsDasLetras = new google.maps.InfoWindow({
                   content: contenteurostarsDasLetras
               });
-                 var infolisbonSaoBentoHotel = new google.maps.InfoWindow({
+                  infolisbonSaoBentoHotel = new google.maps.InfoWindow({
                   content: contentlisbonSaoBentoHotel
               });
-               var infonovotelLisbon = new google.maps.InfoWindow({
+               infonovotelLisbon = new google.maps.InfoWindow({
                   content: contentnovotelLisbon
               });
 
@@ -319,21 +353,27 @@
 
 
               hotelMundial.addListener('click', function() {
+								clearInforWindows()
                   infohotelMundial.open(map, hotelMundial);
               });
               theIndependente.addListener('click', function() {
+								clearInforWindows()
                   infotheIndependente.open(map, theIndependente);
               });
               inspiraSantaMarta.addListener('click', function() {
+								clearInforWindows()
                   infoinspiraSantaMarta.open(map, inspiraSantaMarta);
               });
               eurostarsDasLetras.addListener('click', function() {
+								clearInforWindows()
                   infoeurostarsDasLetras.open(map, eurostarsDasLetras);
               });
               lisbonSaoBentoHotel.addListener('click', function() {
+								clearInforWindows()
                   infolisbonSaoBentoHotel.open(map, lisbonSaoBentoHotel);
               });
               novotelLisbon.addListener('click', function() {
+								clearInforWindows()
                   infonovotelLisbon.open(map, novotelLisbon);
               });
 							map.panTo(hotelMundialLoc);
@@ -361,11 +401,11 @@
                     // '<b style="color:#4686A0">Address: </b> Düsseldorf International Airport (DUS), 40474 Düsseldorf, Germany <br> </p>'+
                     '</div>';
 
-            var infoRuaDeCampolide = new google.maps.InfoWindow({
+            infoRuaDeCampolide = new google.maps.InfoWindow({
                 content: contentRuaDeCampolide
             });
 
-            var infoPalacioDaJusticia = new google.maps.InfoWindow({
+            infoPalacioDaJusticia = new google.maps.InfoWindow({
                 content: contentPalacioDaJusticia
             });
 
@@ -385,10 +425,12 @@
             });
 
             RuaDeCampolideBus.addListener('click', function() {
+							clearInforWindows()
                 infoRuaDeCampolide.open(map, RuaDeCampolideBus);
             });
 
             PalacioDaJusticiaBus.addListener('click', function() {
+							clearInforWindows()
                 infoPalacioDaJusticia.open(map, PalacioDaJusticiaBus);
             });
 
@@ -418,11 +460,11 @@
                     '</div>';
 
 
-            var infoSaoSebastiao = new google.maps.InfoWindow({
+            infoSaoSebastiao = new google.maps.InfoWindow({
                 content: contentSaoSebastiao
             });
 
-            var infoPracadeEspanha = new google.maps.InfoWindow({
+            infoPracadeEspanha = new google.maps.InfoWindow({
                 content: contentPracadeEspanha
             });
 
@@ -441,13 +483,15 @@
               // animation: google.maps.Animation.BOUNCE
             });
 
-                          SaoSebastiaoMetro.addListener('click', function() {
-                              infoSaoSebastiao.open(map, SaoSebastiaoMetro);
-                          });
+            SaoSebastiaoMetro.addListener('click', function() {
+							clearInforWindows()
+                infoSaoSebastiao.open(map, SaoSebastiaoMetro);
+            });
 
-                          PracadeEspanhaMetro.addListener('click', function() {
-                              infoPracadeEspanha.open(map, PracadeEspanhaMetro);
-                          });
+            PracadeEspanhaMetro.addListener('click', function() {
+							clearInforWindows()
+                infoPracadeEspanha.open(map, PracadeEspanhaMetro);
+            });
 
 
             // map.panTo(SaoSebastiaoMetroLoc);
@@ -461,17 +505,17 @@
 
             var trainstationCampolideLoc = new google.maps.LatLng(38.7332879542611, -9.16701009151308);
 
-                          var contentCampolide = '<div id="content" style="color:#4a87d3">' +
-                                  '<h2 style="color:#4a87d3">Train station: Campolide</h2>'+
-                                  '<p align="left" style="color:#4a87d3">' +
-                                  // '<b style="color:#4a87d3">Address: </b> 48143 Münster, Germany <br>' +
-                                  '</p>'+
-                                  '</div>';
+	          var contentCampolide = '<div id="content" style="color:#4a87d3">' +
+	                  '<h2 style="color:#4a87d3">Train station: Campolide</h2>'+
+	                  '<p align="left" style="color:#4a87d3">' +
+	                  // '<b style="color:#4a87d3">Address: </b> 48143 Münster, Germany <br>' +
+	                  '</p>'+
+	                  '</div>';
 
 
-                          var infoCampolide = new google.maps.InfoWindow({
-                              content: contentCampolide
-                          });
+	          infoCampolide = new google.maps.InfoWindow({
+	              content: contentCampolide
+	          });
 
 
 
@@ -484,6 +528,7 @@
 
 
             CampolideTrain.addListener('click', function() {
+							clearInforWindows()
                 infoCampolide.open(map, CampolideTrain);
             });
 
@@ -510,7 +555,7 @@
 				zoom: 13
 			});
 
-			var infoNovaIMS = new google.maps.InfoWindow({
+			infoNovaIMS = new google.maps.InfoWindow({
 				content: contentNovaIMS
 			});
 
@@ -525,8 +570,9 @@
 
 
 			university.addListener('click', function() {
+				clearInforWindows()
 				infoNovaIMS.open(map, university);
-				infoDomplatz.close();
+				//infoDomplatz.close();
 			});
 
 			map.panTo(NovaIMSLoc);
@@ -716,10 +762,7 @@
 				<div align="center" class="4u 12u$(medium)">
 					<span class="image fit2"><img src="images/contact/francisco_pinto.jpg" alt="" /></span>
 					<ul class="actions" align="center">
-						<li><a href="#"
-
-
-							   target="_blank"> Francisco Pinto</a></li>
+						<li>Francisco Pinto</li>
 
 					</ul>
 
@@ -740,10 +783,7 @@
         <div align="center" class="4u 12u$(medium)">
           <span class="image fit2"><img src="images/contact/missing.png" alt="" /></span>
           <ul class="actions" align="center">
-            <li><a href="#"
-
-
-                 target="_blank"> Michael Frank Goodchild</a></li>
+            <li> Michael Frank Goodchild</li>
 
           </ul>
 
