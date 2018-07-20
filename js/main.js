@@ -22,7 +22,7 @@ var NovaIMSLoc = new google.maps.LatLng(38.7322642,-9.1606876);
 var portelaAirportLoc = new google.maps.LatLng(38.7755978,-9.1375554);
 
 var imageNovaIMS = {
-  url: 'images/uni.png'
+  url: 'images/worldwide.png'
 };
 
 var imageAirport = {
