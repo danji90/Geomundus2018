@@ -2339,19 +2339,30 @@
 
 			}
 
-			.img-circle{
+			.img-circle-div{
 				border: 10px solid #8addaa;
 				height: 200px;
+				width: 200px;
 				border-radius: 70%;
 				margin: 0 2% 2% 0;
 				outline: none;
 			}
-
-			.img-circle:hover{
-				border: 10px solid #7d9d4e;
+			.img-circle{
 
 			}
 
+			.img-circle-div:hover{
+				border: 10px solid #7d9d4e;
+
+			}
+			.row-centered {
+					text-align:center;
+				}
+				.col-centered {
+					display:inline-block;
+					float:none;
+					padding:20px;
+				}
 /* List */
 
 	ol {
