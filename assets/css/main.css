@@ -2339,19 +2339,30 @@
 
 			}
 
-			.img-circle{
+			.img-circle-div{
 				border: 10px solid #8addaa;
 				height: 200px;
+				width: 200px;
 				border-radius: 70%;
 				margin: 0 2% 2% 0;
 				outline: none;
 			}
-
-			.img-circle:hover{
-				border: 10px solid #7d9d4e;
+			.img-circle{
 
 			}
 
+			.img-circle-div:hover{
+				border: 10px solid #7d9d4e;
+
+			}
+			.row-centered {
+					text-align:center;
+				}
+				.col-centered {
+					display:inline-block;
+					float:none;
+					padding:20px;
+				}
 /* List */
 
 	ol {
@@ -3595,3 +3606,21 @@
 	.link_keynote{
 		text-decoration: underline;
 	}
+	.marquee {
+			width: 450px;
+		line-height: 50px;
+		color: white;
+		text-shadow: 2px 0 3px #000000;
+			white-space: nowrap;
+			overflow: hidden;
+			box-sizing: border-box;
+		}
+		.marquee p {
+			display: inline-block;
+			padding-left: 100%;
+			animation: marquee 40s linear infinite;
+		}
+		@keyframes marquee {
+			0%   { transform: translate(0, 0); }
+			100% { transform: translate(-100%, 0); }
+		}
