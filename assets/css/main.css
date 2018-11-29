@@ -2347,8 +2347,11 @@
 				margin: 0 2% 2% 0;
 				outline: none;
 			}
-			.img-circle{
-
+			.img-circle-port{
+				position: relative;
+				width: initial;
+				right: 70px;
+				padding: 43px;
 			}
 
 			.img-circle-div:hover{
