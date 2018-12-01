@@ -2349,9 +2349,9 @@
 			}
 			.img-circle-port{
 				position: relative;
-				width: initial;
-				right: 70px;
-				padding: 43px;
+				width: 199px;
+				right: 28px;
+				top: 45px;
 			}
 
 			.img-circle-div:hover{
