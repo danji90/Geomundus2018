@@ -33,7 +33,8 @@
         padding: 0;
         z-index: 9999;
         width: 100%;
-        overflow: hidden;
+				max-height: 100%;
+  			overflow-y: auto;
         background-color: #4FA49A;
     }
 
@@ -3627,3 +3628,19 @@
 			0%   { transform: translate(0, 0); }
 			100% { transform: translate(-100%, 0); }
 		}
+
+/* videoWrapper */
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
