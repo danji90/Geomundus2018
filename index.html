@@ -97,7 +97,6 @@
             if (document.getElementById("hide").style.display === 'block') {
                 document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
             }
-
         }
     </script>
 
@@ -158,7 +157,7 @@
                     </p>
 
                     <header>
-                        <h2>Who should participate in GeoMundus 2018?<br /></h2>
+                        <h2>Who should participate in GeoMundus 2019?<br /></h2>
                     </header>
 
                     <p>Everyone who is curious about geospatial technologies and their applications. We especially welcome students, researchers, industry leaders, and interested members of the public. It is not only a great opportunity to learn, but also
@@ -390,21 +389,26 @@
                     <div id="scroller" style=" max-width:100%; width: 550px; height: 400px;">
                         <div class="innerScrollArea">
                             <ul>
-                                <li><img src="images/loc1.jpg" width="600" height="400" /></li>
-                                <li><img src="images/loc2.jpg" width="600" height="400" /></li>
-                                <li><img src="images/loc3.jpg" width="600" height="400" /></li>
-                                <li><img src="images/loc4.jpg" width="600" height="400" /></li>
-                                <li><img src="images/loc5.jpg" width="600" height="400" /></li>
-                                <li><img src="images/loc6.jpg" width="600" height="400" /></li>
+                                <!-- Define photos here -->
+                                <li style="left: 0px;"><img src="images/image1.jpg" width="600" height="400"></li>
+                                <li style="left: 600px;"><img src="images/image2.jpg" width="600" height="400"></li>
+                                <li style="left: 1200px;"><img src="images/image3.jpg" width="600" height="400"></li>
+                                <li style="left: 1800px;"><img src="images/image4.jpg" width="600" height="400"></li>
+                                <li style="left: 2400px;"><img src="images/image1.jpg" width="600" height="400"></li>
+                                <li style="left: 3000px;"><img src="images/image2.jpg" width="600" height="400"></li>
+                                <li style="left: 3600px;"><img src="images/image3.jpg" width="600" height="400"></li>
+                                <li style="left: 4200px;"><img src="images/image4.jpg" width="600" height="400"></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="6u$ 12u$(medium)">
                     <header align="center" class="major">
-                        <h2 align="center"> <a href="http://www.unl.pt/en" style="color: blue" target="_blank"> Castellón de la Plana
-                            Universitat Jaume I</a><br /></h2>
-                        <p align="center"> <a href="http://www.novaims.unl.pt/" style="color: blue" target="_blank"> INIT - Institute of New Imaging Technologies</a></p>
+                        <h2 align="center"> <a href="http://www.uji.es/en" style="color: blue" target="_blank">  Universitat Jaume I</a></h2>
+                        <p align="center"> INIT - Institute of New Imaging Technologies</p>
+                        <p>
+                            <h2>Castellón de la Plana</h2>
+                        </p>
                     </header>
                     <p>GeoMundus 2019 will be held in Castellón de la Plana, a pleasant, sunlit town that lies between the Desert de les Palmes hills and the Mediterranean Sea, and is surrounded by orange groves. It is the capital of the province of Castellon,
                         Spain and situated 65 km north of Valencia and 285 south of Barcelona. The venue is Universitat Jaume I, Avenida de Vicent Sos Baynat, s/n, 12071 Castellón, Spain..</p>
@@ -412,87 +416,46 @@
             </div>
         </div>
     </section>
-
+    <!--
     <section id="three" class="main style2 special">
         <ul class="major-icons">
             <li><span onclick="setMapVisibility('flight');" class="icon style3 major fa-plane"></span></li>
             <li><span onclick="setMapVisibility('publicTransport');" class="icon style3 major fa-train"></span></li>
             <!-- <li><span onclick="setMapVisibility('bus');" class="icon style3 major fa-bus"></span></li>
       <li><span onclick="setMapVisibility('metro');" class="icon style3 major fa-subway"></span></li> -->
-            <li><span onclick="setMapVisibility('location');" class="icon style3 major fa-map-marker"></span></li>
-            <li><span onclick="setMapVisibility('bed');" class="icon style3 major fa-bed"></span></li>
-        </ul>
-        <div id="map_section">
-            <div id="map" class="container submission"></div>
-        </div>
-        <br>
-        <div style="text-align: left;margin-left: 10%;">
-            <b>
+    <li><span onclick="setMapVisibility('location');" class="icon style3 major fa-map-marker"></span></li>
+    <li><span onclick="setMapVisibility('bed');" class="icon style3 major fa-bed"></span></li>
+    </ul>
+    <div id="map_section">
+        <div id="map" class="container submission"></div>
+    </div>
+    <br>
+    <div style="text-align: left;margin-left: 10%;">
+        <b>
 			<a
 			href="https://www.google.com/maps/dir//NEW+IMS+Information+Management+School,+Campus+de+Campolide,+1070-312+Lisboa,+Portugal/@38.73226,-9.162608,17z/data=!4m16!1m6!3m5!1s0xd19336ccc6ba6f3:0x9503fe5e3320089f!2sNEW+IMS+Information+Management+School!8m2!3d38.73226!4d-9.160414!4m8!1m0!1m5!1m1!1s0xd19336ccc6ba6f3:0x9503fe5e3320089f!2m2!1d-9.160414!2d38.73226!3e1"
-			target="_blank"><u>How to get to Nova IMS:</u></a></b>
-            <ul>
-                <li>
-                    From Lisbon Airport:
-                    <ul>
-                        <li>Metro Red Line - from Aeroporto Station to São Sebastião Station</li>
-                    </ul>
-                </li>
-                <li>From Sete Rios Bus Terminal:</li>
-                <ul>
-                    <li>Buses 701 Campo Ourique/Prazeres , 758 Cais do Sodré Stop: Rua de Campolide – Escola</li>
-                    <li>Metro Blue Line - from Jardim Zoologico Station to São Sebastião Station</li>
-                </ul>
-                <li>
-                    From Oriente Bus Terminal:
-                    <ul>
-                        <li>Metro Red Line - from Oriente Station to São Sebastião Station</li>
-                    </ul>
-                </li>
-            </ul>
-            <u>Closest Metro Stations:</u>
-            <ul>
-                <li>São Sebastião (Blue and Red Line) </li>
-                <li>Praça de Espanha (Blue Line)</li>
-            </ul>
-            <u>Buses with stops closest to NOVA IMS:</u>
-            <ul>
-                <li>Stop: Rua de Campolide – Escola (701, 758)</li>
-                <li>Stop: Viaduto da Av. Gulbenkian (756)</li>
-                <li>Stop: Bº Azul (713, 742)</li>
-            </ul>
+            target="_blank">
+    </div>
+    <div class="row 100%">
+        <div class="4u 12u$(medium)">
+            <h2>Conference Venue</h2>
+            <p> Universitat Jaume I - Espaitec 2,2n floor, conference room <br> Avenida de Vicent Sos Baynat, 12071 Castellón de la Plana<br>
+                <b>Friday and Saturday </b></p>
+    </div>
+    <div class="4u 12u$(medium)">
+        <h2>Conference Dinner</h2>
+        <p> Venue will be Updated soon
+            <</p>
+    </div>
+    <div class="4u 12u$(medium)">
+        <h2>Pre Conference Meetup</h2>
+        <p> El Corte Inglés, Passeig de Morella, 1, 12006 Castellón de la Plana, Castellón, Spain<br>
+            <b>Thursday at 19:00 </b></p>
+    </div>
 
-
-
-        </div>
-        <!-- <div class="row 100%">
-			<div class="4u 12u$(medium)">
-				<h2>Conference Venue</h2>
-
-				<p>
-					<a href="http://www.ifgi.de" target="_blank"> Institute for Geoinformatics</a><br/>
-					<a href="https://www.google.de/maps?f=q&source=embed&hl=en&geocode=&q=GEO+1,+Heisenbergstra%C3%9Fe+2,+M%C3%BCnster&aq=0&oq=Geo+1&sll=51.967539,7.594986&sspn=0.213004,0.528374&ie=UTF8&hq=&hnear=GEO+1,+Heisenbergstra%C3%9Fe+2,+48149+M%C3%BCnster,+Nordrhein-Westfalen&t=m&ll=51.982554,7.596531&spn=0.037004,0.072956&z=13&iwloc=A"
-					  target="_blank">Heisenbergstraße 2 </a>
-					<br/> D-48149 Münster<br/>
-				</p>
-			</div>
-			<div class="4u 12u$(medium)">
-				<h2>Conference Dinner</h2>
-				<a href="http://muenster.aposto.eu/" target="_blank"> Aposto Münster</a><br/> Alter Steinweg 21,<br/> 48143 Münster<br/> Friday, 10th November at 19:30
-
-
-			</div>
-			<div class="4u 12u$(medium)">
-				<h2>Informal Meeting</h2>
-				<p> <a href='https://goo.gl/maps/9ML98ymmTvt' target="_blank"> Domplatz Munster</a><br>
-					<b>Thursday, 9th November at 19:00 </b></p>
-
-			</div>
-
-		</div> -->
-
-
+    </div>
     </section>
+    -->
 
     <!---->
     <!-- Four: PROGRAM AND SCHEDULE -->
@@ -506,11 +469,10 @@
                 <br><br/>
             </p>
 
-            <!--
             <div id="responsiveTabsDemo" class="css3-tabstrip">
                 <ul class="table_list">
                     <li>
-                        <input type="radio" name="css3-tabstrip-0" id="css3-tabstrip-0-1" /><label for="css3-tabstrip-0-1">Thursday, 6th</label>
+                        <input type="radio" name="css3-tabstrip-0" id="css3-tabstrip-0-1" /><label for="css3-tabstrip-0-1">Thursday, 28th</label>
                         <div class="table-wrapper">
                             <table class="alt">
                                 <thead>
@@ -522,12 +484,12 @@
                                 <tbody>
                                     <tr>
                                         <td>19:00</td>
-                                        <td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+ Introductory tour around the historical centre of Lisbon</a>
+                                        <td><a onclick="toggle(this)" style="color:#4CAF50">+ Preconference Informal Event: Castellon City tour</a>
                                             <p style="display:none;">
-                                                We cordially invite all the participants of GeoMundus 2018 to a tour around the astonishing Lisbon city center. Be ready to meet amazing people, share a drink and get into GeoMundus conference mood. The details are as follows:<br>
-                                                <strong>When: </strong>Thursday 6th December 2018, 19:00<br>
-                                                <strong>Where: </strong>Praça do Comércio<br/><br/>
-                                                <strong>(Note): </strong>This is an informal session. Cost of drinks or snacks should be self-payed.
+                                                We cordially invite all the participants of GeoMundus 2019 to a tour around the astonishing Castellon city center. Be ready to meet amazing people, share a drink and get into GeoMundus conference mood. The details are as follows:<br>
+                                                <strong>When: </strong>Thursday November 28th 2019, 19:00<br>
+                                                <strong>Where: </strong>El Corte Inglés, Passeig de Morella, Castellón de la Plana<br/><br/>
+                                                <strong>(Note): </strong>This is an informal session. Cost of drinks or snacks are self-payed.
                                             </p>
                                         </td>
                                     </tr>
@@ -693,12 +655,11 @@
 
                                         <td><a href="javascript:void(0);" onclick="toggle(this)" style="color:#4CAF50">+ The Conference Dinner</a>
                                             <p style="display:none;">
-                                                <The free conference Gala Dinner will take place at <strong><a href="https://www.restaurantelaurentina.pt/index.php?lang=uk&id=home" target="_blank">Laurentina Restaurant</a></strong>.
-                                                A fabulous opportunity for socializing and continuing discussion that started during the day. This year's delicious meal will take place at Pano de Boca Restaurante.<br> Address: R. Ramalho Ortigão, 1070-238
-                                                Lisboa
-                                                <br> Latitude: 38°44'09.9"N<br> Longitude: 9°09'31.7"W<br> About: A cozy restaurant with a great selection of Portuguese cuisine presented in a modern and creative way, located 600 meters away from the conference
-                                                venue. Website: <a href="http://www.panodeboca.pt" target="_blank">http://www.panodeboca.pt</a>
-                                                <br/>Unfortunately, due to budget and space constraints, only the first one hundred participants to have registered will be invited. Look for the invitation in your program when you arrive at the conference.
+                                                <The free conference Gala Dinner will take place at <strong><a href="https://www.restaurantelaurentina.pt/index.php?lang=uk&id=home" target="_blank">Laurentina Restaurant</a></strong>. A fabulous opportunity for socializing and continuing discussion that started
+                                                    during the day. This year's delicious meal will take place at Pano de Boca Restaurante.<br> Address: R. Ramalho Ortigão, 1070-238 Lisboa
+                                                    <br> Latitude: 38°44'09.9"N<br> Longitude: 9°09'31.7"W<br> About: A cozy restaurant with a great selection of Portuguese cuisine presented in a modern and creative way, located 600 meters away from the
+                                                    conference venue. Website: <a href="http://www.panodeboca.pt" target="_blank">http://www.panodeboca.pt</a>
+                                                    <br/>Unfortunately, due to budget and space constraints, only the first one hundred participants to have registered will be invited. Look for the invitation in your program when you arrive at the conference.
 
                                             </p>
                                         </td>
@@ -864,7 +825,6 @@
                     </li>
                 </ul>
             </div>
-        -->
         </div>
 
     </section>
@@ -998,7 +958,7 @@
     <section id="six" class="main style1">
         <div class="container">
             <header class="major" style="text-align: center;">
-                <h2>201 Team</h2>
+                <h2>2019 Team</h2>
             </header>
             <p>GeoMundus is a symposium organised and facilitated by the students of the <a href="http://mastergeotech.info/" style="color: blue" target="_blank"> Erasmus Mundus Master's of Science in Geospatial Technologies.</a></p>
             <div class="row 150%">
@@ -1339,7 +1299,7 @@
                 <li>&copy; GeoMundus 2019</li>
                 <li>Designed by GeoMundus WebTeam</li>
             </ul>
-            <p class="copyright">Website last updated: <time datetime="2018-12-13 23:59">December 13<sup>th</sup> 2018</time></p>
+            <p class="copyright">Website last updated: <time datetime="2019-04-25 23:59">April 13<sup>th</sup> 2019</time></p>
         </div>
     </section>
 
