@@ -18,9 +18,12 @@ var map;
 var markers;
 
 var Ujiloc = new google.maps.LatLng(39.9937, -0.0672);
-var portelaAirportLoc = new google.maps.LatLng(38.7755978, -9.1375554);
+var ValenciaAirportLoc = new google.maps.LatLng(39.4921903, -0.4743740);
+var BarcelonaAirportLoc = new google.maps.LatLng(41.3038545, 2.0729609);
+var MadridAirportLoc = new google.maps.LatLng(39.4921903, -0.4743740);
 
-var imageNovaIMS = {
+
+var imageUJI = {
     url: 'images/worldwide.png'
 };
 
@@ -28,9 +31,12 @@ var imageAirport = {
     url: 'images/airport.png'
 };
 
-var novaIMSTooltip = 'Conference Venue: NOVA Information Management School (NOVA IMS)'
+var ujiTooltip = 'Conference Venue: Universitat Jaume I- Espaitec 2'
 
-var LisbonPortelaAirport;
+var ValenciaAirport;
+var BarcelonaAirport;
+var MadridAirport;
+
 var university;
 var hotelMundial;
 var theIndependente;
@@ -38,7 +44,6 @@ var inspiraSantaMarta;
 var eurostarsDasLetras;
 var lisbonSaoBentoHotel;
 var novotelLisbon;
-
 
 var CampolideTrain;
 var RuaDeCampolideBus;
@@ -51,9 +56,9 @@ var infoPalacioDaJusticia
 var infoSaoSebastiao
 var infoPracadeEspanha
 var infoCampolide
-var infoNovaIMS
-var infoPortelaAirport
-var infoNovaIMS
+var infoUji
+var infoValenciaAirport
+var infoUji
 var infohotelMundial
 var infotheIndependente
 var infoinspiraSantaMarta
@@ -61,20 +66,19 @@ var infoeurostarsDasLetras
 var infolisbonSaoBentoHotel
 var infonovotelLisbon
 
-var contentNovaIMS = '<div id="content" style="color:#4a87d3">' +
-    '<h2 style="color:#4a87d3">NOVA Information Management School (NOVA IMS)</h2>' +
+var contentUji = '<div id = "content" style = "color:#4a87d3" > ' +
+    '<h2 style="color:#4a87d3">Jaume I University </h2>' +
     '<p align="left" style="color:#4a87d3">' +
-    '<b style="color:#4a87d3">Address: </b> Universidade Nova de Lisboa, Campus de Campolide, 1070-312 Lisboa | Portugal <br>' +
-    '<b style="color:#4a87d3">Telephone: </b> +351 213 828 610 <br>' +
-    '<b style="color:#4a87d3">Web Page: </b><a target="_blank" href="http://www.novaims.unl.pt/">' +
-    'http://www.novaims.unl.pt/</a><br/>' +
-    '<b style="color:#4a87d3"><a target="_blank" href= "https://www.google.com/maps/dir//NEW+IMS+Information+Management+School,+Campus+de+Campolide,+1070-312+Lisboa,+Portugal/@38.73226,-9.162608,17z/data=!4m16!1m6!3m5!1s0xd19336ccc6ba6f3:0x9503fe5e3320089f!2sNEW+IMS+Information+Management+School!8m2!3d38.73226!4d-9.160414!4m8!1m0!1m5!1m1!1s0xd19336ccc6ba6f3:0x9503fe5e3320089f!2m2!1d-9.160414!2d38.73226!3e1">Directions</a></b>' +
-    '</p></div>';
-var contentPortelaAirport = '<div id="content" style="color:#4686A0">' +
-    '<h2 style="color:#4686A0">Lisbon Portela Airport</h2>' +
+    '<b style="color:#4a87d3">Address: </b> Avenida de Vicent Sos Baynat, s/n, 12071 Castellón <br>' +
+    '<b style="color:#4a87d3">Teléfono: </b> +34 902320320<br>' +
+    '<b style="color:#4a87d3">Web Page: </b><a href="https://www.uji.es">' +
+    'https://www.uji.es</a></p>' +
+    '</div>';
+var contentValenciaAirport = '<div id="content" style="color:#4686A0">' +
+    '<h2 style="color:#4686A0">Valencia Airport</h2>' +
     '<p align="left" style="color:#4686A0">' +
-    '<b style="color:#4686A0">Web Page: </b><a target="_blank" href="http://www.lisbon-airport.com/">' +
-    'www.lisbon-airport.com/</a></p>' +
+    '<b style="color:#4686A0">Web Page: </b><a target="_blank" href="https://www.airport-valencia.com/">' +
+    'https://www.airport-valencia.com/</a></p>' +
     '</a></p>' +
     '</div>';
 align = "left"
@@ -92,9 +96,9 @@ function clearInforWindows() {
     if (infoSaoSebastiao) infoSaoSebastiao.close();
     if (infoPracadeEspanha) infoPracadeEspanha.close();
     if (infoCampolide) infoCampolide.close();
-    if (infoNovaIMS) infoNovaIMS.close();
-    if (infoPortelaAirport) infoPortelaAirport.close();
-    if (infoNovaIMS) infoNovaIMS.close();
+    if (infoUji) infoUji.close();
+    if (infoValenciaAirport) infoValenciaAirport.close();
+    if (infoUji) infoUji.close();
     if (infohotelMundial) infohotelMundial.close();
     if (infotheIndependente) infotheIndependente.close();
     if (infoinspiraSantaMarta) infoinspiraSantaMarta.close();
@@ -105,7 +109,7 @@ function clearInforWindows() {
 
 function setMapVisibility(itemClicked) {
     window.location.hash = '#map_section';
-    clearObjectFromMap(LisbonPortelaAirport);
+    clearObjectFromMap(ValenciaAirport);
     //clearObjectFromMap(university);
     clearObjectFromMap(hotelMundial);
     clearObjectFromMap(theIndependente);
@@ -121,53 +125,71 @@ function setMapVisibility(itemClicked) {
     clearObjectFromMap(SaoSebastiaoMetro);
     clearObjectFromMap(PracadeEspanhaMetro);
 
-
-
-
-
     switch (itemClicked) {
         case "flight":
             {
                 //Airports
 
-                infoPortelaAirport = new google.maps.InfoWindow({
-                    content: contentPortelaAirport
+                infoValenciaAirport = new google.maps.InfoWindow({
+                    content: contentValenciaAirport
                 });
 
-                LisbonPortelaAirport = new google.maps.Marker({
-                    position: portelaAirportLoc,
+                ValenciaAirport = new google.maps.Marker({
+                    position: ValenciaAirportLoc,
                     map: map,
                     icon: imageAirport,
                     // animation: google.maps.Animation.BOUNCE,
                 });
 
-                map.panTo(portelaAirportLoc);
-                map.setZoom(12);
-                LisbonPortelaAirport.addListener('click', function() {
+                infoBarcelonaAirport = new google.maps.InfoWindow({
+                    content: ""
+                });
+
+                BarcelonaAirport = new google.maps.Marker({
+                    position: BarcelonaAirportLoc,
+                    map: map,
+                    icon: imageAirport,
+                    // animation: google.maps.Animation.BOUNCE,
+                });
+
+                infoMadridAirport = new google.maps.InfoWindow({
+                    content: ""
+                });
+
+                MadridAirport = new google.maps.Marker({
+                    position: MadridAirportLoc,
+                    map: map,
+                    icon: imageAirport,
+                    // animation: google.maps.Animation.BOUNCE,
+                });
+
+                map.panTo(ValenciaAirportLoc);
+                map.setZoom(7);
+                ValenciaAirport.addListener('click', function() {
                     clearInforWindows()
-                    infoPortelaAirport.open(map, LisbonPortelaAirport);
+                    infoValenciaAirport.open(map, ValenciaAirport);
                 });
             }
             break;
         case "location":
             {
 
-                infoNovaIMS = new google.maps.InfoWindow({
-                    content: contentNovaIMS
+                infoUji = new google.maps.InfoWindow({
+                    content: contentUji
                 });
                 if (!university)
                     university = new google.maps.Marker({
                         position: Ujiloc,
                         map: map,
-                        icon: imageNovaIMS,
-                        title: novaIMSTooltip,
+                        icon: imageUJI,
+                        title: ujiTooltip,
                         animation: google.maps.Animation.BOUNCE
                     });
 
 
                 university.addListener('click', function() {
                     clearInforWindows()
-                    infoNovaIMS.open(map, university);
+                    infoUji.open(map, university);
                     //infoDomplatz.close();
                 });
 
@@ -536,23 +558,23 @@ function initMap() {
         zoom: 13
     });
 
-    infoNovaIMS = new google.maps.InfoWindow({
-        content: contentNovaIMS
+    infoUji = new google.maps.InfoWindow({
+        content: contentUji
     });
 
 
     university = new google.maps.Marker({
         position: Ujiloc,
         map: map,
-        icon: imageNovaIMS,
+        icon: imageUJI,
         animation: google.maps.Animation.BOUNCE,
-        title: novaIMSTooltip,
+        title: ujiTooltip,
     });
 
 
     university.addListener('click', function() {
         clearInforWindows()
-        infoNovaIMS.open(map, university);
+        infoUji.open(map, university);
         //infoDomplatz.close();
     });
 
