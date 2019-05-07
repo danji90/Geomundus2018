@@ -20,7 +20,7 @@ var markers;
 var Ujiloc = new google.maps.LatLng(39.9937, -0.0672);
 var ValenciaAirportLoc = new google.maps.LatLng(39.4921903, -0.4743740);
 var BarcelonaAirportLoc = new google.maps.LatLng(41.3038545, 2.0729609);
-var MadridAirportLoc = new google.maps.LatLng(39.4921903, -0.4743740);
+var MadridAirportLoc = new google.maps.LatLng(40.505776, -3.566914);
 
 
 var imageUJI = {
@@ -90,7 +90,7 @@ function setMapVisibility(itemClicked) {
             {
                 //Airports
                 var contentValenciaAirport = '<div id="content" style="color:#4686A0">' +
-                    '<h2 style="color:#4686A0">Valencia Airport</h2>' +
+                    '<h2 style="color:#4686A0">Manises Valencia Airport</h2>' +
                     '<p align="left" style="color:#4686A0">' +
                     '<b style="color:#4686A0">Web Page: </b><a target="_blank" href="https://www.airport-valencia.com/">' +
                     'https://www.airport-valencia.com/</a></p>' +
