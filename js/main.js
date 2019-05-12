@@ -92,10 +92,12 @@ function setMapVisibility(itemClicked) {
                 var contentValenciaAirport = '<div id="content" style="color:#4686A0">' +
                     '<h2 style="color:#4686A0">Manises Valencia Airport</h2>' +
                     '<p align="left" style="color:#4686A0">' +
+                    '<b style="color:#4686A0">Telephone:+34 902 40 47 04</b></br>' +
                     '<b style="color:#4686A0">Web Page: </b><a target="_blank" href="https://www.airport-valencia.com/">' +
                     'https://www.airport-valencia.com/</a></p>' +
                     '</a></p>' +
-                    '</div>';
+                    '<p>How to reach Castellon? (Transit Details)</br>View in Map			<a href="#fromValencia">View Details</a>' +
+                    '</div>'
 
                 infoValenciaAirport = new google.maps.InfoWindow({
                     content: contentValenciaAirport
@@ -109,7 +111,15 @@ function setMapVisibility(itemClicked) {
                 });
 
                 infoBarcelonaAirport = new google.maps.InfoWindow({
-                    content: ""
+                    content: '<div id="content" style="color:#4686A0">' +
+                        '<h2 style="color:#4686A0">Barcelona–El Prat Airport</h2>' +
+                        '<p align="left" style="color:#4686A0">' +
+                        '<b style="color:#4686A0">Telephone:+34 902 40 47 04 </b></br>' +
+                        '<b style="color:#4686A0">Web Page: </b><a target="_blank" href="http://www.aeropuertobarcelona-elprat.com">' +
+                        'http://www.aeropuertobarcelona-elprat.com</a></p>' +
+                        '</a></p>' +
+                        '<p>How to reach Castellon? (Transit Details)</br>View in Map			<a href="#fromBarcelona">View Details</a>' +
+                        '</div>'
                 });
 
                 BarcelonaAirport = new google.maps.Marker({
@@ -120,7 +130,15 @@ function setMapVisibility(itemClicked) {
                 });
 
                 infoMadridAirport = new google.maps.InfoWindow({
-                    content: ""
+                    content: '<div id="content" style="color:#4686A0">' +
+                        '<h2 style="color:#4686A0">Madrid-Barajas Airport</h2>' +
+                        '<p align="left" style="color:#4686A0">' +
+                        '<b style="color:#4686A0">Telephone:+34 91 321 10 00</b></br>' +
+                        '<b style="color:#4686A0">Web Page: </b><a target="_blank" href="https://www.aeropuertomadrid-barajas.com">' +
+                        'https://www.aeropuertomadrid-barajas.com</a></p>' +
+                        '</a></p>' +
+                        '<p>How to reach Castellon? (Transit Details)</br>View in Map			<a href="#fromMadrid">View Details</a>' +
+                        '</div>'
                 });
 
                 MadridAirport = new google.maps.Marker({
