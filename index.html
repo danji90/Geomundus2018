@@ -361,49 +361,55 @@
             </div>
         </div>
     </section>
+    <!-- How to get to UJI-->
     <section id="howto" class="main style2 special">
         <div style="text-align: left;margin-left: 10%;">
             <b>
                 <a href="https://www.google.com/maps/place/Espaitec/@39.9945711,-0.071089,17z/data=!4m5!3m4!1s0x0:0x6f1c7cc3683f5793!8m2!3d39.9935617!4d-0.073115" target="_blank"><u><h2>How to get to UJI:</h2></u></a></b>
-            <div class="row 100%">
-                <div class="4u 12u$(medium)">
-                    <h2 id="fromBarcelona">From Barcelona:</h2>
-                    <p> It is possible to take a commuter train (departures every 30 minutes) from the airport to the “Barcelona Sants” railway station or to take a taxi. Follow the train signs from the airport arrivals area to the trains to Sants (Rodalies).</p>
-                    <p>At Sants take a train directly to Castellón, (the ticket costs aprox. 30 Euros). You can consult Renfe (the train agency): http://www.renfe.es/ and better to buy your ticket online in advance. </p>
-                    <p>Be aware that the last train to Castellón is at 20:30 (most days). if you are travelling on Long Distance trains, your ticket includes "Rodalies/Cercanías" ticket (commuter train BCN airport ‐ Barcelona Sants) free of charge. But you
-                        have to get the ticket from auto‐sales machines. So, once you arrive to the commuter train station at the airport, look for the auto‐sales machines in order to get your "Rodalies" ticket. Select "Combo Rodalies", select destination
-                        "Barcelona Sants" and introduce the 5‐digit code(CombinadoCercanias or CombinadoRodalies) on the top of your ticket. You will get the Rodalies ticket for free.</p>
-                    <p>If you are staying in Hotel Voramar in Benicassim, please note that some trains from Barcelona have a stop in Benicàssim. Once in Benicàssim train station, you should take a taxi to get to the hotel.
-                    </p>
-                </div>
-                <div class="4u 12u$(medium)">
-                    <h2 id="fromMadrid">From Madrid:</h2>
-                    <p> From Barajas Airport you can take the metro underground to Atocha Renfe (the main railway station in Madrid). The journey by taxi from the airport to the station normally costs around 15 Euros, however heavy traffic at certain times
-                        of the day can cause this price to increase dramatically.
-                    </p>
-                    <p>From the Atocha there are direct trains Madrid‐Castellón or Madrid‐Valencia (and then take a 55‐minute commuter train to Castellón). You can consult Renfe (the train agency): http://www.renfe.es/ and better to buy your ticket online
-                        in advance.
-                    </p>
-                    <p>Please be aware that if you are travelling on Long Distance trains; your ticket includes "Rodalies/Cercanías" ticket (commuter train Valencia‐Castellón) free of charge. But you have to get the ticket from auto‐sales machines. So, once
-                        you arrive to València Nord, look for the auto‐sales machines in order to get your "Cercanías" ticket. Select "Combo Cercanías", select destination "Castellón de la Plana" and introduce the 5‐digit code (CombinadoCercanias) on
-                        the top of your ticket. You will get the Cercanías ticket for free.
-                    </p>
-                    <p> <a href="http://www.renfe.com/EN/viajeros/cercanias/valencia/index.html">Check the <u>time table.</u></a>.</br> For more information you can visit the <a href="https://www.madrid-airport.com/"><u> Airport web site</u></a>
-                    </p>
-                </div>
-                <div class="4u 12u$(medium)">
-                    <h2 id="fromValencia">From Valencia:</h2>
-                    <p> The best way to get to the València Nord railway station (“Estación del Norte”) from the airport is by metro line directly to the train station (metro stop “Xàtiva”) with lines 3 or 5. The trip is roughly 20 minutes. It is also possible
-                        to take a taxi which costs approximately 15€.</p>
-                    <p>From Xàtiva, take escalators/stairs up to street level and cross the street to València Nord. From Valencia Nord, take the local train (“Rodalies/Cercanías” C‐6) to Valencia Nord‐Castelló de la Plana which leaves every 30 minutes during
-                        the weekdays (Monday‐Friday 5:55 to 22:30) and every hour on the weekends (Saturday‐Sunday 5:55 to 22:30). </p>
-                    <p><a href="http://www.renfe.com/EN/viajeros/cercanias/valencia/index.html"><u>Cercanías timetable can be checked here</u> </a>. For more information visit the <a href="https://www.aeropuerto-valencia.com/"><u>Airport web site</u> </a>
-                    </p>
-                </div>
+
+            <div>
+                <h2 id="fromBarcelona" onclick="toggle(this)">+ From Barcelona:</h2>
+                <p style="display:none;">
+                    It is possible to take a commuter train (departures every 30 minutes) from the airport to the “Barcelona Sants” railway station or to take a taxi. Follow the train signs from the airport arrivals area to the trains to Sants (Rodalies).
+                    </br>
+                    At Sants take a train directly to Castellón, (the ticket costs aprox. 30 Euros). You can consult Renfe (the train agency): http://www.renfe.es/ and better to buy your ticket online in advance. </br>
+                    Be aware that the last train to Castellón is at 20:30 (most days). if you are travelling on Long Distance trains, your ticket includes "Rodalies/Cercanías" ticket (commuter train BCN airport ‐ Barcelona Sants) free of charge. But you have to get the ticket
+                    from auto‐sales machines. So, once you arrive to the commuter train station at the airport, look for the auto‐sales machines in order to get your "Rodalies" ticket. Select "Combo Rodalies", select destination "Barcelona Sants" and
+                    introduce the 5‐digit code(CombinadoCercanias or CombinadoRodalies) on the top of your ticket. You will get the Rodalies ticket for free.</br>
+                    If you are staying in Hotel Voramar in Benicassim, please note that some trains from Barcelona have a stop in Benicàssim. Once in Benicàssim train station, you should take a taxi to get to the hotel.
+                    </br>
+                </p>
             </div>
+            <div>
+                <h2 id="fromMadrid" onclick="toggle(this)">+ From Madrid:</h2>
+                <p style="display:none;">
+                    From Barajas Airport you can take the metro underground to Atocha Renfe (the main railway station in Madrid). The journey by taxi from the airport to the station normally costs around 15 Euros, however heavy traffic at certain times of the day can cause
+                    this price to increase dramatically.
+                    </br>
+                    From the Atocha there are direct trains Madrid‐Castellón or Madrid‐Valencia (and then take a 55‐minute commuter train to Castellón). You can consult Renfe (the train agency): http://www.renfe.es/ and better to buy your ticket online in advance.
+                    </br>
+                    Please be aware that if you are travelling on Long Distance trains; your ticket includes "Rodalies/Cercanías" ticket (commuter train Valencia‐Castellón) free of charge. But you have to get the ticket from auto‐sales machines. So, once you arrive to València
+                    Nord, look for the auto‐sales machines in order to get your "Cercanías" ticket. Select "Combo Cercanías", select destination "Castellón de la Plana" and introduce the 5‐digit code (CombinadoCercanias) on the top of your ticket. You
+                    will get the Cercanías ticket for free.
+                    </br>
+                    <a href="http://www.renfe.com/EN/viajeros/cercanias/valencia/index.html">Check the <u>time table.</u></a>.</br> For more information you can visit the <a href="https://www.madrid-airport.com/"><u> Airport web site</u></a>
+                    </br>
+                </p>
+            </div>
+            <div>
+                <h2 id="fromValencia" onclick="toggle(this)">+ From Valencia:</h2>
+                <p style="display:none;">
+                    The best way to get to the València Nord railway station (“Estación del Norte”) from the airport is by metro line directly to the train station (metro stop “Xàtiva”) with lines 3 or 5. The trip is roughly 20 minutes. It is also possible to take a taxi
+                    which costs approximately 15€.</br>
+                    From Xàtiva, take escalators/stairs up to street level and cross the street to València Nord. From Valencia Nord, take the local train (“Rodalies/Cercanías” C‐6) to Valencia Nord‐Castelló de la Plana which leaves every 30 minutes during the weekdays (Monday‐Friday
+                    5:55 to 22:30) and every hour on the weekends (Saturday‐Sunday 5:55 to 22:30). </br>
+                    <a href="http://www.renfe.com/EN/viajeros/cercanias/valencia/index.html"><u>Cercanías timetable can be checked here</u> </a>. For more information visit the <a href="https://www.aeropuerto-valencia.com/"><u>Airport web site</u> </a>
+                    </br>
+                </p>
+            </div>
+
         </div>
     </section>
-
     <!---->
     <!-- Four: PROGRAM AND SCHEDULE -->
     <section id="four" class="main style1">
