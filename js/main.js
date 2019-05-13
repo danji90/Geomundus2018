@@ -154,6 +154,14 @@ function setMapVisibility(itemClicked) {
                     clearInforWindows()
                     infoValenciaAirport.open(map, ValenciaAirport);
                 });
+                BarcelonaAirport.addListener('click', function() {
+                    clearInforWindows()
+                    infoBarcelonaAirport.open(map, BarcelonaAirport);
+                });
+                MadridAirport.addListener('click', function() {
+                    clearInforWindows()
+                    infoMadridAirport.open(map, MadridAirport);
+                });
             }
             break;
         case "location":
